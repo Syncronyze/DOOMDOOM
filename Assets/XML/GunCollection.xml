@@ -1,0 +1,24 @@
+<!--
+https://i.imgur.com/dU6Epmr.png
+-->
+
+<GunCollection>
+    <Gun name="fists">
+        <ammoType>None</ammoType>
+        <fireRate>75.0</fireRate>
+        <projectileDist>2.5</projectileDist>
+        <projectileSpeed>-1.0</projectileSpeed>
+    </Gun>
+    <Gun name="pistol">
+        <ammoType>Bullet</ammoType>
+        <fireRate>150</fireRate>
+        <projectileDist>1000</projectileDist>
+        <projectileSpeed>-1.0</projectileSpeed>
+    </Gun>
+    <Gun name="rocket">
+        <ammoType>Rocket</ammoType>
+        <fireRate>50</fireRate>
+        <projectileDist>10000</projectileDist>
+        <projectileSpeed>350</projectileSpeed>
+    </Gun>
+</GunCollection>

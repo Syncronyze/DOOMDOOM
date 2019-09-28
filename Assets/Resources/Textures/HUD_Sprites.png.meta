@@ -1,0 +1,674 @@
+fileFormatVersion: 2
+guid: 204638dea3cff3e48b8c2e602a85acce
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: HUD_Sprites_Am
+    21300002: HUD_Sprites_1
+    21300004: HUD_Sprites_2
+    21300006: HUD_Sprites_3
+    21300008: HUD_Sprites_4
+    21300010: HUD_Sprites_5
+    21300012: HUD_Sprites_6
+    21300014: HUD_Sprites_7
+    21300016: HUD_Sprites_8
+    21300018: HUD_Sprites_9
+    21300020: HUD_Sprites_10
+    21300022: HUD_Sprites_11
+    21300024: HUD_Sprites_12
+    21300026: HUD_Sprites_13
+    21300028: HUD_Sprites_14
+    21300030: HUD_Sprites_15
+    21300032: HUD_Sprites_16
+    21300034: HUD_Sprites_17
+    21300036: HUD_Sprites_18
+    21300038: HUD_Sprites_19
+    21300040: HUD_Sprites_20
+    21300042: HUD_Sprites_21
+    21300044: HUD_Sprites_22
+    21300046: HUD_Sprites_23
+    21300048: HUD_Sprites_24
+    21300050: HUD_Sprites_25
+    21300052: HUD_Sprites_26
+    21300054: HUD_Sprites_27
+    21300056: HUD_Sprites_28
+    21300058: HUD_Sprites_29
+    21300060: HUD_Sprites_30
+    21300062: HUD_Sprites_31
+    21300064: HUD_Sprites_32
+    21300066: HUD_Sprites_33
+    21300068: HUD_Sprites_34
+    21300070: HUD_Sprites_35
+    21300072: HUD_Sprites_36
+    21300074: HUD_Sprites_37
+    21300076: HUD_Sprites_38
+    21300078: HUD_Sprites_39
+    21300080: HUD_Sprites_40
+    21300082: HUD_Sprites_41
+    21300084: HUD_Sprites_42
+    21300086: HUD_Sprites_43
+    21300088: HUD_Sprites_44
+    21300090: HUD_Sprites_45
+    21300092: HUD_Sprites_46
+    21300094: HUD_Sprites_47
+    21300096: HUD_Sprites_48
+    21300098: HUD_Sprites_49
+    21300100: HUD_Sprites_50
+    21300102: HUD_Sprites_51
+    21300104: HUD_Sprites_52
+    21300106: HUD_Sprites_53
+    21300108: HUD_Sprites_54
+    21300110: HUD_Sprites_55
+    21300112: HUD_Sprites_56
+    21300114: HUD_Sprites_57
+    21300116: HUD_Sprites_58
+    21300118: HUD_Sprites_59
+    21300120: HUD_Sprites_60
+    21300122: HUD_Sprites_61
+    21300124: HUD_Sprites_62
+    21300126: HUD_Sprites_63
+    21300128: HUD_Sprites_64
+    21300130: HUD_Sprites_65
+    21300132: HUD_Sprites_66
+    21300134: HUD_Sprites_67
+    21300136: HUD_Sprites_68
+    21300138: HUD_Sprites_69
+    21300140: HUD_Sprites_70
+    21300142: HUD_Sprites_71
+    21300144: HUD_Sprites_72
+    21300146: HUD_Sprites_73
+    21300148: HUD_Sprites_74
+    21300150: HUD_Sprites_75
+    21300152: HUD_Sprites_76
+    21300154: HUD_Sprites_77
+    21300156: HUD_Sprites_78
+    21300158: HUD_Sprites_79
+    21300160: HUD_Sprites_80
+    21300162: HUD_Sprites_81
+    21300164: HUD_Sprites_82
+    21300166: HUD_Sprites_83
+    21300168: HUD_Sprites_84
+    21300170: HUD_Sprites_85
+    21300172: HUD_Sprites_86
+    21300174: HUD_Sprites_87
+    21300176: HUD_Sprites_88
+    21300178: HUD_Sprites_89
+    21300180: HUD_Sprites_90
+    21300182: HUD_Sprites_91
+    21300184: HUD_Sprites_92
+    21300186: HUD_Sprites_93
+    21300188: HUD_Sprites_94
+    21300190: HUD_Sprites_95
+    21300192: HUD_Sprites_96
+    21300194: HUD_Sprites_97
+    21300196: HUD_Sprites_98
+    21300198: HUD_Sprites_99
+    21300200: HUD_Sprites_100
+    21300202: HUD_Sprites_101
+    21300204: HUD_Sprites_102
+    21300206: HUD_Sprites_103
+    21300208: HUD_Sprites_104
+    21300210: HUD_Sprites_105
+    21300212: HUD_Sprites_106
+    21300214: HUD_Sprites_107
+    21300216: HUD_Sprites_108
+    21300218: HUD_Sprites_109
+    21300220: HUD_Sprites_110
+    21300222: HUD_Sprites_111
+    21300224: HUD_Sprites_112
+    21300226: HUD_Sprites_113
+    21300228: HUD_Sprites_114
+    21300230: HUD_Sprites_115
+    21300232: HUD_Sprites_116
+    21300234: HUD_Sprites_117
+    21300236: HUD_Sprites_118
+    21300238: HUD_Sprites_119
+    21300240: HUD_Sprites_120
+    21300242: HUD_Sprites_121
+    21300244: HUD_Sprites_122
+    21300246: HUD_Sprites_123
+    21300248: HUD_Sprites_124
+    21300250: HUD_Sprites_125
+    21300252: HUD_Sprites_126
+    21300254: HUD_Sprites_127
+    21300256: HUD_Sprites_128
+    21300258: HUD_Sprites_129
+    21300260: HUD_Sprites_130
+    21300262: HUD_Sprites_131
+    21300264: HUD_Sprites_132
+    21300266: HUD_Sprites_133
+    21300268: HUD_Sprites_134
+    21300270: HUD_Sprites_135
+    21300272: HUD_Sprites_136
+    21300274: HUD_Sprites_137
+    21300276: HUD_Sprites_138
+    21300278: HUD_Sprites_139
+    21300280: HUD_Sprites_140
+    21300282: HUD_Sprites_141
+    21300284: HUD_Sprites_142
+    21300286: HUD_Sprites_143
+    21300288: HUD_Sprites_144
+    21300290: HUD_Sprites_145
+    21300292: HUD_Sprites_146
+    21300294: HUD_Sprites_147
+    21300296: HUD_Sprites_148
+    21300298: HUD_Sprites_149
+    21300300: HUD_Sprites_150
+    21300302: HUD_Sprites_151
+    21300304: HUD_Sprites_152
+    21300306: HUD_Sprites_153
+    21300308: HUD_Sprites_154
+    21300310: HUD_Sprites_155
+    21300312: HUD_Sprites_156
+    21300314: HUD_Sprites_157
+    21300316: HUD_Sprites_158
+    21300318: HUD_Sprites_159
+    21300320: HUD_Sprites_160
+    21300322: HUD_Sprites_161
+    21300324: HUD_Sprites_162
+    21300326: HUD_Sprites_163
+    21300328: HUD_Sprites_164
+    21300330: HUD_Sprites_165
+    21300332: HUD_Sprites_166
+    21300334: HUD_Sprites_167
+    21300336: HUD_Sprites_168
+    21300338: HUD_Sprites_169
+    21300340: HUD_Sprites_170
+    21300342: HUD_Sprites_171
+    21300344: HUD_Sprites_172
+    21300346: HUD_Sprites_173
+    21300348: HUD_Sprites_174
+    21300350: HUD_Sprites_175
+    21300352: HUD_Sprites_176
+    21300354: HUD_Sprites_177
+    21300356: HUD_Sprites_178
+    21300358: HUD_Sprites_179
+    21300360: HUD_Sprites_180
+    21300362: HUD_Sprites_181
+    21300364: HUD_Sprites_182
+    21300366: HUD_Sprites_183
+    21300368: HUD_Sprites_184
+    21300370: HUD_Sprites_185
+    21300372: HUD_Sprites_186
+    21300374: HUD_Sprites_187
+    21300376: HUD_Sprites_188
+    21300378: HUD_Sprites_189
+    21300380: HUD_Sprites_190
+    21300382: HUD_Sprites_191
+    21300384: HUD_Sprites_192
+    21300386: HUD_Sprites_193
+    21300388: HUD_Sprites_194
+    21300390: HUD_Sprites_195
+    21300392: HUD_Sprites_196
+    21300394: HUD_Sprites_197
+    21300396: HUD_Sprites_198
+    21300398: HUD_Sprites_199
+    21300400: HUD_Sprites_200
+    21300402: HUD_Sprites_201
+    21300404: HUD_Sprites_202
+    21300406: HUD_Sprites_203
+    21300408: HUD_Sprites_204
+    21300410: HUD_Sprites_205
+    21300412: HUD_Sprites_206
+    21300414: HUD_Sprites_207
+    21300416: HUD_Sprites_208
+    21300418: HUD_Sprites_209
+    21300420: HUD_Sprites_210
+    21300422: HUD_Sprites_211
+    21300424: HUD_Sprites_212
+    21300426: HUD_Sprites_213
+    21300428: HUD_Sprites_0
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HUD_Sprites_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 163
+        width: 320
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc62536ca911df64696c7788768bebea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Sprites_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 127
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f719ea55be00694a9a2e0e8fe3296d7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Sprites_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 127
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81afced0a634ae7499322fedd9bb5ba7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Sprites_3
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 135
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6e884590c684444986949ebbbebe85b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 135
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d38ea73d9d3ce9b48afc119f1b904a90
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 135
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f735a34c93d55439981a1c5ea76e0b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Sprites_6
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 131
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f52762b6b5fbc24c9b01e42c93c4033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Sprites_7
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 129
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be34b7d33cef72479acbfd7f1985fa9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Sprites_8
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 129
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f368995562bf5342bea592b6213a548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Sprites_9
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 129
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9110421fc9715429bb443dc373ed34
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Sprites_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 93
+        width: 35
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4349a949f8791b2429545f6bdbd91f8a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Sprites_11
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 93
+        width: 35
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 534b0e6ed2787bf489d4678f4a545a31
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Sprites_12
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 93
+        width: 35
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca8aa4a779c80b84aa18cc78e637ef6b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Sprites_13
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 93
+        width: 35
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d5bb54bfa7ce1d4fa56f62f4c49c5a3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Sprites_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 61
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98b324bb11e8094ca5e5e33891a70fb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Sprites_15
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 61
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2eb95bcb791fb04587ebe81dac120a2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Sprites_16
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 61
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6174e78b3af58024a9e3d5a67dfc8846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Sprites_17
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 61
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54435112ee032f64bab3957961f66335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 77c1411a0ee992b48975ea8716efc769
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
