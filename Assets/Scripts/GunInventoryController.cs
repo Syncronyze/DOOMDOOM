@@ -24,20 +24,21 @@ public class GunInventoryController : MonoBehaviour
     [HideInInspector]
     public bool inventoryRefresh;
 
-    void Start(){
+    void Awake(){
         guns = new List<GunController>();
         ammoDisplays = new List<UIFontController>();
-
+        activeGunIndex = 0;
         inventoryRefresh = true;
+
         if(!uiController.HasControllers())
             uiController.CollectUIControllers();
 
-        activeAmmoDisplay = uiController.GetFontController("UI_AmmoPos");    
-
+        activeAmmoDisplay = uiController.GetFontController("UI_AmmoPos");
         CreateAmmos();
+        // TODO: Remove, just for testing
         AddAmmo(AmmoType.Bullet, 500);
         AddAmmo(AmmoType.Rocket, 500);
-        SetActiveGun();
+        SetActiveGun(); 
     }
 
     void Update(){

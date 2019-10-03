@@ -13,6 +13,7 @@ public class PlayerMovementController : MonoBehaviour {
 	public int maxSpeed;
 	public float timeToTopSpeed;
 	public float accelerationSpeed;
+	public float groundingDistance;
 	[Range(1, 3)]
 	public float runMultiplier; // if we're holding shift (running)
 	[Range(0, 1)]
@@ -21,6 +22,7 @@ public class PlayerMovementController : MonoBehaviour {
 	Vector3 currentVelRef;
 	float currentMaxVelRef;
 	float currentMaxSpeed;
+	float currentAirSpeed;
 
 	bool grounded;
 
@@ -46,13 +48,21 @@ public class PlayerMovementController : MonoBehaviour {
 
 		if(Input.GetKey(KeyCode.LeftShift))
 			targetSpeed *= runMultiplier;
-		else if(!isGrounded())
-			targetSpeed *= airMultiplier;
-		
 
-		if(Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
-			targetSpeed = 0;
-		
+		// if we're not grounded and this is the first frame we're in air, then we update the "current air speed" which is going to be the max speed throughout the flight
+		if(!isGrounded()){
+			if(currentAirSpeed == 0)
+				currentAirSpeed = targetSpeed;
+			else
+				targetSpeed = currentAirSpeed;
+		}
+		else{
+			currentAirSpeed = 0;
+
+			if(Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
+				targetSpeed = 0;
+		}
+
 		// current max speed is the speed which the player can *at most* be going (horizontally)
 		// this doesn't mean the player is going this speed, ie. if they're touching a wall or still continually accelerating.
 		currentMaxSpeed = Mathf.SmoothDamp(currentMaxSpeed, targetSpeed, ref currentMaxVelRef, timeToTopSpeed);
@@ -63,7 +73,9 @@ public class PlayerMovementController : MonoBehaviour {
 	 */
 	void PlayerMovementLogic(){
 
-        rb.AddRelativeForce(Input.GetAxisRaw("Horizontal") * accelerationSpeed * rb.mass, 0, Input.GetAxisRaw("Vertical") * accelerationSpeed * rb.mass);
+		float accelMultiplier = accelerationSpeed * rb.mass * (isGrounded() ? 1 : airMultiplier);
+
+        rb.AddRelativeForce(Input.GetAxisRaw("Horizontal") * accelMultiplier, 0, Input.GetAxisRaw("Vertical") * accelMultiplier);
 
 		Vector2 horizontalMovement = new Vector2 (rb.velocity.x, rb.velocity.z);
 		// checking the magnitude of just the horizontal movement, if it exceeds our max speed, then we'll have to clamp it
@@ -91,17 +103,17 @@ public class PlayerMovementController : MonoBehaviour {
 		if(grounded)
 			return true;
 		// otherwise we use a raycast to check if the collision isn't correct.
-		return isGroundedRaycast();
+		grounded = isGroundedRaycast();
+		return grounded;
 	}
 	
 	/*
 	 * Raycast double check to see if we're actually grounded
 	 */
 	bool isGroundedRaycast(){
-		RaycastHit groundedInfo;
-		if(Physics.Raycast(transform.position, transform.up *-1f, out groundedInfo, 1, ~ignoreLayer)){
-			Debug.DrawRay (transform.position, transform.up * -1f, Color.red, 0.0f);
-			if(groundedInfo.transform != null)
+		RaycastHit rcHit;
+		if(Physics.Raycast(transform.position, Vector3.down, out rcHit, groundingDistance, ~ignoreLayer)){
+			if(rcHit.transform != null)
 				return true;
 			else
 				return false;
@@ -132,7 +144,11 @@ public class PlayerMovementController : MonoBehaviour {
 	 * 	TODO: REMOVE, ONLY FOR DEBUGGING.
 	 */
 	void OnGUI(){
-		GUI.Label(new Rect(10, 10, 400, 80), "Speed: " + System.Math.Round(GetCurrentSpeed(), 4) + "\nX/Y Speed: " + System.Math.Round(GetCurrentHorzSpeed(), 4) + "\nMax Speed: " + System.Math.Round(currentMaxSpeed, 3));
+		GUI.Label(new Rect(10, 10, 400, 80), 
+		"Speed: " + System.Math.Round(GetCurrentSpeed(), 4) + 
+		"\nX/Y Speed: " + System.Math.Round(GetCurrentHorzSpeed(), 4) + 
+		"\nMax Speed: " + System.Math.Round(currentMaxSpeed, 3) + 
+		(isGrounded() ? "\nGrounded" : ""));
 	}
 
 

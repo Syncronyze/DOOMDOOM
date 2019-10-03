@@ -43,7 +43,7 @@ public class GunController : MonoBehaviour
      */
     public void SetActive(bool active){
         isActiveGun = active;
-        lastShot = RPS / 2;
+        lastShot = RPS * 0.75f;
     }
 
     /*

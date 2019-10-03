@@ -25,8 +25,8 @@ public class GameUIController : MonoBehaviour
     public void CollectUIControllers(){
         fontControllers = new List<UIFontController>();
         foreach(Transform child in transform){
-            UIFontController fc = child.GetComponent<UIFontController>();
-            if(fc != null){
+            UIFontController fc;
+            if(child.TryGetComponent<UIFontController>(out fc)){
                 fontControllers.Add(fc);
             }
         }

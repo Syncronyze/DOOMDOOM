@@ -12,13 +12,13 @@ https://i.imgur.com/dU6Epmr.png
     <Gun name="pistol">
         <ammoType>Bullet</ammoType>
         <fireRate>150</fireRate>
-        <projectileDist>1000</projectileDist>
+        <projectileDist>-1.0</projectileDist>
         <projectileSpeed>-1.0</projectileSpeed>
     </Gun>
     <Gun name="rocket">
         <ammoType>Rocket</ammoType>
         <fireRate>50</fireRate>
-        <projectileDist>10000</projectileDist>
+        <projectileDist>40</projectileDist>
         <projectileSpeed>350</projectileSpeed>
     </Gun>
 </GunCollection>

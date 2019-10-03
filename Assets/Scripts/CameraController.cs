@@ -28,12 +28,14 @@ public class CameraController : MonoBehaviour {
 	public float headBobSpeed;
 	public float lowestHeadHeight = -0.001f;
 	float defaultHeadHeight = 0;
+	float cameraOffset;
 	static float bobTimer = 0.0f;
 	
 
 	void Awake(){
 		Cursor.lockState = CursorLockMode.Locked;
 		mainCamera = GameObject.FindGameObjectWithTag("MainCamera").transform;
+		cameraOffset = mainCamera.localPosition.y; // before we begin, we want to maintain the camera's Y offeset
 
 		xhair = Resources.Load<Texture2D>("Textures/xhair");
 		float xhairWidth = 4;
@@ -58,7 +60,7 @@ public class CameraController : MonoBehaviour {
 	 * Applying the headbob to the camera
 	 */
 	void HeadBob(){
-		mainCamera.transform.localPosition = new Vector3(0, Mathf.Lerp(defaultHeadHeight, lowestHeadHeight, bobTimer), 0);
+		mainCamera.transform.localPosition = new Vector3(0, Mathf.Lerp(defaultHeadHeight, lowestHeadHeight, bobTimer) + cameraOffset, 0);
 		// multiplying the timer by the speed of the player, halved and clamped with a max to ensure we can disable if we need.
 		// setting headBobSpeed to 0 will disable head bob entirely.
         bobTimer += Mathf.Clamp(GetComponent<PlayerMovementController>().GetCurrentHorzSpeed() * 0.5f, 0, headBobSpeed) * Time.deltaTime;

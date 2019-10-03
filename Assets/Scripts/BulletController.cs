@@ -42,7 +42,7 @@ public class BulletController : MonoBehaviour
             End();
         
 
-        dist += Vector3.Distance(startPos, transform.position);
+        dist = Vector3.Distance(startPos, transform.position);
         timeActive += Time.deltaTime;
         
     }
@@ -107,7 +107,7 @@ public class BulletController : MonoBehaviour
         raycast = _projectileSpeed <= 0;
 
         if(projectileDist <= 0)
-            projectileDist = 1024;
+            projectileDist = 128;
 
         valid = true;
     }
