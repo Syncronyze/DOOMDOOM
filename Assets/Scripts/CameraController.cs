@@ -5,6 +5,7 @@ using System.Collections;
 public class CameraController : MonoBehaviour {
 
 	public Transform mainCamera;
+	PlayerController playerController;
 
 	public float mouseSensitvity;
 	private float rotationYVelocity, cameraXVelocity;
@@ -34,6 +35,7 @@ public class CameraController : MonoBehaviour {
 
 	void Awake(){
 		Cursor.lockState = CursorLockMode.Locked;
+		playerController = GetComponent<PlayerController>();
 		mainCamera = GameObject.FindGameObjectWithTag("MainCamera").transform;
 		cameraOffset = mainCamera.localPosition.y; // before we begin, we want to maintain the camera's Y offeset
 
@@ -48,12 +50,14 @@ public class CameraController : MonoBehaviour {
 
 	void Update(){
 		MouseInputMovement();
-		HeadBob ();	
+		RotateCamera();
+		if(headBobSpeed > 0)
+			HeadBob ();	
 
 	}
 
 	void FixedUpdate(){
-		RotateCamera();
+		//RotateCamera();
 	}
 
 	/*
@@ -63,7 +67,8 @@ public class CameraController : MonoBehaviour {
 		mainCamera.transform.localPosition = new Vector3(0, Mathf.Lerp(defaultHeadHeight, lowestHeadHeight, bobTimer) + cameraOffset, 0);
 		// multiplying the timer by the speed of the player, halved and clamped with a max to ensure we can disable if we need.
 		// setting headBobSpeed to 0 will disable head bob entirely.
-        bobTimer += Mathf.Clamp(GetComponent<PlayerMovementController>().GetCurrentHorzSpeed() * 0.5f, 0, headBobSpeed) * Time.deltaTime;
+		if(playerController.isGrounded())
+        	bobTimer += Mathf.Clamp(playerController.GetCurrentHorzSpeed() * 0.5f, 0, headBobSpeed) * Time.deltaTime;
 
 		// if the timer has run its course, we flip the variables and reset the timer.
         if (bobTimer > 1.0f)

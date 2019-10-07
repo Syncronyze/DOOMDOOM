@@ -55,11 +55,14 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BulletController.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\FogController.cs" />
      <Compile Include="Assets\Scripts\GameUIController.cs" />
      <Compile Include="Assets\Scripts\Gun.cs" />
      <Compile Include="Assets\Scripts\GunController.cs" />
      <Compile Include="Assets\Scripts\GunInventoryController.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerMovementController.cs" />
+     <Compile Include="Assets\Scripts\ScrollTexture.cs" />
      <Compile Include="Assets\Scripts\UIFontController.cs" />
      <Compile Include="Assets\Scripts\UISpriteLoader.cs" />
      <None Include="Assets\XML\GunCollection.xml" />
@@ -68,6 +71,9 @@
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>D:/Users/Nick/Documents/DOOMDOOM/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+ <HintPath>D:/Users/Nick/Documents/DOOMDOOM/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Users/Nick/Documents/DOOMDOOM/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -84,17 +90,14 @@
  <Reference Include="Unity.Rider.Editor">
  <HintPath>D:/Users/Nick/Documents/DOOMDOOM/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.ProBuilder.AddOns.Editor">
+ <HintPath>D:/Users/Nick/Documents/DOOMDOOM/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>D:/Users/Nick/Documents/DOOMDOOM/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>D:/Users/Nick/Documents/DOOMDOOM/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
- <HintPath>D:/Users/Nick/Documents/DOOMDOOM/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
- </Reference>
- <Reference Include="Unity.ProBuilder.AddOns.Editor">
- <HintPath>D:/Users/Nick/Documents/DOOMDOOM/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

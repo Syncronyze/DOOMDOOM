@@ -10,7 +10,7 @@ public class PlayerMovementController : MonoBehaviour {
 	public Transform cameraMain;
 
 	[Header("Player Physics Variables")]
-	public int maxSpeed;
+	public float maxSpeed;
 	public float timeToTopSpeed;
 	public float accelerationSpeed;
 	public float groundingDistance;
