@@ -38,7 +38,12 @@ public class GunInventoryController : MonoBehaviour
         // TODO: Remove, just for testing
         AddAmmo(AmmoType.Bullet, 500);
         AddAmmo(AmmoType.Rocket, 500);
-        SetActiveGun(); 
+        
+    }
+
+    void Start(){
+        RefreshInventory();
+        SetActiveGun();
     }
 
     void Update(){
@@ -58,7 +63,6 @@ public class GunInventoryController : MonoBehaviour
             Ammo ammo = new Ammo(type);
             string uiString = "UI_Ammo" + type.ToString();
             ammos.Add(ammo);
-            
             // if it's less than 0, we display blank since it's infinite ammo
             uiController.SetValue(uiString + "MaxPos", ammo.max < 0 ? "" : ammo.max + "");
 
@@ -86,12 +90,6 @@ public class GunInventoryController : MonoBehaviour
      */
     void UpdateGUI(){
         int iterator = 1;
-        if( ammoDisplays == null || 
-            ammoDisplays.Count == 0 || 
-            activeAmmoDisplay == null || 
-            ammos.Count == 0 || 
-            activeAmmo == null)
-            return;
 
         foreach(UIFontController cont in ammoDisplays){
             if(cont == null)
@@ -118,7 +116,7 @@ public class GunInventoryController : MonoBehaviour
                 i--;
                 continue;
             }
-            
+
             if(i == activeGunIndex){
                 activeGunIndex = i;
                 gun.SetActive(true);

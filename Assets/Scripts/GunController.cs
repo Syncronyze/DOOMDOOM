@@ -19,7 +19,7 @@ public class GunController : MonoBehaviour
     bool isActiveGun;
     
 
-    void Start(){
+    void Awake(){
         if(!RetrieveGunInfo()){
             print($"Invalid gun {gunName}, please check the XML and ensure all parameters are correct.");
             Destroy(gameObject);
