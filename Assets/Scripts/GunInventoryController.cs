@@ -10,15 +10,19 @@ using System.Linq;
 public class GunInventoryController : MonoBehaviour
 {
     public GameUIController uiController;
+    public UIViewSpriteController uiViewSprite;
     
     List<GunController> guns;
     List<Ammo> ammos;
+    List<UIFontController> ammoDisplays;
+    UIFontController activeAmmoDisplay;
     Ammo activeAmmo;
+
     int activeGunIndex;
     bool valid;
 
-    List<UIFontController> ammoDisplays;
-    UIFontController activeAmmoDisplay;
+
+    
 
     // when the inventory has an update and needs to be refreshed
     [HideInInspector]
@@ -121,6 +125,7 @@ public class GunInventoryController : MonoBehaviour
                 activeGunIndex = i;
                 gun.SetActive(true);
                 activeAmmo = ammos[(int)gun.GetAmmoType()];
+                uiViewSprite.ChangeGun(gun.gunName);
             }
             else{
                 gun.SetActive(false);
@@ -183,6 +188,7 @@ public class GunInventoryController : MonoBehaviour
                         print("No ammo type available for " + gc.gunName + "\n" + e.Message + "\n StackTrace: " + e.StackTrace);
                     }
                     uiController.ChangeStyle("UI_Arms" + iterator + "Pos", FontStyle.Go);
+                    gc.uiViewSprite = uiViewSprite;
                     guns.Add(gc);
                     iterator++;
                 }

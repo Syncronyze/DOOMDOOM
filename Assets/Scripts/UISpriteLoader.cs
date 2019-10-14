@@ -10,7 +10,7 @@ public class UISpriteLoader : MonoBehaviour
 
     Dictionary<string, Sprite[]> sprites = new Dictionary<string, Sprite[]>();
     
-    public Sprite RetrieveSprite(string name, string texture){
+    public Sprite RetrieveSprite(string name, string texture, bool containsSubstring = false){
         Sprite[] returnSprites;
 
         if(!sprites.TryGetValue(name, out returnSprites)){
@@ -21,8 +21,10 @@ public class UISpriteLoader : MonoBehaviour
         for(int i = 0; i < returnSprites.Length; i++){
             if(returnSprites[i].name == texture)
                 return returnSprites[i];
+            else if(containsSubstring && returnSprites[i].name.Contains(texture))
+                return returnSprites[i];
         }
-        print($"The sprite {texture} in sprite sheet {name} doesn't exist or is unloaded.");
+        //print($"The sprite {texture} in sprite sheet {name} doesn't exist or is unloaded.");
         return null;
     }
 
@@ -37,5 +39,38 @@ public class UISpriteLoader : MonoBehaviour
         }
         
         sprites.Add(name, retrievedSprites);
+    }
+
+    public int CountMatches(string name, string texture){
+        Sprite[] returnSprites;
+        int count = 0;
+        if(!sprites.TryGetValue(name, out returnSprites)){
+            print($"The sprite sheet {name} doesn't exist or is unloaded.");
+            return 0;
+        }
+        
+        for(int i = 0; i < returnSprites.Length; i++){
+            if(returnSprites[i].name.Contains(texture))
+                count++;
+        }
+
+        return count;
+    }
+
+    public Sprite[] GetMatches(string name, string texture){
+        Sprite[] returnSprites;
+
+        if(!sprites.TryGetValue(name, out returnSprites)){
+            print($"The sprite sheet {name} doesn't exist or is unloaded.");
+            return returnSprites;
+        }
+
+        List<Sprite> spriteList = new List<Sprite>();
+
+        for(int i = 0; i < returnSprites.Length; i++){
+            if(returnSprites[i].name.Contains(texture))
+                spriteList.Add(returnSprites[i]);
+        }
+        return spriteList.ToArray();
     }
 }

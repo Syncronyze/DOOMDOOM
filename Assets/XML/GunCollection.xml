@@ -5,8 +5,8 @@ https://i.imgur.com/dU6Epmr.png
 <GunCollection>
     <Gun name="fists">
         <ammoType>None</ammoType>
-        <fireRate>75.0</fireRate>
-        <projectileDist>2.5</projectileDist>
+        <fireRate>75</fireRate>
+        <projectileDist>4</projectileDist>
         <projectileSpeed>-1.0</projectileSpeed>
     </Gun>
     <Gun name="pistol">
@@ -20,5 +20,11 @@ https://i.imgur.com/dU6Epmr.png
         <fireRate>50</fireRate>
         <projectileDist>40</projectileDist>
         <projectileSpeed>350</projectileSpeed>
+    </Gun>
+    <Gun name="chaingun">
+        <ammoType>Bullet</ammoType>
+        <fireRate>850</fireRate>
+        <projectileDist>40</projectileDist>
+        <projectileSpeed>-1.0</projectileSpeed>
     </Gun>
 </GunCollection>

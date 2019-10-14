@@ -11,13 +11,19 @@ public class GunController : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject bulletEndPrefab;
 
+    [HideInInspector]
+    public UIViewSpriteController uiViewSprite;
+
     LayerMask ignoreLayer;
-    
     Gun gun; // holds all of our gun-related variables
+
     float lastShot;
     float RPS; // rounds per second
+
     bool isActiveGun;
-    
+
+    // how long it takes for the gun swap to be complete.
+    const float GUNSWAPTIMER = 1f;
 
     void Awake(){
         if(!RetrieveGunInfo()){
@@ -25,6 +31,7 @@ public class GunController : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        isActiveGun = false;
         RPS = (60f / gun.fireRate); // gun's fire rate is rounds per minute, we're setting it to be rounds per second for coding purposes
         ignoreLayer = ignoreLayer = 1 << LayerMask.NameToLayer ("Player");
     }
@@ -34,8 +41,13 @@ public class GunController : MonoBehaviour
     }
 
     void FixedUpdate(){
-        if (isActiveGun && Input.GetButton("Fire1"))
-            Shoot();
+        if(isActiveGun){
+            if(Input.GetButton("Fire1"))
+                Shoot();
+            else
+                uiViewSprite.ToggleFiring(false);
+        }
+            
     }
 
     /*
@@ -43,7 +55,7 @@ public class GunController : MonoBehaviour
      */
     public void SetActive(bool active){
         isActiveGun = active;
-        lastShot = RPS * 0.75f;
+        lastShot = -GUNSWAPTIMER;
     }
 
     /*
@@ -71,15 +83,25 @@ public class GunController : MonoBehaviour
     }
 
     /*
+     * Retrieves the rounds per second of the gun.
+     */
+    public float GetRPS(){
+        return RPS;
+    }
+
+    /*
      * Method to fire the gun, does prerequisite checks to ensure the gun can actually be fired, then expends ammo and fires the bullet (raytrace or projectile)
      */
     void Shoot(){
         if(lastShot > RPS){
             if(gun.ExpendAmmo()){
                 BulletController bullet = Instantiate(bulletPrefab, transform.position, transform.rotation).GetComponent<BulletController>();
-                bullet.SetVariables(gun.projectileSpeed, gun.projectileDist, LayerMask.NameToLayer("Player"));
+                bullet.SetVariables(gun.projectileSpeed, gun.projectileDist, LayerMask.NameToLayer("Player"), bulletEndPrefab);
+                uiViewSprite.ToggleFiring(true);
+                uiViewSprite.Fire();
             }
             else{
+                uiViewSprite.ToggleFiring(false);
                 print("No Ammo.");
             }
             

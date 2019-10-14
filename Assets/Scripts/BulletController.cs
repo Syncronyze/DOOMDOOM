@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
+    public bool spawnParticleOnlyOnHit = true;
+
     Vector3 startPos;
     Vector3 endPos;
     Rigidbody rb;
+    GameObject endPrefab;
 
     float dist;
     float timeActive;
+    float moveHit = 0.2f;
 
     bool raycast;
     bool hit;
@@ -56,7 +60,7 @@ public class BulletController : MonoBehaviour
             hit = Physics.Raycast(startPos, transform.TransformDirection(Vector3.forward), out rcHit, projectileDist, ~ignoreLayer);
 
             if(hit){
-                endPos = rcHit.point;
+                endPos = rcHit.point + (rcHit.normal * moveHit);
                 dist = rcHit.distance;
             }
             else{
@@ -84,10 +88,13 @@ public class BulletController : MonoBehaviour
      */
     void End(){
         print($"{(timeActive == 0 ? "Raycasted" : "Lasted " + timeActive + " s")}, travelling {dist}u, and hit something? {hit}");
-        print($"Bullet orignated at {startPos} and ended {endPos}.");
+        //print($"Bullet orignated at {startPos} and ended {endPos}.");
 
-        // TODO: spawn bullet "end" prefab
-        
+        // if we hit, we spawn particles no matter what
+        if(endPrefab != null && (hit || !spawnParticleOnlyOnHit)){
+            ParticleController particle = Instantiate(endPrefab, endPos, transform.rotation).GetComponent<ParticleController>();
+            particle.MoveParticle();
+        }
 
         Destroy(gameObject);
     }
@@ -95,10 +102,11 @@ public class BulletController : MonoBehaviour
     /*
      * Once spawned, the bullet needs to become valid based on its projectile speed & distance.
      */
-    public void SetVariables(float _projectileSpeed, float _projectileDist, LayerMask _ignoreLayer){
+    public void SetVariables(float _projectileSpeed, float _projectileDist, LayerMask _ignoreLayer, GameObject _endPrefab){
         if(rb == null)
             Destroy(gameObject);
-
+        
+        endPrefab = _endPrefab;
         projectileSpeed = _projectileSpeed;
         projectileDist = _projectileDist;
         // this is the layer that is firing this bullet, to ignore whatever is firing it.

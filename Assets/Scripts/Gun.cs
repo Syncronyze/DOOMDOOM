@@ -3,12 +3,14 @@
   */
 public class Gun{
 
+        public Ammo ammo { get; private set; }
+        public AmmoType ammoType;
+
         public float fireRate{ get; }
         public float projectileDist{ get; }
         public float projectileSpeed{ get; }
+        
         public string gunName{ get; }
-        public Ammo ammo { get; private set; }
-        public AmmoType ammoType;
 
         public Gun(string _gunName, float _fireRate, float _projectileDist, float _projectileSpeed, AmmoType _ammoType){
             gunName = _gunName;
@@ -105,8 +107,3 @@ public class Ammo{
         return string.Format("Type: {0} Count: {1}, Max Ammo: {2} ", type, count, max);
     }
 }
-
-public enum AmmoType{
-    None, Bullet, Shell, Rocket, Cell
-}
-
