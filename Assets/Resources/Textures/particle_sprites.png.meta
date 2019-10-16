@@ -3410,27 +3410,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: particle_sprites_134
-      rect:
-        serializedVersion: 2
-        x: 172
-        y: 169
-        width: 41
-        height: 33
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e031ecb15b86af45ab9ba9bc5f292c4
-      internalID: -5826236625873243545
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: particle_sprites_135
       rect:
         serializedVersion: 2
@@ -3447,27 +3426,6 @@ TextureImporter:
       bones: []
       spriteID: 38db188e0c2224447bbb050f27969c2f
       internalID: 8012561872424931258
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: particle_sprites_136
-      rect:
-        serializedVersion: 2
-        x: 214
-        y: 178
-        width: 26
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c8717a960956d364fad56f6496fc16a2
-      internalID: -6254013874295061008
       vertices: []
       indices: 
       edges: []
@@ -3515,76 +3473,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: particle_sprites_139
-      rect:
-        serializedVersion: 2
-        x: 167
-        y: 158
-        width: 11
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9fa6abe6d1d55d44393d39128ddb383c
-      internalID: -8719440005311053818
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: particle_sprites_140
-      rect:
-        serializedVersion: 2
-        x: 241
-        y: 168
-        width: 12
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 032840beae9017a4c8859c3fe00e1d80
-      internalID: -2787020057689316682
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: particle_sprites_141
-      rect:
-        serializedVersion: 2
-        x: 243
-        y: 175
-        width: 16
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 342573dd31d6ce641be56d3a2ffba72d
-      internalID: -4527681507330203959
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: particle_sprites_142
       rect:
         serializedVersion: 2
         x: 164
-        y: 130
-        width: 29
-        height: 43
+        y: 116
+        width: 103
+        height: 86
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3594,174 +3489,6 @@ TextureImporter:
       bones: []
       spriteID: 756b23660c37e1b4296d59d1a073e9b9
       internalID: -7485124929456185944
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: particle_sprites_143
-      rect:
-        serializedVersion: 2
-        x: 242
-        y: 146
-        width: 5
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1898c924e1154f4399df1080a9cf88e
-      internalID: 4220837780310308743
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: particle_sprites_144
-      rect:
-        serializedVersion: 2
-        x: 252
-        y: 149
-        width: 15
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: acc3a11461f429b41847c7c394354c6b
-      internalID: -1061463452475326337
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: particle_sprites_145
-      rect:
-        serializedVersion: 2
-        x: 253
-        y: 151
-        width: 5
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ecff91b3ed576444bf88eb2cdf1ae90
-      internalID: -4432547514071666912
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: particle_sprites_146
-      rect:
-        serializedVersion: 2
-        x: 165
-        y: 120
-        width: 25
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8afbce0e001a24458a742620e1ac0ee
-      internalID: 4531409861737463556
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: particle_sprites_147
-      rect:
-        serializedVersion: 2
-        x: 181
-        y: 117
-        width: 27
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fcf1106853068764cbed31080553c9de
-      internalID: -5523746362602290501
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: particle_sprites_148
-      rect:
-        serializedVersion: 2
-        x: 231
-        y: 131
-        width: 11
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e5c44006b9d09d4688755f82d72ffe2
-      internalID: 1450089545107647312
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: particle_sprites_149
-      rect:
-        serializedVersion: 2
-        x: 241
-        y: 122
-        width: 24
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cbe2670d35ddce24a8dda017a02b0d11
-      internalID: -1922169037359120428
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: particle_sprites_150
-      rect:
-        serializedVersion: 2
-        x: 213
-        y: 116
-        width: 30
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f631b306bcfeefe45b5fb866d55b0730
-      internalID: -3353976865517615724
       vertices: []
       indices: 
       edges: []

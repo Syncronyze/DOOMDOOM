@@ -25,30 +25,31 @@ public class Pseudo3DSpriteController : MonoBehaviour
     void Update(){
         if(sprites.Length != 5){
             print("Pseudo sprite controller requires exactly 5 sprites.");
+            return;
         }
         UpdateFrame();
     }
 
     void UpdateFrame(){
-        float thisY = UseNegativeDegrees(transform.eulerAngles.y);
-        float parentY = UseNegativeDegrees(transform.parent.eulerAngles.y);
+        float thisY = UseNegativeDegrees(transform.localEulerAngles.y);
+        int previousFrame = currentFrame;
 
-        float combined = UseNegativeDegrees(thisY + parentY);
-        spriteRenderer.flipX = combined > 0;
-        combined = Mathf.Abs(combined);
+        spriteRenderer.flipX = thisY > 0;
+        thisY = Mathf.Abs(thisY);
 
-        if(combined < 22.5)
+        if(thisY < 22.5)
             currentFrame = 0;
-        else if(combined < 67.5)
+        else if(thisY < 67.5)
             currentFrame = 4;
-        else if(combined < 112.5)
+        else if(thisY < 112.5)
             currentFrame = 3;
-        else if(combined < 157.5)
+        else if(thisY < 157.5)
             currentFrame = 2;
         else
             currentFrame = 1;
-        print(combined + ", " + currentFrame);
-        spriteRenderer.sprite = sprites[currentFrame];
+            
+        if(previousFrame != currentFrame)
+            spriteRenderer.sprite = sprites[currentFrame];
     }
 
     float UseNegativeDegrees(float input){

@@ -5,31 +5,35 @@ using System.Collections;
 public class CameraController : MonoBehaviour {
 
 	public Transform mainCamera;
+
+	// headbob variables
+	[Range(0, 4)]
+	public float headBobSpeed = 0;
+	public float cameraResetSpeed = 1f; // how long this takes, in seconds to reset the camera when coming to a stop
+	public float lowestHeadHeight = -0.001f;
+	// first person look variables
+	public float mouseSensitvity = 1;
+	public float topAngleView = 89;
+	public float bottomAngleView = -89;
+
 	PlayerController playerController;
+	Texture2D xhair;
+    Rect xhairRect;
 
-	public float mouseSensitvity;
-	private float rotationYVelocity, cameraXVelocity;
-
+	// first person look variables
 	float wantedYRotation;
 	float currentYRotation;
 	float wantedCameraXRotation;
 	float currentCameraXRotation;
-
-	// max view angles
-	public float topAngleView = 89;
-	public float bottomAngleView = -89;
-
-	//[HideInInspector]
-	//public GameObject weapon; // Current weapon that player carries
-
-    Texture2D xhair;
-    Rect xhairRect;
-
-	[Range(0, 4)]
-	public float headBobSpeed;
-	public float lowestHeadHeight = -0.001f;
-	float defaultHeadHeight = 0;
+	float rotationYVelocity;
+	float cameraXVelocity;
+	// headbob variables
+	float movingCamHeightTo;
+	float movingCamHeightFrom;
 	float cameraOffset;
+
+	bool resettingCamera;
+
 	static float bobTimer = 0.0f;
 	
 
@@ -38,6 +42,9 @@ public class CameraController : MonoBehaviour {
 		playerController = GetComponent<PlayerController>();
 		mainCamera = GameObject.FindGameObjectWithTag("MainCamera").transform;
 		cameraOffset = mainCamera.localPosition.y; // before we begin, we want to maintain the camera's Y offeset
+		movingCamHeightFrom = 0;
+		movingCamHeightTo = lowestHeadHeight;
+		resettingCamera = false;
 
 		xhair = Resources.Load<Texture2D>("Textures/xhair");
 		float xhairWidth = 4;
@@ -64,20 +71,47 @@ public class CameraController : MonoBehaviour {
 	 * Applying the headbob to the camera
 	 */
 	void HeadBob(){
-		mainCamera.transform.localPosition = new Vector3(0, Mathf.Lerp(defaultHeadHeight, lowestHeadHeight, bobTimer) + cameraOffset, 0);
-		// multiplying the timer by the speed of the player, halved and clamped with a max to ensure we can disable if we need.
-		// setting headBobSpeed to 0 will disable head bob entirely.
-		if(playerController.isGrounded())
-        	bobTimer += Mathf.Clamp(playerController.GetCurrentHorzSpeed() * 0.5f, 0, headBobSpeed) * Time.deltaTime;
+		float currentSpeed = playerController.GetCurrentHorzSpeed();
+		if(!playerController.isGrounded())
+			return;
 
-		// if the timer has run its course, we flip the variables and reset the timer.
-        if (bobTimer > 1.0f)
-        {
-            float temp = lowestHeadHeight;
-            lowestHeadHeight = defaultHeadHeight;
-            defaultHeadHeight = temp;
-            bobTimer = 0.0f;
-        }
+		if(currentSpeed > 0){
+			// if we came from camera reset, we have to ensure we're starting fresh
+			if(resettingCamera){
+				resettingCamera = false;
+				bobTimer = 0;
+				movingCamHeightFrom = 0;
+				movingCamHeightTo = lowestHeadHeight;
+			}
+
+			// if the timer has run its course, we flip the variables and reset the timer.
+			if (bobTimer > 1.0f)
+			{
+				float temp = movingCamHeightTo;
+				movingCamHeightTo = movingCamHeightFrom;
+				movingCamHeightFrom = temp;
+				bobTimer = 0.0f;
+			}
+		}
+		else{
+			if(!resettingCamera){
+				float currentCamHeight = mainCamera.transform.localPosition.y - cameraOffset;
+				movingCamHeightTo = 0;
+				movingCamHeightFrom = currentCamHeight; 
+				// bobTimer represents a decimal percentage of where we are
+				// thus, we set where we currently are in relation to the lowest possible camera height in % form
+				bobTimer = 1 - Mathf.Abs(currentCamHeight / lowestHeadHeight);
+				//print($"Moving Camera from {movingCamHeightFrom} to {movingCamHeightTo}, and at {(bobTimer * 100)}%");
+				resettingCamera = true;
+			}
+			else if(resettingCamera && bobTimer > 1.0f){ // if we're not moving, and we've already reset the camera, we're done here
+				return;
+			}
+
+		}
+		bobTimer += Time.deltaTime * headBobSpeed;
+		//print($"Moving Camera from {movingCamHeightFrom} to {movingCamHeightTo}, and at {(bobTimer * 100)}%");
+		mainCamera.transform.localPosition = new Vector3(0, Mathf.Lerp(movingCamHeightFrom, movingCamHeightTo, bobTimer) + cameraOffset, 0);
 	}
 
 	/*

@@ -12,7 +12,7 @@ https://i.imgur.com/dU6Epmr.png
     <Gun name="pistol">
         <ammoType>Bullet</ammoType>
         <fireRate>150</fireRate>
-        <projectileDist>-1.0</projectileDist>
+        <projectileDist>-1</projectileDist>
         <projectileSpeed>-1.0</projectileSpeed>
     </Gun>
     <Gun name="rocket">
@@ -24,7 +24,7 @@ https://i.imgur.com/dU6Epmr.png
     <Gun name="chaingun">
         <ammoType>Bullet</ammoType>
         <fireRate>850</fireRate>
-        <projectileDist>40</projectileDist>
+        <projectileDist>-1</projectileDist>
         <projectileSpeed>-1.0</projectileSpeed>
     </Gun>
 </GunCollection>

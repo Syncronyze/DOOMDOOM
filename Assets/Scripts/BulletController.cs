@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    public bool spawnParticleOnlyOnHit = true;
+    public bool forceSpawnEndParticles = false;
+    public float moveHit = 0.5f;
 
     Vector3 startPos;
     Vector3 endPos;
@@ -13,7 +14,7 @@ public class BulletController : MonoBehaviour
 
     float dist;
     float timeActive;
-    float moveHit = 0.2f;
+    
 
     bool raycast;
     bool hit;
@@ -91,8 +92,8 @@ public class BulletController : MonoBehaviour
         //print($"Bullet orignated at {startPos} and ended {endPos}.");
 
         // if we hit, we spawn particles no matter what
-        if(endPrefab != null && (hit || !spawnParticleOnlyOnHit)){
-            ParticleController particle = Instantiate(endPrefab, endPos, transform.rotation).GetComponent<ParticleController>();
+        if(endPrefab != null && (hit || forceSpawnEndParticles)){
+            ParticleController particle = Instantiate(endPrefab, (forceSpawnEndParticles && !hit) ? transform.position : endPos, transform.rotation).GetComponent<ParticleController>();
             particle.MoveParticle();
         }
 
