@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - LevelPart
-  - Dummie
   - SpriteLoader
+  - ViewSprite
+  - GameUI
   layers:
   - Default
   - TransparentFX

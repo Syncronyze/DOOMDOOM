@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 /*
 
-    -------------------OLD CODE - NO LONGER IN USE
+    -------------------OLD CODE - NO LONGER IN USE, USE UIVIEWSPRITECONTROLLER
 
 
  */

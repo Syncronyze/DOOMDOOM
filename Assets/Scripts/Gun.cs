@@ -46,14 +46,14 @@ public class Gun{
   * Ammo class to store the ammo information, since ammo is shared between guns.
   */
 public class Ammo{
-    public int max{ get; }
+    public int max{ get; private set; }
     public int count{ get; private set;}
     public AmmoType type{ get; }
 
     public Ammo(AmmoType _type){
         type = _type;
         count = 0;
-        max = SetMaxAmmo();
+        max = SetMaxAmmo(1);
     }
 
     /*
@@ -89,16 +89,21 @@ public class Ammo{
         return true;
     }
 
+    public void IncreaseMaxAmmo(int multiplier){
+        if(multiplier > 0)
+            max = SetMaxAmmo(multiplier);
+    }
+
     /*
      * Sets the max ammo based on the type of ammo, defaults to -1 (infinite) if the ammo is undefined.
      */
-    public int SetMaxAmmo(){
+    int SetMaxAmmo(int m){
         switch(type){
             case AmmoType.None: count = -1; return -1;
-            case AmmoType.Bullet: return 200;
-            case AmmoType.Shell: return 50;
-            case AmmoType.Rocket: return 50;
-            case AmmoType.Cell: return 300;
+            case AmmoType.Bullet: return 200 * m;
+            case AmmoType.Shell: return 50 * m;
+            case AmmoType.Rocket: return 50 * m;
+            case AmmoType.Cell: return 300 * m;
         }
         return -1;
     }

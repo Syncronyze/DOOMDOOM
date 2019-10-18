@@ -18,3 +18,10 @@ public enum AmmoType{
     None, Bullet, Shell, Rocket, Cell
 }
 
+public enum ArmorType{
+    None, Blue = 2, Green = 3 
+}
+
+public enum PickupType{
+    Health, Armor, Weapon, Ammo, Key, Backpack
+}

@@ -69,10 +69,10 @@ public class BulletController : MonoBehaviour
                 dist = projectileDist;
             }
 
-            Debug.DrawRay(  startPos, 
-                            transform.TransformDirection(Vector3.forward) * dist, 
-                            hit ? Color.green : Color.red, 
-                            0.2f);
+            //Debug.DrawRay(  startPos, 
+            //                transform.TransformDirection(Vector3.forward) * dist, 
+            //                hit ? Color.green : Color.red, 
+            //                0.2f);
         }
         else{
             Physics.IgnoreLayerCollision(ignoreLayer, LayerMask.NameToLayer("Bullet"));
