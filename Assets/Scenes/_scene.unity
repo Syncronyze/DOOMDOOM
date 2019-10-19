@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 220584220}
   - component: {fileID: 220584223}
   - component: {fileID: 220584219}
+  - component: {fileID: 220584224}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -263,10 +264,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 16
-  gravity: 40
+  gravity: 60
   maxFallSpeed: 40
   runMultiplier: 2
   airMultiplier: 0.75
+  timeToMaxSpeed: 0.175
   isGroundedCheckDist: 3
 --- !u!143 &220584220
 CharacterController:
@@ -333,7 +335,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3687f3b5647fd304194c6ff1e475f440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiController: {fileID: 0}
+--- !u!114 &220584224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220584218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3683cbc067587804da145a00ee631cd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &252707343
 GameObject:
   m_ObjectHideFlags: 0
@@ -4485,7 +4498,7 @@ GameObject:
   - component: {fileID: 650586157}
   - component: {fileID: 650586158}
   m_Layer: 5
-  m_Name: UI_HPPos
+  m_Name: UI_ArmorPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4526,9 +4539,9 @@ MonoBehaviour:
   fromRight: 1
   imagePrefab: {fileID: 8850401647600470807, guid: 47256c87eb3c15249862e72aaa186764,
     type: 3}
-  letterSpacing: 3
+  letterSpacing: 0
   letterScaling: 3
-  defaultValue: 
+  defaultValue: 100
 --- !u!1 &656332966
 GameObject:
   m_ObjectHideFlags: 0
@@ -4630,7 +4643,7 @@ GameObject:
   - component: {fileID: 670726597}
   - component: {fileID: 670726598}
   m_Layer: 5
-  m_Name: UI_ArmorPos
+  m_Name: UI_HealthPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4667,13 +4680,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e70448bb60e2f145ba89e4864a2e282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _style: 0
-  fromRight: 0
+  _style: 2
+  fromRight: 1
   imagePrefab: {fileID: 8850401647600470807, guid: 47256c87eb3c15249862e72aaa186764,
     type: 3}
   letterSpacing: 3
   letterScaling: 3
-  defaultValue: 
+  defaultValue: 0
 --- !u!43 &750520905
 Mesh:
   m_ObjectHideFlags: 0
@@ -9791,7 +9804,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14702
+  m_Name: pb_Mesh14722
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10779,7 +10792,7 @@ GameObject:
   - component: {fileID: 1807464425}
   m_Layer: 8
   m_Name: GunInventory
-  m_TagString: Untagged
+  m_TagString: PlayerInventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11506,7 +11519,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 40}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2121821618
@@ -11523,6 +11536,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponScaling: 2
   FPS: 5
+  gunSwapSpeedSeconds: 0.25
+  viewPos: {x: 0, y: 70, z: 0}
+  spriteBob: {x: 0, y: 0, z: 0}
 --- !u!114 &2121821619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11565,7 +11581,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14846
+  m_Name: pb_Mesh14848
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

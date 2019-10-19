@@ -4,19 +4,34 @@ using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
-    public GameUIController uiController;
-
+    
     public int health{ get; private set; }
     public int armor{ get; private set; }
     public ArmorType armorType{ get; private set; }
 
+    GameUIController uiController;
+    
+    bool invunerable;
+
+    const float INVUNERABILITYLENGTH = 10f;
+
     void Start(){
-        
+        uiController = GameObject.FindGameObjectWithTag("GameUI").GetComponent<GameUIController>();
     }
 
     void Update(){
         //if(health == 0)
             // DEATH
+        uiController.SetValue("UI_ArmorPos", health + "");
+        uiController.SetValue("UI_HealthPos", armorType == ArmorType.None ? "" : armor + "");
+    }
+
+    public bool AddHealth(int healthToAdd){
+        if(health >= 200)
+            return false;
+        
+        health += healthToAdd;
+        return true;
     }
 
     public bool ChangeArmor(ArmorType type){
@@ -46,6 +61,8 @@ public class HealthController : MonoBehaviour
     }
 
     public void TakeDamage(int damage){
+        if(invunerable)
+            return;
         // if armorType is none, then our armor takes 0 damage, otherwise it takes a multiplier of how much it prevents
         // eg, blue is 2 so we take half damage: damage * (0.5);
         float armorDamage = damage * (1 / (int)armorType);
@@ -64,6 +81,32 @@ public class HealthController : MonoBehaviour
         if(health < 0)
             health = 0;
 
+    }
+
+    public bool Invunerability(){
+        if(invunerable)
+            return false;
+
+        invunerable = true;
+        StartCoroutine(InvunerabilityTimer());
+        return true;
+    }
+
+    IEnumerator InvunerabilityTimer(){
+        yield return new WaitForSeconds(INVUNERABILITYLENGTH);
+        invunerable = false;
+    }
+
+    public void LoadGlobalVariables(){
+        health = GlobalPlayerVariables.HP;
+        armor = GlobalPlayerVariables.AP;
+        armorType = GlobalPlayerVariables.aType;
+    }
+
+    public void SaveGlobalVariables(){
+        GlobalPlayerVariables.HP = health;
+        GlobalPlayerVariables.AP = armor;
+        GlobalPlayerVariables.aType = armorType;
     }
 
 

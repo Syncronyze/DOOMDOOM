@@ -58,21 +58,21 @@ public class BulletController : MonoBehaviour
     void Move(){
         if(raycast){
             RaycastHit rcHit;
-            hit = Physics.Raycast(startPos, transform.TransformDirection(Vector3.forward), out rcHit, projectileDist, ~ignoreLayer);
+            hit = Physics.Raycast(startPos, transform.TransformDirection(Vector3.forward), out rcHit, projectileDist, ~(1 << ignoreLayer));
 
             if(hit){
                 endPos = rcHit.point + (rcHit.normal * moveHit);
-                dist = rcHit.distance;
+                dist = rcHit.distance;       
             }
             else{
                 endPos = transform.TransformDirection(Vector3.forward) * projectileDist;
                 dist = projectileDist;
             }
 
-            //Debug.DrawRay(  startPos, 
-            //                transform.TransformDirection(Vector3.forward) * dist, 
-            //                hit ? Color.green : Color.red, 
-            //                0.2f);
+            // Debug.DrawRay(  startPos, 
+            //                 transform.TransformDirection(Vector3.forward) * dist, 
+            //                 hit ? Color.green : Color.red, 
+            //                 5f);
         }
         else{
             Physics.IgnoreLayerCollision(ignoreLayer, LayerMask.NameToLayer("Bullet"));

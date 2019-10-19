@@ -11,7 +11,11 @@ public class UIViewSpriteController : MonoBehaviour
 
     public float weaponScaling;
     public float FPS;
+    public float gunSwapSpeedSeconds;
+    public Vector3 viewPos;
+    public Vector3 spriteBob;
 
+    PlayerMovementController playerMovementController;
     UISpriteLoader spriteLoader;
     Image image;
     RectTransform rt;
@@ -20,6 +24,7 @@ public class UIViewSpriteController : MonoBehaviour
 
     bool firing;
     bool fire;
+    bool gunSwap;
 
     int firingLoopBegin;
     int firingLoopEnd;
@@ -28,13 +33,17 @@ public class UIViewSpriteController : MonoBehaviour
     string gunName;
 
     float previousFrame;
+    float gunSwapTimer;
+    float gunSwapSpeed;
 
     void Awake(){
         spriteLoader = GameObject.FindGameObjectWithTag("SpriteLoader").GetComponent<UISpriteLoader>();
+        playerMovementController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementController>();
         spriteLoader.LoadSpriteSheet("weapons", "Textures/weapons");
         image = gameObject.GetComponent<Image>();
         rt = gameObject.GetComponent<RectTransform>();
         FPS = FPS / 60; // converting to FPS.
+        gunSwapSpeed = 1 / gunSwapSpeedSeconds;
     }
 
     void Update(){
@@ -42,9 +51,14 @@ public class UIViewSpriteController : MonoBehaviour
 
         if(previousFrame >= FPS)
             NextFrame();
+
+        ApplySpriteMovement();        
     }
 
     public void ChangeGun(string _gunName){
+        if(gunName == _gunName)
+            return;
+
         gunName = _gunName;
         Sprite[] sprites = spriteLoader.GetMatches("weapons", $"weapons_{gunName}");
         image.enabled = true;
@@ -54,6 +68,8 @@ public class UIViewSpriteController : MonoBehaviour
         firingLoopBegin = 0;
         firingLoopEnd = sprites.Length - 1;
         previousFrame = FPS; // allowing for instant refresh of the frame
+        gunSwapTimer = 0;
+        gunSwap = true;
         // finding the beginning of the firing loop (which is likely 0)
         for(int i = 0; i < sprites.Length; i++){
             if(sprites[i].name[sprites[i].name.Length - 1] == 'f'){
@@ -75,6 +91,22 @@ public class UIViewSpriteController : MonoBehaviour
      */
     public void Fire(){
         fire = true;
+    }
+
+    void ApplySpriteMovement(){
+        Vector3 moveTo = viewPos;
+        if(gunSwap){
+            moveTo.y = Mathf.Lerp(0, viewPos.y, gunSwapTimer);
+            //print($"Moving to {moveTo}, {(gunSwapTimer * 100)}% complete.");
+            rt.anchoredPosition = moveTo;
+            gunSwapTimer += (Time.deltaTime * gunSwapSpeed);
+            gunSwap = gunSwapTimer < 1;
+        }
+        else if(playerMovementController.GetCurrentHorzSpeed() > 0){
+
+        }
+
+        rt.anchoredPosition = moveTo;
     }
 
     /*

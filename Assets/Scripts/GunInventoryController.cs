@@ -20,6 +20,7 @@ public class GunInventoryController : MonoBehaviour
     Ammo activeAmmo;
 
     int activeGunIndex;
+    int ammoMultiplier;
     bool valid;
     bool updateMaxAmmo;
 
@@ -41,19 +42,15 @@ public class GunInventoryController : MonoBehaviour
 
         activeAmmoDisplay = uiController.GetFontController("UI_AmmoPos");
         CreateAmmos();
+        AddAmmo(AmmoType.Bullet, 10);
         
         // TODO: Remove, just for testing
-        AddAmmo(AmmoType.Bullet, 500);
-        AddAmmo(AmmoType.Rocket, 500);
-        CreateGun("fists");
-        CreateGun("pistol");
-        CreateGun("rocket");
-        CreateGun("chaingun");
-    }
-
-    void Start(){
-        LoadInventory();
-        //SetActiveGun();
+        //AddAmmo(AmmoType.Bullet, 500);
+        //AddAmmo(AmmoType.Rocket, 500);
+        //CreateGun("fists");
+        //CreateGun("pistol");
+        //CreateGun("rocket");
+        //CreateGun("chaingun");
     }
 
     void Update(){
@@ -78,17 +75,48 @@ public class GunInventoryController : MonoBehaviour
         return false;
     }
 
+    public bool AddGun(string gunName, int ammo){
+        GunController gun = null;
+        bool addedGun = false;
+
+        foreach(GunController gc in guns){
+            if(gc.gunName == gunName){
+                gun = gc;
+                break;
+            }
+        }
+
+        if(gun == null){
+            gun = CreateGun(gunName);
+            if(gun == null)
+                return false;
+
+            addedGun = true;
+        }
+
+        AmmoType ammoType = gun.GetAmmoType();
+        // if we added ammo, OR if the gun wasn't already in our inventory
+        addedGun = (AddAmmo(ammoType, ammo) || addedGun);
+
+        return addedGun;
+    }
+
     /*
      * Increases max ammo by a multiplier given.
      */
-    public void IncreaseMaxAmmo(int multiplier){
+    public bool IncreaseMaxAmmo(int multiplier){
+        if(multiplier <= 0 || ammos[0].multiplier == multiplier)
+            return false;
+
         foreach(Ammo a in ammos){
             a.IncreaseMaxAmmo(multiplier);
+            ammoMultiplier = multiplier;
             updateMaxAmmo = true;
         }
+        return true;
     }
 
-    public void SaveInventory(){
+    public void SaveGlobalVariables(){
         GlobalPlayerVariables.guns = new List<string>();
         foreach(GunController gc in guns){
             GlobalPlayerVariables.guns.Add(gc.gunName);
@@ -97,10 +125,10 @@ public class GunInventoryController : MonoBehaviour
         GlobalPlayerVariables.ammos = ammos;
     }
 
-    public void LoadInventory(){
+    public void LoadGlobalVariables(){
         if(GlobalPlayerVariables.ammos != null)
             ammos = GlobalPlayerVariables.ammos;
-        
+
         if(GlobalPlayerVariables.guns == null)
             return;
 
@@ -112,11 +140,11 @@ public class GunInventoryController : MonoBehaviour
             
     }
 
-    void CreateGun(string gunName){
+    GunController CreateGun(string gunName){
         GameObject gunPrefab = (GameObject)AssetDatabase.LoadAssetAtPath($"Assets/Prefabs/{gunName}Prefab.prefab", typeof(GameObject));
+        GunController gunController;
             if(gunPrefab != null){
                 GameObject gun = Instantiate(gunPrefab, transform.position, transform.rotation);
-                GunController gunController;
                 if(gun.TryGetComponent<GunController>(out gunController)){
                     gunController.gunName = gunName;
                     gun.transform.parent = this.transform;
@@ -124,15 +152,17 @@ public class GunInventoryController : MonoBehaviour
                 else{
                     Destroy(gun);
                     print($"Gun {gunName} couldn't be loaded because it doesn't have an attached Gun Controller.");
+                    return null;
                 }
                 
             }
             else{
                 print($"Gun {gunName} couldn't be loaded because it doesn't have a relevant prefab.");
+                return null;
             }
-                
-        
+
         inventoryRefresh = true;
+        return gunController;
     }
 
     

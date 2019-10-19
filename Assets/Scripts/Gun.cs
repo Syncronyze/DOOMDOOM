@@ -47,13 +47,15 @@ public class Gun{
   */
 public class Ammo{
     public int max{ get; private set; }
+    public int multiplier{ get; private set; }
     public int count{ get; private set;}
     public AmmoType type{ get; }
 
     public Ammo(AmmoType _type){
         type = _type;
         count = 0;
-        max = SetMaxAmmo(1);
+        multiplier = 1;
+        SetMaxAmmo();
     }
 
     /*
@@ -89,23 +91,24 @@ public class Ammo{
         return true;
     }
 
-    public void IncreaseMaxAmmo(int multiplier){
-        if(multiplier > 0)
-            max = SetMaxAmmo(multiplier);
+    public void IncreaseMaxAmmo(int _multiplier){
+        if(_multiplier > 0){
+            multiplier = _multiplier;
+            SetMaxAmmo();
+        }
     }
 
     /*
      * Sets the max ammo based on the type of ammo, defaults to -1 (infinite) if the ammo is undefined.
      */
-    int SetMaxAmmo(int m){
+    void SetMaxAmmo(){
         switch(type){
-            case AmmoType.None: count = -1; return -1;
-            case AmmoType.Bullet: return 200 * m;
-            case AmmoType.Shell: return 50 * m;
-            case AmmoType.Rocket: return 50 * m;
-            case AmmoType.Cell: return 300 * m;
+            case AmmoType.None: count = -1; max = -1; break;
+            case AmmoType.Bullet: max = 200 * multiplier; break;
+            case AmmoType.Shell: max = 50 * multiplier; break;
+            case AmmoType.Rocket: max = 50 * multiplier; break;
+            case AmmoType.Cell: max = 300 * multiplier; break;
         }
-        return -1;
     }
 
     public override string ToString(){

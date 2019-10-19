@@ -71,10 +71,13 @@ public class CameraController : MonoBehaviour {
 	 */
 	void HeadBob(){
 		float currentSpeed = playerController.GetCurrentHorzSpeed();
+		float speedPercentage = Mathf.Clamp(currentSpeed / playerController.GetMaxHorzSpeed(), 0, 1);
+
 		if(!playerController.isGrounded())
 			return;
-
-		if(currentSpeed > 0){
+		
+		// to smooth the headbob, we're only applying headbob at 50% speed
+		if(speedPercentage > 0.5){
 			// if we came from camera reset, we have to ensure we're starting fresh
 			if(resettingCamera){
 				resettingCamera = false;
@@ -91,13 +94,15 @@ public class CameraController : MonoBehaviour {
 				movingCamHeightFrom = temp;
 				bobTimer = 0.0f;
 			}
-			bobTimer += Time.deltaTime * headBobSpeed;
+
+			
+			bobTimer += Time.deltaTime * headBobSpeed * speedPercentage;
 		}
 		else{
 			if(!resettingCamera){
 				float currentCamHeight = mainCamera.transform.localPosition.y - cameraOffset;
 				movingCamHeightTo = 0;
-				movingCamHeightFrom = currentCamHeight; 
+				movingCamHeightFrom = headBobDistance; 
 				// bobTimer represents a decimal percentage of where we are
 				// thus, we set where we currently are in relation to the lowest possible camera height in % form
 				bobTimer = 1 - Mathf.Abs(currentCamHeight / headBobDistance);

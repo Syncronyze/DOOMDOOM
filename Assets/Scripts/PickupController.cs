@@ -23,13 +23,9 @@ public class PickupController : MonoBehaviour
             case PickupType.Health:break;
             case PickupType.Armor:break;
             case PickupType.Weapon:break;
-            case PickupType.Ammo: 
-                destroy = player.AddAmmo(
-                    (AmmoType)Enum.Parse(typeof(AmmoType), key), 
-                    Int32.Parse(value)); 
-            break;
+            case PickupType.Ammo: destroy = player.AddAmmo((AmmoType)Enum.Parse(typeof(AmmoType), key), Int32.Parse(value)); break;
             case PickupType.Key:break;
-            case PickupType.Backpack:break;
+            case PickupType.Backpack: destroy = player.AddBackpack(); break;
         }
         print($"Destroying pickup? {destroy}. Type {pickup.ToString()}, key {key}, value {value}");
         if(destroy)

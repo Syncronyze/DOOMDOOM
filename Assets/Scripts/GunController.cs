@@ -19,11 +19,9 @@ public class GunController : MonoBehaviour
 
     float lastShot;
     float RPS; // rounds per second
+    float gunSwapSpeed;
 
     bool isActiveGun;
-
-    // how long it takes for the gun swap to be complete.
-    const float GUNSWAPTIMER = 1f;
 
     void Awake(){
         if(!RetrieveGunInfo()){
@@ -31,9 +29,12 @@ public class GunController : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        uiViewSprite = GameObject.FindGameObjectWithTag("ViewSprite").GetComponent<UIViewSpriteController>();
+
         isActiveGun = false;
         RPS = (60f / gun.fireRate); // gun's fire rate is rounds per minute, we're setting it to be rounds per second for coding purposes
         ignoreLayer = ignoreLayer = 1 << LayerMask.NameToLayer ("Player");
+        gunSwapSpeed = uiViewSprite.gunSwapSpeedSeconds;
     }
 
     void Update(){
@@ -55,7 +56,7 @@ public class GunController : MonoBehaviour
      */
     public void SetActive(bool active){
         isActiveGun = active;
-        lastShot = -GUNSWAPTIMER;
+        lastShot = RPS - gunSwapSpeed;
     }
 
     /*
@@ -96,7 +97,7 @@ public class GunController : MonoBehaviour
         if(lastShot > RPS){
             if(gun.ExpendAmmo()){
                 BulletController bullet = Instantiate(bulletPrefab, transform.position, transform.rotation).GetComponent<BulletController>();
-                bullet.SetVariables(gun.projectileSpeed, gun.projectileDist, LayerMask.NameToLayer("Player"), bulletEndPrefab);
+                bullet.SetVariables(gun.projectileSpeed, gun.projectileDist, gameObject.layer, bulletEndPrefab);
                 uiViewSprite.ToggleFiring(true);
                 uiViewSprite.Fire();
             }

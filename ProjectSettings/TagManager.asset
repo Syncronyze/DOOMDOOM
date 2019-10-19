@@ -7,6 +7,7 @@ TagManager:
   - SpriteLoader
   - ViewSprite
   - GameUI
+  - PlayerInventory
   layers:
   - Default
   - TransparentFX

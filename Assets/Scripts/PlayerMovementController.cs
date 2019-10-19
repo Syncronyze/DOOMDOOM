@@ -5,11 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovementController : MonoBehaviour
 {
-    public float speed = 6.0f;
-    public float gravity = 20.0f;
+    public float speed = 16.0f;
+    public float gravity = 60.0f;
     public float maxFallSpeed = 40.0f;
     public float runMultiplier = 2.0f;
     public float airMultiplier = 0.75f;
+    public float timeToMaxSpeed = 0.125f;
 	public float isGroundedCheckDist = 3f;
 
     Vector3 lastVelocity;
@@ -17,31 +18,18 @@ public class PlayerMovementController : MonoBehaviour
 	LayerMask ignoreLayer;
     CharacterController cc;
 
+    float accelerationTimer;
+    bool running;
+
     void Start(){
         cc = GetComponent<CharacterController>();
         ignoreLayer = 1 << LayerMask.NameToLayer ("Player");
+        accelerationTimer = 0;
     }
 
     void Update(){
-        float targetSpeed = speed;
-
-        if(Input.GetKey(KeyCode.LeftShift))
-            targetSpeed *= runMultiplier;
-
-        // gravity
-        if(cc.isGrounded){
-            moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-            moveDirection = transform.TransformDirection(moveDirection).normalized;
-            moveDirection *= targetSpeed;
-        }
-        else{
-            moveDirection = lastVelocity;
-            moveDirection.y -= Mathf.Clamp(gravity * Time.deltaTime, 0, maxFallSpeed);
-        }
-
-        lastVelocity = moveDirection;
-
-        cc.Move(moveDirection * Time.deltaTime);
+        running = Input.GetButton("Run");
+        CalculateMovement();
     }
 
     public bool isGrounded(){
@@ -58,6 +46,37 @@ public class PlayerMovementController : MonoBehaviour
 	public float GetCurrentHorzSpeed(){
 		return new Vector2 (cc.velocity.x, cc.velocity.z).magnitude;
 	}
+
+    public float GetMaxHorzSpeed(){
+        return speed;
+    }
+
+    void CalculateMovement(){
+        if(cc.isGrounded){
+            moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+            if(moveDirection == Vector3.zero){
+                moveDirection = lastVelocity.normalized;
+                moveDirection *= Mathf.Lerp(0, speed, accelerationTimer);
+                accelerationTimer -= Time.deltaTime / timeToMaxSpeed;
+            }
+            else{
+                moveDirection = transform.TransformDirection(moveDirection).normalized;
+                moveDirection *= Mathf.Lerp(0, speed, accelerationTimer);
+                accelerationTimer += Time.deltaTime / timeToMaxSpeed;
+                if(running)
+                    moveDirection *= runMultiplier;
+            }
+            accelerationTimer = Mathf.Clamp(accelerationTimer, 0, 1);
+        }
+        else{
+            moveDirection = lastVelocity;
+            moveDirection.y -= Mathf.Clamp(gravity * Time.deltaTime, 0, maxFallSpeed);
+        }
+
+        lastVelocity = moveDirection;
+        //print(moveDirection);
+        cc.Move(moveDirection * Time.deltaTime);
+    }
 
     
     bool isGroundedRaycast(){
