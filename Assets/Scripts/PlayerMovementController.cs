@@ -5,30 +5,31 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovementController : MonoBehaviour
 {
-    public float speed = 16.0f;
-    public float gravity = 60.0f;
+    public float friction = 35.0f;
+    public float acceleration = 5.25f;
+    public float gravity = 1.0f;
     public float maxFallSpeed = 40.0f;
     public float runMultiplier = 2.0f;
-    public float airMultiplier = 0.75f;
-    public float timeToMaxSpeed = 0.125f;
-	public float isGroundedCheckDist = 3f;
+	public float isGroundedCheckDist = 3.0f;
 
-    Vector3 lastVelocity;
-    Vector3 moveDirection;
 	LayerMask ignoreLayer;
     CharacterController cc;
 
-    float accelerationTimer;
-    bool running;
+    Vector3 velocity;
 
     void Start(){
         cc = GetComponent<CharacterController>();
         ignoreLayer = 1 << LayerMask.NameToLayer ("Player");
-        accelerationTimer = 0;
     }
 
     void Update(){
-        running = Input.GetButton("Run");
+        if(Input.GetButtonDown("Run")){
+            acceleration *= runMultiplier;
+        }
+        else if(Input.GetButtonUp("Run")){
+            acceleration /= runMultiplier;
+        }
+
         CalculateMovement();
     }
 
@@ -47,35 +48,21 @@ public class PlayerMovementController : MonoBehaviour
 		return new Vector2 (cc.velocity.x, cc.velocity.z).magnitude;
 	}
 
-    public float GetMaxHorzSpeed(){
-        return speed;
-    }
-
     void CalculateMovement(){
         if(cc.isGrounded){
-            moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-            if(moveDirection == Vector3.zero){
-                moveDirection = lastVelocity.normalized;
-                moveDirection *= Mathf.Lerp(0, speed, accelerationTimer);
-                accelerationTimer -= Time.deltaTime / timeToMaxSpeed;
-            }
-            else{
-                moveDirection = transform.TransformDirection(moveDirection).normalized;
-                moveDirection *= Mathf.Lerp(0, speed, accelerationTimer);
-                accelerationTimer += Time.deltaTime / timeToMaxSpeed;
-                if(running)
-                    moveDirection *= runMultiplier;
-            }
-            accelerationTimer = Mathf.Clamp(accelerationTimer, 0, 1);
+            velocity += GetInput() * acceleration * Time.deltaTime;
+            velocity -= friction * Time.deltaTime * velocity;
+            velocity.y = 0;
         }
         else{
-            moveDirection = lastVelocity;
-            moveDirection.y -= Mathf.Clamp(gravity * Time.deltaTime, 0, maxFallSpeed);
+            velocity.y -= Mathf.Clamp(gravity * Time.deltaTime, 0, maxFallSpeed);
         }
+        
+        cc.Move(velocity);
+    }
 
-        lastVelocity = moveDirection;
-        //print(moveDirection);
-        cc.Move(moveDirection * Time.deltaTime);
+    Vector3 GetInput(){
+        return transform.TransformDirection(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"))).normalized;
     }
 
     
@@ -95,8 +82,8 @@ public class PlayerMovementController : MonoBehaviour
 	 */
 	void OnGUI(){
 		GUI.Label(new Rect(10, 10, 400, 80), 
-		"Speed: " + System.Math.Round(GetCurrentSpeed(), 4) + 
-		"\nX/Y Speed: " + System.Math.Round(GetCurrentHorzSpeed(), 4) +
+		"Speed: " + System.Math.Round(GetCurrentSpeed(), 5) + 
+		"\nX/Y Speed: " + System.Math.Round(GetCurrentHorzSpeed(), 5) +
 		(isGrounded() ? "\nGrounded" : ""));
 	}
 }

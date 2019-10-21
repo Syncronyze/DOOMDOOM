@@ -71,7 +71,7 @@ public class CameraController : MonoBehaviour {
 	 */
 	void HeadBob(){
 		float currentSpeed = playerController.GetCurrentHorzSpeed();
-		float speedPercentage = Mathf.Clamp(currentSpeed / playerController.GetMaxHorzSpeed(), 0, 1);
+		float speedPercentage = Mathf.Clamp(currentSpeed / 16, 0, 1);
 
 		if(!playerController.isGrounded())
 			return;
@@ -87,14 +87,12 @@ public class CameraController : MonoBehaviour {
 			}
 
 			// if the timer has run its course, we flip the variables and reset the timer.
-			if (bobTimer > 1.0f)
-			{
+			if (bobTimer > 1.0f){
 				float temp = movingCamHeightTo;
 				movingCamHeightTo = movingCamHeightFrom;
 				movingCamHeightFrom = temp;
 				bobTimer = 0.0f;
 			}
-
 			
 			bobTimer += Time.deltaTime * headBobSpeed * speedPercentage;
 		}
@@ -109,7 +107,7 @@ public class CameraController : MonoBehaviour {
 				//print($"Moving Camera from {movingCamHeightFrom} to {movingCamHeightTo}, and at {(bobTimer * 100)}%");
 				resettingCamera = true;
 			}
-			else if(resettingCamera && bobTimer > 1.0f){ // if we're not moving, and we've already reset the camera, we're done here
+			else if(bobTimer > 1.0f){ // if we're not moving, and we've already reset the camera, we're done here
 				return;
 			}
 			bobTimer += Time.deltaTime * headBobResetSpeed;

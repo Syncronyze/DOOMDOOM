@@ -240,9 +240,9 @@ GameObject:
   m_Component:
   - component: {fileID: 220584222}
   - component: {fileID: 220584221}
+  - component: {fileID: 220584219}
   - component: {fileID: 220584220}
   - component: {fileID: 220584223}
-  - component: {fileID: 220584219}
   - component: {fileID: 220584224}
   m_Layer: 8
   m_Name: Player
@@ -263,12 +263,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f839f1acba87513449704035214947bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 16
-  gravity: 60
+  friction: 35
+  acceleration: 5.25
+  gravity: 1.5
   maxFallSpeed: 40
   runMultiplier: 2
-  airMultiplier: 0.75
-  timeToMaxSpeed: 0.175
   isGroundedCheckDist: 3
 --- !u!143 &220584220
 CharacterController:
@@ -282,7 +281,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2.5
-  m_Radius: 0.75
+  m_Radius: 0.55
   m_SlopeLimit: 45
   m_StepOffset: 1.5
   m_SkinWidth: 0.08
