@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: fists
+  viewSpriteHeight: 63
   bulletPrefab: {fileID: 7553818978209837499, guid: 839d648890c018147a861e59a955f27f,
     type: 3}
   bulletEndPrefab: {fileID: 1527790110431134770, guid: baa7ad5b9abde394ba2b99306936d901,

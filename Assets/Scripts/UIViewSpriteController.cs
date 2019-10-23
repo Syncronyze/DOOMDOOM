@@ -8,42 +8,46 @@ using UnityEngine.UI;
  */
 public class UIViewSpriteController : MonoBehaviour
 {
-
-    public float weaponScaling;
-    public float FPS;
-    public float gunSwapSpeedSeconds;
-    public Vector3 viewPos;
-    public Vector3 spriteBob;
+    public Vector3 defaultSpritePos = new Vector3(0, 65, 0);
+    public float weaponScaling = 2;
+    public float FPS = 5;
+    public float gunSwapSpeed = 0.25f;
+    public float spriteBobMovementScale = 0.2f;
+    public float spriteBobResetScale = 25;
+    public float spriteBobX = -40;
 
     PlayerMovementController playerMovementController;
     UISpriteLoader spriteLoader;
     Image image;
     RectTransform rt;
+    Vector3 spriteMoveTo;
+    Vector3 spriteMoveFrom;
 
     string currentSprite;
 
     bool firing;
     bool fire;
     bool gunSwap;
+    bool bobbing;
 
     int firingLoopBegin;
     int firingLoopEnd;
     int currentIndex;
+    int bobDireciton;
 
     string gunName;
 
     float previousFrame;
     float gunSwapTimer;
-    float gunSwapSpeed;
-
+    float bobTimer;
+    
     void Awake(){
         spriteLoader = GameObject.FindGameObjectWithTag("SpriteLoader").GetComponent<UISpriteLoader>();
         playerMovementController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementController>();
         spriteLoader.LoadSpriteSheet("weapons", "Textures/weapons");
         image = gameObject.GetComponent<Image>();
         rt = gameObject.GetComponent<RectTransform>();
-        FPS = FPS / 60; // converting to FPS.
-        gunSwapSpeed = 1 / gunSwapSpeedSeconds;
+        FPS /= 60; // converting to FPS.
     }
 
     void Update(){
@@ -55,10 +59,10 @@ public class UIViewSpriteController : MonoBehaviour
         ApplySpriteMovement();        
     }
 
-    public void ChangeGun(string _gunName){
+    public void ChangeGun(string _gunName, float viewSpriteHeight){
         if(gunName == _gunName)
             return;
-
+        // resetting all variables
         gunName = _gunName;
         Sprite[] sprites = spriteLoader.GetMatches("weapons", $"weapons_{gunName}");
         image.enabled = true;
@@ -70,6 +74,11 @@ public class UIViewSpriteController : MonoBehaviour
         previousFrame = FPS; // allowing for instant refresh of the frame
         gunSwapTimer = 0;
         gunSwap = true;
+        bobTimer = 1;
+        bobbing = false;
+
+        defaultSpritePos.y = viewSpriteHeight;
+
         // finding the beginning of the firing loop (which is likely 0)
         for(int i = 0; i < sprites.Length; i++){
             if(sprites[i].name[sprites[i].name.Length - 1] == 'f'){
@@ -94,19 +103,57 @@ public class UIViewSpriteController : MonoBehaviour
     }
 
     void ApplySpriteMovement(){
-        Vector3 moveTo = viewPos;
+        Vector3 moveTo = defaultSpritePos;
+        float currentPlayerSpeed = playerMovementController.GetCurrentHorzSpeed();
         if(gunSwap){
-            moveTo.y = Mathf.Lerp(0, viewPos.y, gunSwapTimer);
-            //print($"Moving to {moveTo}, {(gunSwapTimer * 100)}% complete.");
-            rt.anchoredPosition = moveTo;
-            gunSwapTimer += (Time.deltaTime * gunSwapSpeed);
+            gunSwapTimer += (Time.deltaTime / gunSwapSpeed);
+            moveTo.y = Mathf.Lerp(0, defaultSpritePos.y, gunSwapTimer);
             gunSwap = gunSwapTimer < 1;
+            //print($"Moving to {moveTo}, {(gunSwapTimer * 100)}% complete. {gunSwap}");
         }
-        else if(playerMovementController.GetCurrentHorzSpeed() > 0){
+        else if(currentPlayerSpeed > 2){
+            if(!bobbing){ // if we're not bobbing but we're meant to be (player is moving)
+                bobbing = true;
+                bobTimer = 0;
+                spriteBobX *= -1;
+                spriteMoveFrom.x = defaultSpritePos.x;
+                spriteMoveTo.x = spriteBobX;
+            }
 
+            moveTo.x = Mathf.Lerp(spriteMoveFrom.x, spriteMoveTo.x, bobTimer);
+            moveTo.y += Mathf.Pow(moveTo.x, 2) * 0.01f;
+            bobTimer += Time.deltaTime * currentPlayerSpeed * spriteBobMovementScale;
+
+            if(bobTimer > 1){
+                float temp = spriteMoveFrom.x;
+
+                if(spriteMoveFrom.x != defaultSpritePos.x)
+                    temp *= -1;
+                    
+                spriteMoveFrom = spriteMoveTo;
+                spriteMoveTo.x = temp;
+                bobTimer = 0;
+            }
+        }
+        else{
+            if(bobbing){
+                bobbing = false;
+                spriteMoveFrom = rt.anchoredPosition;
+                bobTimer = 1 - Mathf.Abs(spriteMoveFrom.x / spriteBobX);
+                spriteMoveTo = defaultSpritePos;
+            }
+
+            if(bobTimer >= 1)
+                return;
+
+            moveTo = Vector3.Lerp(spriteMoveFrom, spriteMoveTo, bobTimer);
+            bobTimer += Time.deltaTime * spriteBobResetScale;
         }
 
-        rt.anchoredPosition = moveTo;
+        // doom has an interesting behaviour (bug?) that if the gun is firing, we stop the gun, but do not stop the bob counter
+        // so we only move to the anchored position if we're not firing.
+        if(!firing)
+            rt.anchoredPosition = moveTo;
     }
 
     /*

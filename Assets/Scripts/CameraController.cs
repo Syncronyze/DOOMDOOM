@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour {
 
 	// headbob variables
 	public float headBobSpeed = 4;
+	public float bobMovementScale = 0.0625f;
 	public float headBobResetSpeed = 8;
 	public float headBobDistance = 0.5f;
 	// first person look variables
@@ -33,7 +34,7 @@ public class CameraController : MonoBehaviour {
 
 	bool resettingCamera;
 
-	static float bobTimer = 0.0f;
+	float bobTimer = 0.0f;
 	
 
 	void Awake(){
@@ -71,7 +72,7 @@ public class CameraController : MonoBehaviour {
 	 */
 	void HeadBob(){
 		float currentSpeed = playerController.GetCurrentHorzSpeed();
-		float speedPercentage = Mathf.Clamp(currentSpeed / 16, 0, 1);
+		float speedPercentage = currentSpeed * bobMovementScale;
 
 		if(!playerController.isGrounded())
 			return;
@@ -87,11 +88,11 @@ public class CameraController : MonoBehaviour {
 			}
 
 			// if the timer has run its course, we flip the variables and reset the timer.
-			if (bobTimer > 1.0f){
+			if (bobTimer > 1){
 				float temp = movingCamHeightTo;
 				movingCamHeightTo = movingCamHeightFrom;
 				movingCamHeightFrom = temp;
-				bobTimer = 0.0f;
+				bobTimer = 0;
 			}
 			
 			bobTimer += Time.deltaTime * headBobSpeed * speedPercentage;

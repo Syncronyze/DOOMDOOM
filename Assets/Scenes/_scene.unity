@@ -265,8 +265,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   friction: 35
   acceleration: 5.25
-  gravity: 1.5
-  maxFallSpeed: 40
+  gravity: 1
+  maxFallSpeed: 0.5
   runMultiplier: 2
   isGroundedCheckDist: 3
 --- !u!143 &220584220
@@ -301,6 +301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 631496545}
   headBobSpeed: 4
+  bobMovementScale: 0.075
   headBobResetSpeed: 8
   headBobDistance: 0.5
   mouseSensitvity: 1
@@ -4428,7 +4429,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631496544}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1807464424}
@@ -11533,11 +11534,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd222420e9755454094fe2b4148c854b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultSpritePos: {x: 0, y: 40, z: 0}
   weaponScaling: 2
   FPS: 5
   gunSwapSpeedSeconds: 0.25
-  viewPos: {x: 0, y: 70, z: 0}
-  spriteBob: {x: 0, y: 0, z: 0}
+  spriteBobMovementScale: 0.15
+  spriteBobResetScale: 25
+  spriteBobX: -40
 --- !u!114 &2121821619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11873,7 +11876,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14804
+  m_Name: pb_Mesh14814
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

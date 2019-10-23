@@ -6,7 +6,7 @@ https://i.imgur.com/dU6Epmr.png
     <Gun name="fists">
         <ammoType>None</ammoType>
         <fireRate>75</fireRate>
-        <projectileDist>6</projectileDist>
+        <projectileDist>5</projectileDist>
         <projectileSpeed>-1.0</projectileSpeed>
     </Gun>
     <Gun name="pistol">

@@ -229,7 +229,7 @@ public class GunInventoryController : MonoBehaviour
                 activeGunIndex = i;
                 gun.SetActive(true);
                 activeAmmo = ammos[(int)gun.GetAmmoType()];
-                uiViewSprite.ChangeGun(gun.gunName);
+                uiViewSprite.ChangeGun(gun.gunName, gun.viewSpriteHeight);
             }
             else{
                 gun.SetActive(false);

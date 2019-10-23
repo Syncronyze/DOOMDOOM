@@ -8,7 +8,7 @@ public class PlayerMovementController : MonoBehaviour
     public float friction = 35.0f;
     public float acceleration = 5.25f;
     public float gravity = 1.0f;
-    public float maxFallSpeed = 40.0f;
+    public float maxFallSpeed = 0.5f;
     public float runMultiplier = 2.0f;
 	public float isGroundedCheckDist = 3.0f;
 
@@ -45,7 +45,9 @@ public class PlayerMovementController : MonoBehaviour
 	}
 
 	public float GetCurrentHorzSpeed(){
-		return new Vector2 (cc.velocity.x, cc.velocity.z).magnitude;
+        // TODO: figure out a way to calculate the theoretical max speed using friction & accel values
+        // 16u/s is the velocity that fits with the doom scale.
+		return Mathf.Clamp(new Vector2 (cc.velocity.x, cc.velocity.z).magnitude, 0, 16);
 	}
 
     void CalculateMovement(){
@@ -55,7 +57,8 @@ public class PlayerMovementController : MonoBehaviour
             velocity.y = 0;
         }
         else{
-            velocity.y -= Mathf.Clamp(gravity * Time.deltaTime, 0, maxFallSpeed);
+            velocity.y -= gravity * Time.deltaTime;
+            velocity.y = Mathf.Clamp(velocity.y, -maxFallSpeed, 0);
         }
         
         cc.Move(velocity);

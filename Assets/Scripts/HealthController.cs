@@ -22,8 +22,8 @@ public class HealthController : MonoBehaviour
     void Update(){
         //if(health == 0)
             // DEATH
-        uiController.SetValue("UI_ArmorPos", health + "");
-        uiController.SetValue("UI_HealthPos", armorType == ArmorType.None ? "" : armor + "");
+        uiController.SetValue("UI_ArmorPos", health + "%");
+        uiController.SetValue("UI_HealthPos", armorType == ArmorType.None ? "" : armor + "%");
     }
 
     public bool AddHealth(int healthToAdd){

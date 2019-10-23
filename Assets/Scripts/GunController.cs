@@ -8,6 +8,7 @@ using UnityEngine;
 public class GunController : MonoBehaviour
 {   
     public string gunName;
+    public float viewSpriteHeight = 40.0f;
     public GameObject bulletPrefab;
     public GameObject bulletEndPrefab;
 
@@ -20,6 +21,8 @@ public class GunController : MonoBehaviour
     float lastShot;
     float RPS; // rounds per second
     float gunSwapSpeed;
+
+    
 
     bool isActiveGun;
 
@@ -34,7 +37,7 @@ public class GunController : MonoBehaviour
         isActiveGun = false;
         RPS = (60f / gun.fireRate); // gun's fire rate is rounds per minute, we're setting it to be rounds per second for coding purposes
         ignoreLayer = ignoreLayer = 1 << LayerMask.NameToLayer ("Player");
-        gunSwapSpeed = uiViewSprite.gunSwapSpeedSeconds;
+        gunSwapSpeed = uiViewSprite.gunSwapSpeed;
     }
 
     void Update(){
@@ -140,7 +143,7 @@ public class GunController : MonoBehaviour
 
             if(!Enum.TryParse(gunNode.SelectSingleNode("ammoType").InnerText, out ammoType))
                 return false;
-            
+
             gun = new Gun(gunName, fireRate, projectileDist, projectileSpeed, ammoType);
             return true;
         }
