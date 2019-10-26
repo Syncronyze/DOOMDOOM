@@ -8,7 +8,6 @@ public class CameraController : MonoBehaviour {
 
 	// headbob variables
 	public float headBobSpeed = 4;
-	public float bobMovementScale = 0.0625f;
 	public float headBobResetSpeed = 8;
 	public float headBobDistance = 0.5f;
 	// first person look variables
@@ -71,14 +70,13 @@ public class CameraController : MonoBehaviour {
 	 * Applying the headbob to the camera
 	 */
 	void HeadBob(){
-		float currentSpeed = playerController.GetCurrentHorzSpeed();
-		float speedPercentage = currentSpeed * bobMovementScale;
+		float speedPercentage = playerController.GetCurrentSpeedPercentage();
 
 		if(!playerController.isGrounded())
 			return;
 		
-		// to smooth the headbob, we're only applying headbob at 50% speed
-		if(speedPercentage > 0.5){
+		// to smooth the headbob, we're only applying headbob at 25% speed
+		if(speedPercentage > 0.25){
 			// if we came from camera reset, we have to ensure we're starting fresh
 			if(resettingCamera){
 				resettingCamera = false;

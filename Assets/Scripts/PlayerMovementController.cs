@@ -5,29 +5,32 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovementController : MonoBehaviour
 {
-    public float friction = 35.0f;
-    public float acceleration = 5.25f;
+    //public float friction = 0.25f;
+    //public float acceleration = 5.25f;
     public float gravity = 1.0f;
     public float maxFallSpeed = 0.5f;
     public float runMultiplier = 2.0f;
 	public float isGroundedCheckDist = 3.0f;
 
+    float speedMultiplier;
+
 	LayerMask ignoreLayer;
     CharacterController cc;
 
     Vector3 velocity;
+    //float velocity;
 
     void Start(){
         cc = GetComponent<CharacterController>();
         ignoreLayer = 1 << LayerMask.NameToLayer ("Player");
     }
 
-    void Update(){
-        if(Input.GetButtonDown("Run")){
-            acceleration *= runMultiplier;
+    void FixedUpdate(){
+        if(Input.GetButton("Run")){
+            speedMultiplier = 2;
         }
-        else if(Input.GetButtonUp("Run")){
-            acceleration /= runMultiplier;
+        else{
+            speedMultiplier = 1;
         }
 
         CalculateMovement();
@@ -45,22 +48,38 @@ public class PlayerMovementController : MonoBehaviour
 	}
 
 	public float GetCurrentHorzSpeed(){
-        // TODO: figure out a way to calculate the theoretical max speed using friction & accel values
-        // 16u/s is the velocity that fits with the doom scale.
-		return Mathf.Clamp(new Vector2 (cc.velocity.x, cc.velocity.z).magnitude, 0, 16);
+		return new Vector2(cc.velocity.x, cc.velocity.z).magnitude;
 	}
 
+    public float GetCurrentSpeedPercentage(){
+        return Mathf.Clamp(GetCurrentHorzSpeed() / 16.0f, 0, 1);
+    }
+    // max horizontal speed
+    // AND
+    // acceleration
+
     void CalculateMovement(){
+        //float distance = 0;
+        //Vector3 input = GetInput();
         if(cc.isGrounded){
-            velocity += GetInput() * acceleration * Time.deltaTime;
-            velocity -= friction * Time.deltaTime * velocity;
-            velocity.y = 0;
+            //velocity += GetInput() * acceleration * Time.deltaTime * speedMultiplier;
+            //velocity -= friction * Time.deltaTime * velocity;
+            float T_max = 40f;
+            float V_max = 18.5f;
+            float friction = 5 / T_max;
+            float acceleration = friction * V_max;
+            
+            velocity += GetInput() * (acceleration * Time.deltaTime);
+            velocity -= (velocity * friction);
+            //distance = velocity * Time.deltaTime + (0.5f * acceleration * Mathf.Pow(Time.deltaTime, 2));
+
+            //velocity += (acceleration * GetInput()) - (friction * velocity);
+            //velocity -= friction * velocity;
         }
-        else{
-            velocity.y -= gravity * Time.deltaTime;
-            velocity.y = Mathf.Clamp(velocity.y, -maxFallSpeed, 0);
-        }
-        
+
+        velocity.y -= gravity * Time.deltaTime;
+        velocity.y = Mathf.Clamp(velocity.y, -maxFallSpeed, 0);
+
         cc.Move(velocity);
     }
 
@@ -87,6 +106,6 @@ public class PlayerMovementController : MonoBehaviour
 		GUI.Label(new Rect(10, 10, 400, 80), 
 		"Speed: " + System.Math.Round(GetCurrentSpeed(), 5) + 
 		"\nX/Y Speed: " + System.Math.Round(GetCurrentHorzSpeed(), 5) +
-		(isGrounded() ? "\nGrounded" : ""));
+		(isGrounded() ? "\nGrounded" : "\n"));
 	}
 }

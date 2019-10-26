@@ -90,7 +90,7 @@ public class GunInventoryController : MonoBehaviour
             gun = CreateGun(gunName);
             if(gun == null)
                 return false;
-
+            
             addedGun = true;
         }
 
@@ -141,7 +141,7 @@ public class GunInventoryController : MonoBehaviour
     }
 
     GunController CreateGun(string gunName){
-        GameObject gunPrefab = (GameObject)AssetDatabase.LoadAssetAtPath($"Assets/Prefabs/{gunName}Prefab.prefab", typeof(GameObject));
+        GameObject gunPrefab = Resources.Load($"Prefabs/{gunName}Prefab", typeof(GameObject)) as GameObject;
         GunController gunController;
             if(gunPrefab != null){
                 GameObject gun = Instantiate(gunPrefab, transform.position, transform.rotation);

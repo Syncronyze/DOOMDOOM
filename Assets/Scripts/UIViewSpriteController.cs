@@ -104,14 +104,15 @@ public class UIViewSpriteController : MonoBehaviour
 
     void ApplySpriteMovement(){
         Vector3 moveTo = defaultSpritePos;
-        float currentPlayerSpeed = playerMovementController.GetCurrentHorzSpeed();
+        float speedPercentage = playerMovementController.GetCurrentSpeedPercentage();
+
         if(gunSwap){
             gunSwapTimer += (Time.deltaTime / gunSwapSpeed);
             moveTo.y = Mathf.Lerp(0, defaultSpritePos.y, gunSwapTimer);
             gunSwap = gunSwapTimer < 1;
             //print($"Moving to {moveTo}, {(gunSwapTimer * 100)}% complete. {gunSwap}");
         }
-        else if(currentPlayerSpeed > 2){
+        else if(speedPercentage > 0.25){
             if(!bobbing){ // if we're not bobbing but we're meant to be (player is moving)
                 bobbing = true;
                 bobTimer = 0;
@@ -122,9 +123,9 @@ public class UIViewSpriteController : MonoBehaviour
 
             moveTo.x = Mathf.Lerp(spriteMoveFrom.x, spriteMoveTo.x, bobTimer);
             moveTo.y += Mathf.Pow(moveTo.x, 2) * 0.01f;
-            bobTimer += Time.deltaTime * currentPlayerSpeed * spriteBobMovementScale;
+            bobTimer += Time.deltaTime * speedPercentage * spriteBobMovementScale;
 
-            if(bobTimer > 1){
+            if(bobTimer > 1){ // resetting bobTimer
                 float temp = spriteMoveFrom.x;
 
                 if(spriteMoveFrom.x != defaultSpritePos.x)
@@ -135,7 +136,7 @@ public class UIViewSpriteController : MonoBehaviour
                 bobTimer = 0;
             }
         }
-        else{
+        else{ // otherwise, not moving; resetting viewmodel back
             if(bobbing){
                 bobbing = false;
                 spriteMoveFrom = rt.anchoredPosition;
@@ -143,7 +144,7 @@ public class UIViewSpriteController : MonoBehaviour
                 spriteMoveTo = defaultSpritePos;
             }
 
-            if(bobTimer >= 1)
+            if(bobTimer >= 1) // wait until we begin moving again
                 return;
 
             moveTo = Vector3.Lerp(spriteMoveFrom, spriteMoveTo, bobTimer);

@@ -119,7 +119,7 @@ public class GunController : MonoBehaviour
     bool RetrieveGunInfo(){
         if(!string.IsNullOrEmpty(gunName)){
             XmlDocument doc = new XmlDocument();
-            doc.Load(Application.dataPath + "/XML/GunCollection.xml");
+            doc.Load(Application.dataPath + "/Resources/XML/GunCollection.xml");
             XmlNodeList gunNodes = doc.DocumentElement.SelectNodes("Gun[@name='" + gunName + "']");
             
             if(gunNodes.Count < 1)

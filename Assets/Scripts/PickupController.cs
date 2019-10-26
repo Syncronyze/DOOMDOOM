@@ -22,7 +22,7 @@ public class PickupController : MonoBehaviour
         switch(pickup){
             case PickupType.Health:break;
             case PickupType.Armor:break;
-            case PickupType.Weapon:break;
+            case PickupType.Weapon: destroy = player.AddGun(key, Int32.Parse(value)); break;
             case PickupType.Ammo: destroy = player.AddAmmo((AmmoType)Enum.Parse(typeof(AmmoType), key), Int32.Parse(value)); break;
             case PickupType.Key:break;
             case PickupType.Backpack: destroy = player.AddBackpack(); break;
