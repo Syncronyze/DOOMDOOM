@@ -13,6 +13,10 @@ public class PlayerMovementController : MonoBehaviour
 	public float isGroundedCheckDist = 3.0f;
 
     float speedMultiplier;
+    float T_max = 40f;
+    float V_max = 18.5f;
+    float friction;
+    float acceleration;
 
 	LayerMask ignoreLayer;
     CharacterController cc;
@@ -23,6 +27,8 @@ public class PlayerMovementController : MonoBehaviour
     void Start(){
         cc = GetComponent<CharacterController>();
         ignoreLayer = 1 << LayerMask.NameToLayer ("Player");
+        friction = 5 / T_max;
+        acceleration = friction * V_max;
     }
 
     void FixedUpdate(){
@@ -54,22 +60,15 @@ public class PlayerMovementController : MonoBehaviour
     public float GetCurrentSpeedPercentage(){
         return Mathf.Clamp(GetCurrentHorzSpeed() / 16.0f, 0, 1);
     }
-    // max horizontal speed
-    // AND
-    // acceleration
-
+    
     void CalculateMovement(){
         //float distance = 0;
         //Vector3 input = GetInput();
         if(cc.isGrounded){
             //velocity += GetInput() * acceleration * Time.deltaTime * speedMultiplier;
             //velocity -= friction * Time.deltaTime * velocity;
-            float T_max = 40f;
-            float V_max = 18.5f;
-            float friction = 5 / T_max;
-            float acceleration = friction * V_max;
             
-            velocity += GetInput() * (acceleration * Time.deltaTime);
+            velocity += GetInput() * (acceleration * Time.deltaTime) * speedMultiplier;
             velocity -= (velocity * friction);
             //distance = velocity * Time.deltaTime + (0.5f * acceleration * Mathf.Pow(Time.deltaTime, 2));
 
@@ -103,7 +102,7 @@ public class PlayerMovementController : MonoBehaviour
 	 * 	TODO: REMOVE, ONLY FOR DEBUGGING.
 	 */
 	void OnGUI(){
-		GUI.Label(new Rect(10, 10, 400, 80), 
+		GUI.Label(new Rect(10, 600, 400, 80), 
 		"Speed: " + System.Math.Round(GetCurrentSpeed(), 5) + 
 		"\nX/Y Speed: " + System.Math.Round(GetCurrentHorzSpeed(), 5) +
 		(isGrounded() ? "\nGrounded" : "\n"));

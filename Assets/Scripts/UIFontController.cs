@@ -80,6 +80,10 @@ public class UIFontController : MonoBehaviour
                 rt.anchorMin = new Vector2(1, 0.5f);
                 rt.anchorMax = new Vector2(1, 0.5f);
             }
+            else{
+                rt.anchorMax = new Vector2(0, 0.5f);
+                rt.anchorMin = new Vector2(0, 0.5f);
+            }
 
             // defined whitespace size by 0, as all HUDFonts have a 0 and is reasonble size to become a space.
             if(currentChar == HUDFont.WhiteSp){
@@ -103,6 +107,7 @@ public class UIFontController : MonoBehaviour
             rt.sizeDelta = new Vector2(sprite.rect.size.x * letterScaling, sprite.rect.size.y * letterScaling);
             // position on the x axis is defined by the center of the image
             float xPos = (rt.sizeDelta.x / 2) + startPos;
+            rt.localScale = new Vector3(1, 1, 1); 
 
             if(fromRight)
                 xPos *= -1;

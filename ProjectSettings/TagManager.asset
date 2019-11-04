@@ -19,9 +19,9 @@ TagManager:
   - 
   - Player
   - Bullet
-  - 
-  - 
-  - 
+  - Sprite
+  - LevelParts
+  - PlayerClip
   - 
   - 
   - 

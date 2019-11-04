@@ -112,7 +112,7 @@ public class UIViewSpriteController : MonoBehaviour
             gunSwap = gunSwapTimer < 1;
             //print($"Moving to {moveTo}, {(gunSwapTimer * 100)}% complete. {gunSwap}");
         }
-        else if(speedPercentage > 0.25){
+        else if(speedPercentage > 0.10){
             if(!bobbing){ // if we're not bobbing but we're meant to be (player is moving)
                 bobbing = true;
                 bobTimer = 0;

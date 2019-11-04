@@ -78,7 +78,6 @@
      <Compile Include="Assets\Scripts\UIWeaponController.cs" />
      <Compile Include="Assets\Scripts\UseController.cs" />
      <Compile Include="Assets\Scripts\UtilityEnums.cs" />
-     <None Include="Assets\Resources\XML\GunCollection.xml" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/Users/Nick/Documents/DOOMDOOM/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

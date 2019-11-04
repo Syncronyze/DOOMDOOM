@@ -7,37 +7,49 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {   
-    public string gunName;
-    public float viewSpriteHeight = 40.0f;
+
+    public LayerMask ignoreLayer;
+
+    public AmmoType ammoType;
+
     public GameObject bulletPrefab;
     public GameObject bulletEndPrefab;
+
+    public string gunName;
+
+    public float viewSpriteHeight = 40.0f;
+    public float fireRate = 150f;
+
+    public float projectileDist = 1024f;
+    public float projectileSpeed = -1;
+    public int projectileAmount = 1;
+
+    public float minDamage = 5f;
+    public float maxDamage = 15f;
+    public float bulletSpread = 5.5f;
+
+    public int spreadOnNthBullet = 0;
+    
 
     [HideInInspector]
     public UIViewSpriteController uiViewSprite;
 
-    LayerMask ignoreLayer;
-    Gun gun; // holds all of our gun-related variables
+    Ammo ammo;
 
     float lastShot;
     float RPS; // rounds per second
     float gunSwapSpeed;
 
-    
+    int bulletsFired;
 
     bool isActiveGun;
 
     void Awake(){
-        if(!RetrieveGunInfo()){
-            print($"Invalid gun {gunName}, please check the XML and ensure all parameters are correct.");
-            Destroy(gameObject);
-            return;
-        }
         uiViewSprite = GameObject.FindGameObjectWithTag("ViewSprite").GetComponent<UIViewSpriteController>();
-
         isActiveGun = false;
-        RPS = (60f / gun.fireRate); // gun's fire rate is rounds per minute, we're setting it to be rounds per second for coding purposes
-        ignoreLayer = ignoreLayer = 1 << LayerMask.NameToLayer ("Player");
+        RPS = (60f / fireRate); // gun's fire rate is rounds per minute, we're setting it to be rounds per second for coding purposes
         gunSwapSpeed = uiViewSprite.gunSwapSpeed;
+        bulletSpread /= 2;
     }
 
     void Update(){
@@ -46,10 +58,13 @@ public class GunController : MonoBehaviour
 
     void FixedUpdate(){
         if(isActiveGun){
-            if(Input.GetButton("Fire1"))
+            if(Input.GetButton("Fire1")){
                 Shoot();
-            else
+            }
+            else{
                 uiViewSprite.ToggleFiring(false);
+                bulletsFired = 0;
+            }
         }
             
     }
@@ -65,11 +80,11 @@ public class GunController : MonoBehaviour
     /*
      * Passes along the ammo reference to the Gun object.
      */
-    public void SetAmmo(ref Ammo _ammo){
-        if(_ammo == null || _ammo.type != gun.ammoType)
+    public void SetAmmo(Ammo _ammo){
+        if(_ammo == null || _ammo.type != ammoType)
             return;
         
-        gun.SetAmmo(ref _ammo);       
+        ammo = _ammo;      
     }
 
     /*
@@ -77,7 +92,7 @@ public class GunController : MonoBehaviour
      */
     public AmmoType GetAmmoType(){
         try{
-            return gun.ammoType;
+            return ammoType;
         }
         catch(NullReferenceException){
             print("Ammo type for " + gunName + " is an unknown type. Please check the XML file.");
@@ -87,7 +102,7 @@ public class GunController : MonoBehaviour
     }
 
     /*
-     * Retrieves the rounds per second of the gun.
+     * Retrieves the rounds per second of the 
      */
     public float GetRPS(){
         return RPS;
@@ -98,11 +113,23 @@ public class GunController : MonoBehaviour
      */
     void Shoot(){
         if(lastShot > RPS){
-            if(gun.ExpendAmmo()){
-                BulletController bullet = Instantiate(bulletPrefab, transform.position, transform.rotation).GetComponent<BulletController>();
-                bullet.SetVariables(gun.projectileSpeed, gun.projectileDist, gameObject.layer, bulletEndPrefab);
+            if(ExpendAmmo()){
                 uiViewSprite.ToggleFiring(true);
                 uiViewSprite.Fire();
+
+                for(int i = 0; i < projectileAmount; i++){
+                    float randomSpreadX = 0;
+                    float randomSpreadY = 0;
+
+                    if(bulletsFired >= spreadOnNthBullet){
+                        randomSpreadX = UnityEngine.Random.Range(-bulletSpread, bulletSpread);
+                        randomSpreadY = UnityEngine.Random.Range(-bulletSpread, bulletSpread);
+                    }
+
+                    BulletController bullet = Instantiate(bulletPrefab, transform.position, transform.rotation * Quaternion.Euler (randomSpreadX, randomSpreadY, 0f)).GetComponent<BulletController>();
+                    bullet.SetVariables(projectileSpeed, projectileDist, ignoreLayer, bulletEndPrefab);
+                    bulletsFired++;
+                }
             }
             else{
                 uiViewSprite.ToggleFiring(false);
@@ -111,43 +138,12 @@ public class GunController : MonoBehaviour
             
             lastShot = 0;
         }
-    }    
-
-    /*
-     *   Retrieving the gun's information based on the gunName parameter, stored in XML. Returns true or false depending if we're dealing with a valid gun.
-     */
-    bool RetrieveGunInfo(){
-        if(!string.IsNullOrEmpty(gunName)){
-            XmlDocument doc = new XmlDocument();
-            doc.Load(Application.dataPath + "/Resources/XML/GunCollection.xml");
-            XmlNodeList gunNodes = doc.DocumentElement.SelectNodes("Gun[@name='" + gunName + "']");
-            
-            if(gunNodes.Count < 1)
-                return false;
-           
-            XmlNode gunNode = gunNodes[0];
-
-            AmmoType ammoType;
-            float projectileSpeed, projectileDist, fireRate;
-
-            
-    
-            if(!Single.TryParse(gunNode.SelectSingleNode("fireRate").InnerText, out fireRate))
-                return false;
-
-            if(!Single.TryParse(gunNode.SelectSingleNode("projectileSpeed").InnerText, out projectileSpeed))
-                return false;
-
-            if(!Single.TryParse(gunNode.SelectSingleNode("projectileDist").InnerText, out projectileDist))
-                return false;
-
-            if(!Enum.TryParse(gunNode.SelectSingleNode("ammoType").InnerText, out ammoType))
-                return false;
-
-            gun = new Gun(gunName, fireRate, projectileDist, projectileSpeed, ammoType);
-            return true;
-        }
-
-        return false;
     }
-}
+
+    bool ExpendAmmo(){
+        if(ammo == null)
+            return false;
+
+        return ammo.ExpendAmmo();
+    }
+} 

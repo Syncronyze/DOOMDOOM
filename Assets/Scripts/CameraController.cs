@@ -75,21 +75,29 @@ public class CameraController : MonoBehaviour {
 		if(!playerController.isGrounded())
 			return;
 		
-		// to smooth the headbob, we're only applying headbob at 25% speed
-		if(speedPercentage > 0.25){
-			// if we came from camera reset, we have to ensure we're starting fresh
+		// to smooth the headbob, we're only applying headbob at 10% speed
+		if(speedPercentage > 0.1){
+			// if we came from camera reset, we start from the current height
+			// the timing will be a bit off, becuase it's a smaller distnace covered by the same timer
+			// but this is a smoother result overall
 			if(resettingCamera){
 				resettingCamera = false;
 				bobTimer = 0;
-				movingCamHeightFrom = 0;
+				movingCamHeightFrom = mainCamera.transform.localPosition.y - cameraOffset;;
 				movingCamHeightTo = headBobDistance;
 			}
 
 			// if the timer has run its course, we flip the variables and reset the timer.
 			if (bobTimer > 1){
-				float temp = movingCamHeightTo;
-				movingCamHeightTo = movingCamHeightFrom;
-				movingCamHeightFrom = temp;
+				if(movingCamHeightTo == headBobDistance){
+					movingCamHeightTo = 0;
+					movingCamHeightFrom = headBobDistance;
+				}
+				else{
+					movingCamHeightFrom = 0;
+					movingCamHeightTo = headBobDistance;
+				}
+
 				bobTimer = 0;
 			}
 			
@@ -97,13 +105,9 @@ public class CameraController : MonoBehaviour {
 		}
 		else{
 			if(!resettingCamera){
-				float currentCamHeight = mainCamera.transform.localPosition.y - cameraOffset;
 				movingCamHeightTo = 0;
-				movingCamHeightFrom = headBobDistance; 
-				// bobTimer represents a decimal percentage of where we are
-				// thus, we set where we currently are in relation to the lowest possible camera height in % form
-				bobTimer = 1 - Mathf.Abs(currentCamHeight / headBobDistance);
-				//print($"Moving Camera from {movingCamHeightFrom} to {movingCamHeightTo}, and at {(bobTimer * 100)}%");
+				movingCamHeightFrom =  mainCamera.transform.localPosition.y - cameraOffset;
+				bobTimer = 0;
 				resettingCamera = true;
 			}
 			else if(bobTimer > 1.0f){ // if we're not moving, and we've already reset the camera, we're done here
@@ -147,6 +151,11 @@ public class CameraController : MonoBehaviour {
 	void OnGUI(){
 		if(xhair != null)
 			GUI.DrawTexture(xhairRect, xhair, ScaleMode.StretchToFill, true, 0, new Color(0, 1, 0, 0.75f), 6f, 6f);
+
+		GUI.Label(new Rect(10, 550, 400, 80), 
+		"timer: " + System.Math.Round(bobTimer, 2) +
+		"\nmoving to " + movingCamHeightTo + 
+		"\nmoving from " + movingCamHeightFrom);
 	}
 
 }

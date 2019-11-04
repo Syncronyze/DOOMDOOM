@@ -20,13 +20,15 @@ public class Pseudo3DSpriteController : MonoBehaviour
 
     void Awake(){
         spriteRenderer = GetComponent<SpriteRenderer>();    
+        if(sprites.Length != 5)
+            print("Pseudo sprite controller requires exactly 5 sprites.");
+        
     }
 
     void Update(){
-        if(sprites.Length != 5){
-            print("Pseudo sprite controller requires exactly 5 sprites.");
+        if(sprites.Length != 5)
             return;
-        }
+        
         UpdateFrame();
     }
 

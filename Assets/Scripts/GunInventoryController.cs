@@ -45,8 +45,8 @@ public class GunInventoryController : MonoBehaviour
         AddAmmo(AmmoType.Bullet, 10);
         
         // TODO: Remove, just for testing
-        //AddAmmo(AmmoType.Bullet, 500);
-        //AddAmmo(AmmoType.Rocket, 500);
+        AddAmmo(AmmoType.Bullet, 500);
+        AddAmmo(AmmoType.Rocket, 500);
         //CreateGun("fists");
         //CreateGun("pistol");
         //CreateGun("rocket");
@@ -141,7 +141,7 @@ public class GunInventoryController : MonoBehaviour
     }
 
     GunController CreateGun(string gunName){
-        GameObject gunPrefab = Resources.Load($"Prefabs/{gunName}Prefab", typeof(GameObject)) as GameObject;
+        GameObject gunPrefab = Resources.Load($"Prefabs/guns/{gunName}Prefab", typeof(GameObject)) as GameObject;
         GunController gunController;
             if(gunPrefab != null){
                 GameObject gun = Instantiate(gunPrefab, transform.position, transform.rotation);
@@ -295,7 +295,7 @@ public class GunInventoryController : MonoBehaviour
                 if(child.TryGetComponent<GunController>(out gc)){
                     try{
                         Ammo ammo = ammos.First(a => a.type == gc.GetAmmoType());
-                        gc.SetAmmo(ref ammo);
+                        gc.SetAmmo(ammo);
                     }
                     catch(Exception e){
                         print("No ammo type available for " + gc.gunName + "\n" + e.Message + "\n StackTrace: " + e.StackTrace);

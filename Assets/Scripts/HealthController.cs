@@ -12,18 +12,23 @@ public class HealthController : MonoBehaviour
     GameUIController uiController;
     
     bool invunerable;
+    bool isPlayer;
 
     const float INVUNERABILITYLENGTH = 10f;
 
     void Start(){
-        uiController = GameObject.FindGameObjectWithTag("GameUI").GetComponent<GameUIController>();
+        isPlayer = gameObject.tag == "player";
+        if(isPlayer)
+            uiController = GameObject.FindGameObjectWithTag("GameUI").GetComponent<GameUIController>();
     }
 
     void Update(){
         //if(health == 0)
             // DEATH
-        uiController.SetValue("UI_ArmorPos", health + "%");
-        uiController.SetValue("UI_HealthPos", armorType == ArmorType.None ? "" : armor + "%");
+        if(isPlayer){
+            uiController.SetValue("UI_HealthPos", health + "%");
+            uiController.SetValue("UI_ArmorPos", armor + "%");
+        }
     }
 
     public bool AddHealth(int healthToAdd){
@@ -31,6 +36,14 @@ public class HealthController : MonoBehaviour
             return false;
         
         health += healthToAdd;
+        return true;
+    }
+
+    public bool AddArmor(int armorToAdd){
+        if(armor >= 200)
+            return false;
+
+        armor += armorToAdd;
         return true;
     }
 
@@ -52,10 +65,6 @@ public class HealthController : MonoBehaviour
                     return true;
                 }
             break;
-            case ArmorType.None:
-                armor = 0;
-                armorType = type;
-                return true;
         }
         return false;
     }
@@ -63,17 +72,15 @@ public class HealthController : MonoBehaviour
     public void TakeDamage(int damage){
         if(invunerable)
             return;
-        // if armorType is none, then our armor takes 0 damage, otherwise it takes a multiplier of how much it prevents
-        // eg, blue is 2 so we take half damage: damage * (0.5);
+        
         float armorDamage = damage * (1 / (int)armorType);
         float healthDamage = damage - armorDamage;
         float armorOverkill = 0;
         armor -= Mathf.RoundToInt(armorDamage);
 
-        if(armor <= 0){
+        if(armor <= 0)
             armorOverkill = Mathf.Abs(armor);
-            ChangeArmor(ArmorType.None);
-        }
+        
         
         health -= Mathf.RoundToInt(healthDamage + armorOverkill);
 

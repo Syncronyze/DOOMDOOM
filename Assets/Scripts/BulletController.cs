@@ -58,7 +58,7 @@ public class BulletController : MonoBehaviour
     void Move(){
         if(raycast){
             RaycastHit rcHit;
-            hit = Physics.Raycast(startPos, transform.TransformDirection(Vector3.forward), out rcHit, projectileDist, ~(1 << ignoreLayer));
+            hit = Physics.Raycast(startPos, transform.TransformDirection(Vector3.forward), out rcHit, projectileDist, ~(ignoreLayer));
 
             if(hit){
                 endPos = rcHit.point + (rcHit.normal * moveHit);
@@ -110,7 +110,6 @@ public class BulletController : MonoBehaviour
         endPrefab = _endPrefab;
         projectileSpeed = _projectileSpeed;
         projectileDist = _projectileDist;
-        // this is the layer that is firing this bullet, to ignore whatever is firing it.
         ignoreLayer = _ignoreLayer;
 
         raycast = _projectileSpeed <= 0;

@@ -25,7 +25,7 @@ public class InteractController : MonoBehaviour
     }
 
     public void Interact(){
-        print("interacting");
+        //rint("interacting");
         isOn = !isOn;
         holdTimer = holdFor;
     }

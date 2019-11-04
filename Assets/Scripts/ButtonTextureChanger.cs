@@ -18,20 +18,23 @@ public class ButtonTextureChanger : MonoBehaviour
         button = GetComponent<InteractController>();
         r = GetComponent<MeshRenderer>();
         previousState = button.isOn;
+        UpdateButtonTexture();
     }
 
     void Update(){
         if(button.isOn == previousState) // checking if the state has changed
             return;
-        
+
+        UpdateButtonTexture();
+        previousState = button.isOn;
+    }
+
+    void UpdateButtonTexture(){
         if(button.isOn)
             ChangeMaterials(indexToChange, onMaterial);
         
         else
             ChangeMaterials(indexToChange, offMaterial);
-        
-
-        previousState = button.isOn;
     }
 
     void ChangeMaterials(int index, Material material){
