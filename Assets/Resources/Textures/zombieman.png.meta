@@ -1,0 +1,1432 @@
+fileFormatVersion: 2
+guid: c15b4acf0848b9f4e8ed9b83ab215271
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9126734146601306942
+    second: zombieman_walk0_00
+  - first:
+      213: -7607235503631003559
+    second: zombieman_walk0_01
+  - first:
+      213: 3980495666870220647
+    second: zombieman_walk0_02
+  - first:
+      213: -8506929963853097757
+    second: zombieman_walk0_03
+  - first:
+      213: 8130296811768332932
+    second: zombieman_walk0_04
+  - first:
+      213: -2420641488085588052
+    second: zombieman_walk1_00
+  - first:
+      213: 6475951643900231648
+    second: zombieman_walk1_01
+  - first:
+      213: 6761809363876537213
+    second: zombieman_walk1_02
+  - first:
+      213: 6098878981698281440
+    second: zombieman_walk1_03
+  - first:
+      213: -5781665166400209183
+    second: zombieman_walk1_04
+  - first:
+      213: 4745264031569720772
+    second: zombieman_walk2_00
+  - first:
+      213: 1994954194773036360
+    second: zombieman_walk2_01
+  - first:
+      213: 7633949219551451774
+    second: zombieman_walk2_02
+  - first:
+      213: -2817516936152776951
+    second: zombieman_walk2_03
+  - first:
+      213: -8843508700152197000
+    second: zombieman_walk2_04
+  - first:
+      213: 4215875831615940166
+    second: zombieman_walk3_00
+  - first:
+      213: 5062615310706021415
+    second: zombieman_walk3_01
+  - first:
+      213: -2488912449445237990
+    second: zombieman_walk3_02
+  - first:
+      213: -41950748943834193
+    second: zombieman_walk3_03
+  - first:
+      213: 2627504249653268038
+    second: zombieman_walk3_04
+  - first:
+      213: 4664160231812090630
+    second: zombieman_shoot0_00
+  - first:
+      213: 3973933987705989435
+    second: zombieman_shoot0_01
+  - first:
+      213: -9194362980023452632
+    second: zombieman_shoot0_02
+  - first:
+      213: -2291081212567972684
+    second: zombieman_shoot0_03
+  - first:
+      213: 4406617256153599157
+    second: zombieman_shoot0_04
+  - first:
+      213: -6525608508842100163
+    second: zombieman_shoot0_00
+  - first:
+      213: -693614254945974762
+    second: zombieman_shoot0_01
+  - first:
+      213: -3714339877676295139
+    second: zombieman_shoot0_02
+  - first:
+      213: 4482325659195741435
+    second: zombieman_shoot0_03
+  - first:
+      213: -1713763585050498743
+    second: zombieman_shoot0_04
+  - first:
+      213: 8295754310312013603
+    second: zombieman_hit0_00
+  - first:
+      213: 8992955994186413289
+    second: zombieman_hit0_01
+  - first:
+      213: -4870241241509045163
+    second: zombieman_hit0_02
+  - first:
+      213: -4768644956945222666
+    second: zombieman_hit0_03
+  - first:
+      213: 5349558535835276727
+    second: zombieman_hit0_04
+  - first:
+      213: -7132919187823354882
+    second: zombieman_deth1
+  - first:
+      213: 8157939777191116363
+    second: zombieman_deth1
+  - first:
+      213: 8335356963751990966
+    second: zombieman_deth1
+  - first:
+      213: -2819521915299163400
+    second: zombieman_deth2
+  - first:
+      213: 5263694074735240849
+    second: zombieman_deth3
+  - first:
+      213: 5303040962707564181
+    second: zombieman_gib0
+  - first:
+      213: -174463884756407830
+    second: zombieman_gib4
+  - first:
+      213: -1790589458737850476
+    second: zombieman_gib4
+  - first:
+      213: 6842150069138520158
+    second: zombieman_gib4
+  - first:
+      213: -9012642309021572811
+    second: zombieman_gib4
+  - first:
+      213: -1696046738164295089
+    second: zombieman_gib4
+  - first:
+      213: -4654685127673048140
+    second: zombieman_gib7
+  - first:
+      213: -8416956918033321779
+    second: zombieman_gib4
+  - first:
+      213: -2356935315095547318
+    second: zombieman_gib7
+  - first:
+      213: 8904968156660153782
+    second: zombieman_sleep0_00
+  - first:
+      213: 8718364819872368179
+    second: zombieman_sleep0_01
+  - first:
+      213: 4474900098215071454
+    second: zombieman_sleep0_02
+  - first:
+      213: -8834807619442345687
+    second: zombieman_sleep0_03
+  - first:
+      213: 5284105069475561963
+    second: zombieman_sleep0_04
+  - first:
+      213: -5203230619051257853
+    second: zombieman_shoot1_00
+  - first:
+      213: 4664160231812090630
+    second: zombieman_shoot1_01
+  - first:
+      213: 3973933987705989435
+    second: zombieman_shoot1_02
+  - first:
+      213: -9194362980023452632
+    second: zombieman_shoot1_03
+  - first:
+      213: 4406617256153599157
+    second: zombieman_shoot1_04
+  - first:
+      213: -7260139820017181816
+    second: zombieman_shoot2_00
+  - first:
+      213: -6525608508842100163
+    second: zombieman_shoot2_01
+  - first:
+      213: -693614254945974762
+    second: zombieman_shoot2_02
+  - first:
+      213: -3714339877676295139
+    second: zombieman_shoot2_03
+  - first:
+      213: 4482325659195741435
+    second: zombieman_shoot2_04
+  - first:
+      213: 2087154264701859931
+    second: zombieman_0
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zombieman_walk0_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 786
+        width: 41
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02bcab57d09c4cd408dccd6e42cc3e95
+      internalID: 9126734146601306942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk0_01
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 787
+        width: 36
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed36d28be2ba93645b453cc1773def27
+      internalID: -7607235503631003559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk0_02
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 788
+        width: 43
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5d0d61553c7bd845b7c4093a4bffa66
+      internalID: 3980495666870220647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk0_03
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 791
+        width: 45
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05263d2c188e08a4cab9aa7089b40fb5
+      internalID: -8506929963853097757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk0_04
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 790
+        width: 36
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d08359bed5d83d4c80d0a52d032a25f
+      internalID: 8130296811768332932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk1_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 689
+        width: 37
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acbd818c0f147b04d99a124408faddab
+      internalID: -2420641488085588052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk1_01
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 690
+        width: 35
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01bec7065f8b5814e96f2c038edf6826
+      internalID: 6475951643900231648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk1_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 690
+        width: 36
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57ba79fd9480db541b84ba1e52d0d43e
+      internalID: 6761809363876537213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk1_03
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 690
+        width: 40
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d5e4d099ad95d04caf9f0bc4856dc0b
+      internalID: 6098878981698281440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk1_04
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 690
+        width: 35
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 479ce803ad667444a9d31ccb0ee7072c
+      internalID: -5781665166400209183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk2_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 592
+        width: 38
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5d002a50e3e4d04980ecdb60df6a948
+      internalID: 4745264031569720772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk2_01
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 593
+        width: 37
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6dd345ffaebe23429dd17c536f2838f
+      internalID: 1994954194773036360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk2_02
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 592
+        width: 37
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc54d88a1ff9bdd478602dfd465c45b5
+      internalID: 7633949219551451774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk2_03
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 592
+        width: 41
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f0bf7c6d3fd074cba6b6caa5f077bc
+      internalID: -2817516936152776951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk2_04
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 592
+        width: 34
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e11421dabdc1bf4191ab1578b70084e
+      internalID: -8843508700152197000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk3_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 495
+        width: 40
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d77a5044c170c114a807c7ca8babb47f
+      internalID: 4215875831615940166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk3_01
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 496
+        width: 35
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a3bb3c6a526055419a3577183cf581e
+      internalID: 5062615310706021415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk3_02
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 496
+        width: 34
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3ac5e4f16033b1479cf8dd4b06bb609
+      internalID: -2488912449445237990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk3_03
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 496
+        width: 41
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 875b27d10f057b843ac6ae259902612d
+      internalID: -41950748943834193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_walk3_04
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 496
+        width: 35
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f804ab1dd8ec941a630b28c090af79
+      internalID: 2627504249653268038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_shoot0_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 309
+        width: 27
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ccea153bbe65004ca462d62ee0acccd
+      internalID: -6525608508842100163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_shoot0_01
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 310
+        width: 45
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666fd9d347dea4947ba3262d01f67b54
+      internalID: -693614254945974762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_shoot0_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 311
+        width: 52
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74061a9d57d08a248a1c3ff53dd61873
+      internalID: -3714339877676295139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_shoot0_03
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 313
+        width: 42
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c22241ceb24ae054782cc455cb540365
+      internalID: 4482325659195741435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_shoot0_04
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 313
+        width: 24
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a956a80dad3980b489f5b611493a5cc1
+      internalID: -1713763585050498743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_hit0_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 220
+        width: 39
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bca4c6c40fd74b46846d4eedd2d141a
+      internalID: 8295754310312013603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_hit0_01
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 220
+        width: 36
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1817e35e0e415d94299b2416cb6e2225
+      internalID: 8992955994186413289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_hit0_02
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 221
+        width: 43
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ce5bb4d79332a40ab99468728b8e39
+      internalID: -4870241241509045163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_hit0_03
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 222
+        width: 43
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a0b8c68a9cbfa84eab6b265fa6cd281
+      internalID: -4768644956945222666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_hit0_04
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 222
+        width: 34
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb9ec32761cc98448de929ff2c776de
+      internalID: 5349558535835276727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_deth0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 131
+        width: 39
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53785a8e4945f9a4887683302354d793
+      internalID: -7132919187823354882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_deth1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 140
+        width: 35
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0947283c7acd72b4eb15d56ba6400220
+      internalID: 8157939777191116363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_deth2
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 153
+        width: 43
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 908620dfa375c4b4fb22001ca616c2d5
+      internalID: 8335356963751990966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_deth3
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 159
+        width: 48
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f578daba5ad9c9946a9c9ec71380d168
+      internalID: -2819521915299163400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_deth4
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 169
+        width: 47
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70e0fee5b81eb514389a1950fa7b2fe4
+      internalID: 5263694074735240849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_gib0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 39
+        width: 41
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380eca87635dd93448b7e9c1db65c182
+      internalID: 5303040962707564181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_gib1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 36
+        width: 43
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b273930ebd0ece8498a5a710a5d570fe
+      internalID: -174463884756407830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_gib2
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 37
+        width: 48
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec89a1b1de9529489426fea4e5b10e0
+      internalID: -1790589458737850476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_gib6
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 62
+        width: 57
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6042ff21b85c6574ca7b5ba556d521fc
+      internalID: 6842150069138520158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_gib3
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 43
+        width: 53
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f2a5cd61173214eb979fee831d9bb3
+      internalID: -9012642309021572811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_gib5
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 55
+        width: 57
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e6a100e826e314193373af90251876
+      internalID: -1696046738164295089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_gib4
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 47
+        width: 55
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 543d963c5a2510746a34881ffd083e02
+      internalID: -4654685127673048140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_gib7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 57
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db0598c340856c84991c2befbb4dc10c
+      internalID: -8416956918033321779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_gib8
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 5
+        width: 57
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88880aa3f88a4934c87bc7f9a66159c8
+      internalID: -2356935315095547318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_sleep0_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 398
+        width: 26
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ea9283a558cbf644ae8b5ff8257ced0
+      internalID: 8904968156660153782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_sleep0_01
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 399
+        width: 43
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ff6515bde6a5754680847250940c254
+      internalID: 8718364819872368179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_sleep0_02
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 400
+        width: 51
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb48d0a03997f64996aeefff3449126
+      internalID: 4474900098215071454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_sleep0_03
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 401
+        width: 39
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d11c3bb07c2e4941ab3a6734c05b874
+      internalID: -8834807619442345687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_sleep0_04
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 402
+        width: 26
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e39aa441c1a5046a4d470377e4c6e6
+      internalID: 5284105069475561963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_shoot1_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 398
+        width: 26
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e4dbf55d9881a649852bca2c33221ee
+      internalID: -5203230619051257853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_shoot1_01
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 399
+        width: 43
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ec59dea4618a4f42a4dd0063523665a
+      internalID: 4664160231812090630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_shoot1_02
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 399
+        width: 51
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4da228cb606aa4a8c55a3715261f24
+      internalID: 3973933987705989435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_shoot1_03
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 401
+        width: 39
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5465f007c86af1f46bd417e36e56d9a4
+      internalID: -9194362980023452632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombieman_shoot1_04
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 402
+        width: 26
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca50738fcbdfc54aaf1ca5a88a655e2
+      internalID: 4406617256153599157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: fb4f1739b715aa0459ac81d9d15aa06b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

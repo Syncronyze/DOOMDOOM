@@ -53,12 +53,13 @@ MonoBehaviour:
     type: 3}
   gunName: pistol
   viewSpriteHeight: 40
-  fireRate: 150
+  viewSpriteFPS: 12
+  fireRate: 120
   projectileDist: -1
   projectileSpeed: -1
   projectileAmount: 1
-  minDamage: 5
-  maxDamage: 15
+  explosionSize: 1
+  minDamage: 1
+  maxDamage: 1
   bulletSpread: 5.5
   spreadOnNthBullet: 2
-  uiViewSprite: {fileID: 0}

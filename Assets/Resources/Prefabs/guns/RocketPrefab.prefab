@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1098538795240364884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1098538795240364885}
+  - component: {fileID: 1098538795240364882}
+  m_Layer: 8
+  m_Name: RocketPrefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1098538795240364885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098538795240364884}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1098538795240364882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098538795240364884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd1ebe2001fe354b8d60b8f49f99c5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 5888
+  ammoType: 3
+  bulletPrefab: {fileID: 2406412495494251024, guid: 6766bb0ef03e61e458086c778c2f9989,
+    type: 3}
+  bulletEndPrefab: {fileID: 2519044172990083312, guid: df7336f3ff837074ca805c5a0b2503bd,
+    type: 3}
+  gunName: rocket
+  viewSpriteHeight: 40
+  viewSpriteFPS: 12
+  fireRate: 125
+  projectileDist: 2048
+  projectileSpeed: 7500
+  projectileAmount: 1
+  explosionSize: 3
+  minDamage: 999
+  maxDamage: 999
+  bulletSpread: 5.5
+  spreadOnNthBullet: 2

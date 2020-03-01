@@ -13,19 +13,20 @@ public class UIFontController : MonoBehaviour
     public float letterSpacing;
     [Min(0.01f)]
     public float letterScaling = 3;
-    
+    public bool caseInsensitive = true;
     public string defaultValue;
 
     //[HideInInspector]
     //public string objectName;
 
-    private string value;
+    string value;
     //private float lastUpdate;
-    private bool update;
+    bool update;
+    bool valid;
 
     void Start(){
         spriteLoader = GameObject.FindGameObjectWithTag("SpriteLoader").GetComponent<UISpriteLoader>();
-        spriteLoader.LoadSpriteSheet("HUD_Font", "Textures/HUD_Font");
+        valid = spriteLoader.LoadSpriteSheet("HUD_Font", "Textures/HUD_Font");
         if(!string.IsNullOrEmpty(defaultValue))
             SetValue(defaultValue);
     }
@@ -34,7 +35,7 @@ public class UIFontController : MonoBehaviour
         //lastUpdate += Time.deltaTime;
 
         // only updating if we need to
-        if(update)
+        if(valid && update)
             UpdateText();
         
     }
@@ -52,7 +53,6 @@ public class UIFontController : MonoBehaviour
     void UpdateText(){
         update = false;
         //lastUpdate = 0;
-        
         HUDFont[] characters = FromStringToEnum(value, _style);
         
         if(characters == null)
@@ -142,15 +142,15 @@ public class UIFontController : MonoBehaviour
     }
 
     /*
-     * Disabling children instead of deleting any unused ones, as deleting is an asynchronous operation, and this is generally faster.
+     * Disabling children instead of deleting any unused ones, as deleting is an asynchronous operation meaning it can lead to issues, and it's generally faster to just disable versus delete/create.
      */
     void DisableChildren(int amountOfChildren){
         for(int i = 0; i < transform.childCount; i++){
             Image toHide;
-            int childIndex = i;
+            int childIndex = (transform.childCount - 1) - i;
 
-            if(fromRight)
-                childIndex = (transform.childCount - 1) - i;
+            //if(!fromRight)
+            //childIndex = ;
 
             if(transform.GetChild(childIndex).TryGetComponent<Image>(out toHide)){
                 toHide.enabled = false;
@@ -191,22 +191,32 @@ public class UIFontController : MonoBehaviour
         if(char.IsWhiteSpace(input))
             return "WhiteSp";
 
-        if(char.IsLetterOrDigit(input))
-            return input.ToString().ToUpper();
+        if(char.IsLetterOrDigit(input)){
+            if(caseInsensitive)
+                return input.ToString().ToUpper();
+            else
+                return input.ToString();
+        }
+            
+
         // in the event that we have to convert symbols, these are the related and relevant names
         // there is not every symbol, not even close, but these are the ones available.
         switch(input){
             case '-': return "Neg"; // negative/dash & percentage are first, as they're the most likely outside of letters, numbers and whitepsace
             case '%': return "Pcnt";
             case '\'': return "Quo"; 
-            case ';': return "Col"; 
-            case '|': return "Pipe"; 
-            case '(': return "Parl"; 
-            case ')': return "Parr";
+            case '.': return "Prd";
+            case ';': return "SCol";
+            case ':': return "Col";
+            case '|': return "Pipe";
+            case '[': return "SqbL";
+            case ']': return "SqbR";
+            case '(': return "ParL"; 
+            case ')': return "ParR";
             case '=': return "Equ"; 
             case '+': return "Plus"; 
-            case '<': return "Carl"; 
-            case '>': return "Carr"; 
+            case '<': return "CarL"; 
+            case '>': return "CarR"; 
             case '"': return "Dblq";
             case '#': return "Pnd"; 
             case '$': return "Dol"; 

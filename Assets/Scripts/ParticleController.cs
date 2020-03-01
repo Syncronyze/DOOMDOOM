@@ -17,10 +17,11 @@ public class ParticleController : MonoBehaviour
     float frameTimer;
     float frameSpeed;
     bool valid;
+    bool move;
 
     void Start(){
         spriteLoader = GameObject.FindGameObjectWithTag("SpriteLoader").GetComponent<UISpriteLoader>();
-        spriteLoader.LoadSpriteSheet("particles", "Textures/particle_sprites");
+        valid = spriteLoader.LoadSpriteSheet("particles", "Textures/particle_sprites");
         spriteRenderer = GetComponent<SpriteRenderer>();
         frameTimer = 0;
         currentSpriteIndex = 0;
@@ -28,6 +29,9 @@ public class ParticleController : MonoBehaviour
 
     void Update(){
         if(!valid)
+            return;
+
+        if(!move)
             return;
 
         if(lifeTime <= 0){
@@ -52,7 +56,7 @@ public class ParticleController : MonoBehaviour
         transform.localScale *= scale;
         frameSpeed = animationTime / particleSpriteFrames.Length;
         moveTo += transform.position;
-        valid = true;
+        move = true;
     }
 
     void NextFrame(){

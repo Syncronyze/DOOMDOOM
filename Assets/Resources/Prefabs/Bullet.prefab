@@ -84,4 +84,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceSpawnEndParticles: 0
-  moveHit: 0.1
+  moveEndParticle: 0.5

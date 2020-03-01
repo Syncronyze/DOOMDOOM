@@ -53,12 +53,13 @@ MonoBehaviour:
     type: 3}
   gunName: shotgun
   viewSpriteHeight: 40
+  viewSpriteFPS: 9
   fireRate: 56.8
   projectileDist: -1
   projectileSpeed: -1
   projectileAmount: 7
+  explosionSize: 1
   minDamage: 5
   maxDamage: 15
   bulletSpread: 5.5
   spreadOnNthBullet: 0
-  uiViewSprite: {fileID: 0}

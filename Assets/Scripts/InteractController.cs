@@ -10,8 +10,7 @@ public class InteractController : MonoBehaviour
 {
     public float holdFor;
 
-    [HideInInspector]
-    public bool isOn;
+    public bool isOn{ get; private set; }
 
     float holdTimer;
 

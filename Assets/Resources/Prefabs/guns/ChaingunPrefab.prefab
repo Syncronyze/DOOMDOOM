@@ -57,8 +57,9 @@ MonoBehaviour:
   projectileDist: -1
   projectileSpeed: -1
   projectileAmount: 1
+  explosionSize: 0.2
   minDamage: 5
   maxDamage: 15
   bulletSpread: 5.5
   spreadOnNthBullet: 2
-  uiViewSprite: {fileID: 0}
+  bulletFiredOnFrame: 0

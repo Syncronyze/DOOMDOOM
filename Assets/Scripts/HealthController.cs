@@ -4,47 +4,39 @@ using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
-    
+    public int maxHealth;
+    public int maxArmor;
+
     public int health{ get; private set; }
     public int armor{ get; private set; }
     public ArmorType armorType{ get; private set; }
+    public Transform damagedBy{ get; private set; }
+    public int damageAmountHealth{ get; private set; }
+    public int damageAmountArmor{ get; private set; }
 
-    GameUIController uiController;
-    
     bool invunerable;
     bool isPlayer;
 
     const float INVUNERABILITYLENGTH = 10f;
 
     void Start(){
-        isPlayer = gameObject.tag == "player";
-        if(isPlayer)
-            uiController = GameObject.FindGameObjectWithTag("GameUI").GetComponent<GameUIController>();
+        isPlayer = gameObject.tag == "Player";
+        if(!isPlayer)
+            health = maxHealth;
     }
 
-    void Update(){
-        //if(health == 0)
-            // DEATH
-        if(isPlayer){
-            uiController.SetValue("UI_HealthPos", health + "%");
-            uiController.SetValue("UI_ArmorPos", armor + "%");
-        }
+    void LateUpdate(){
+        damagedBy = null;
+        damageAmountHealth = 0;
+        damageAmountArmor = 0;
     }
 
-    public bool AddHealth(int healthToAdd){
-        if(health >= 200)
-            return false;
-        
+    public void AddHealth(int healthToAdd){
         health += healthToAdd;
-        return true;
     }
 
-    public bool AddArmor(int armorToAdd){
-        if(armor >= 200)
-            return false;
-
+    public void AddArmor(int armorToAdd){
         armor += armorToAdd;
-        return true;
     }
 
     public bool ChangeArmor(ArmorType type){
@@ -65,29 +57,36 @@ public class HealthController : MonoBehaviour
                     return true;
                 }
             break;
+            case ArmorType.None:
+                armor = 0;
+                armorType = type;
+                return true;
         }
         return false;
     }
 
-    public void TakeDamage(int damage){
+    public void TakeDamage(Transform _damagedBy, int damage){
         if(invunerable)
             return;
+
+        damagedBy = _damagedBy;
         
-        float armorDamage = damage * (1 / (int)armorType);
+        float armorDamage = armorType == ArmorType.None ? 0 : damage * (1 / (int)armorType);
         float healthDamage = damage - armorDamage;
         float armorOverkill = 0;
-        armor -= Mathf.RoundToInt(armorDamage);
+
+        int roundedArmorDmg = Mathf.RoundToInt(armorDamage);
+
+        armor -= roundedArmorDmg;
+        damageAmountArmor = roundedArmorDmg;
 
         if(armor <= 0)
             armorOverkill = Mathf.Abs(armor);
         
-        
-        health -= Mathf.RoundToInt(healthDamage + armorOverkill);
+        int roundedHealthDmg = Mathf.RoundToInt(healthDamage + armorOverkill);
 
-        // for the UI
-        if(health < 0)
-            health = 0;
-
+        damageAmountHealth = roundedHealthDmg;
+        health -= roundedHealthDmg;
     }
 
     public bool Invunerability(){
@@ -105,12 +104,20 @@ public class HealthController : MonoBehaviour
     }
 
     public void LoadGlobalVariables(){
+        if(!isPlayer)
+            return;
+
+        maxHealth = GlobalPlayerVariables.MaxHP;
+        maxArmor = GlobalPlayerVariables.MaxAP;
         health = GlobalPlayerVariables.HP;
         armor = GlobalPlayerVariables.AP;
         armorType = GlobalPlayerVariables.aType;
     }
 
     public void SaveGlobalVariables(){
+        if(!isPlayer)
+            return;
+
         GlobalPlayerVariables.HP = health;
         GlobalPlayerVariables.AP = armor;
         GlobalPlayerVariables.aType = armorType;

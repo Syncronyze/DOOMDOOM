@@ -52,13 +52,14 @@ MonoBehaviour:
   bulletEndPrefab: {fileID: 1527790110431134770, guid: baa7ad5b9abde394ba2b99306936d901,
     type: 3}
   gunName: fists
-  viewSpriteHeight: 40
+  viewSpriteHeight: 60
+  viewSpriteFPS: 12
   fireRate: 123.5
   projectileDist: 6
   projectileSpeed: -1
   projectileAmount: 1
+  explosionSize: 1
   minDamage: 2
   maxDamage: 20
   bulletSpread: 0
   spreadOnNthBullet: 0
-  uiViewSprite: {fileID: 0}

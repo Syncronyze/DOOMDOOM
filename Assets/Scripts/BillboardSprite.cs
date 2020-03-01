@@ -11,7 +11,7 @@ public class BillboardSprite : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    void Update(){
-        transform.LookAt(new Vector3(player.position.x, (lookOnYAxis ? player.position.y : transform.position.y), player.position.z)) ;
+    void LateUpdate(){
+        transform.LookAt(new Vector3(player.position.x, (lookOnYAxis ? player.position.y : transform.position.y), player.position.z));
     }
 }

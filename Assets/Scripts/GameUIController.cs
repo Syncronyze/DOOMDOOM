@@ -23,27 +23,23 @@ public class GameUIController : MonoBehaviour
      * Collecting all of the UI Controllers within the child elements and storing them in a list for further use
      */
     public void CollectUIControllers(){
-        fontControllers = new List<UIFontController>();
-        foreach(Transform child in transform){
-            UIFontController fc;
-            if(child.TryGetComponent<UIFontController>(out fc)){
-                fontControllers.Add(fc);
-            }
-        }
+        fontControllers = new List<UIFontController>(transform.GetComponentsInChildren<UIFontController>());
     }
 
     /*
      * Gets the requested font controller; returns null if it doesn't exist
      */
     public UIFontController GetFontController(string UIElementName){
-        if(!HasControllers())
+        if(!HasControllers()){
+            Debug.LogWarning("There is no controllers, this likely isn't attached to the right gameObject!");
             return null;
+        }
         
         foreach(UIFontController fc in fontControllers){
             if(fc.name == UIElementName)
                 return fc;
         }
-        print("Font Controller " + UIElementName + " doesn't exist.");
+
         return null;
     }
 
@@ -53,8 +49,10 @@ public class GameUIController : MonoBehaviour
     public void SetValue(string UIElementName, string value){
         UIFontController fc = GetFontController(UIElementName);
 
-        if(fc == null)
+        if(fc == null){
+            Debug.LogWarning($"Cannot set {value} on font controller {UIElementName}, as it doesn't exist or cannot be found.");
             return;
+        }
 
         fc.SetValue(value);
     }
@@ -65,9 +63,10 @@ public class GameUIController : MonoBehaviour
     public void ChangeStyle(string UIElementName, FontStyle style){
         UIFontController fc = GetFontController(UIElementName);
 
-        if(fc == null)
+        if(fc == null){
+            Debug.LogWarning($"Cannot set font style {style} on font controller {UIElementName}, as it doesn't exist or cannot be found.");
             return;
-        
+        }
         fc.ChangeFontStyle(style);
 
     }

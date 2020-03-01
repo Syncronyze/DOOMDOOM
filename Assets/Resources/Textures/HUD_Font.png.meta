@@ -1,193 +1,789 @@
 fileFormatVersion: 2
 guid: 3a4c63ffc0d8de8438f360ed5d325199
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: HUD_Font_grNum_0
-    21300002: HUD_Font_grNum_1
-    21300004: HUD_Font_grNum_2
-    21300006: HUD_Font_grNum_3
-    21300008: HUD_Font_grNum_4
-    21300010: HUD_Font_grNum_5
-    21300012: HUD_Font_grNum_6
-    21300014: HUD_Font_grNum_7
-    21300016: HUD_Font_grNum_8
-    21300018: HUD_Font_grNum_9
-    21300020: HUD_Font_goNum_0
-    21300022: HUD_Font_goNum_1
-    21300024: HUD_Font_goNum_2
-    21300026: HUD_Font_goNum_3
-    21300028: HUD_Font_goNum_4
-    21300030: HUD_Font_goNum_5
-    21300032: HUD_Font_goNum_6
-    21300034: HUD_Font_goNum_7
-    21300036: HUD_Font_goNum_8
-    21300038: HUD_Font_goNum_9
-    21300040: HUD_Font_rNum_0
-    21300042: HUD_Font_rNum_1
-    21300044: HUD_Font_rNum_2
-    21300046: HUD_Font_rNum_3
-    21300048: HUD_Font_rNum_4
-    21300050: HUD_Font_rNum_5
-    21300052: HUD_Font_rNum_6
-    21300054: HUD_Font_rNum_7
-    21300056: HUD_Font_rNum_8
-    21300058: HUD_Font_rNum_9
-    21300060: HUD_Font_rNum_prc
-    21300062: HUD_Font_rNum_neg
-    21300064: HUD_Font_rsmNum_0
-    21300066: HUD_Font_rsmNum_1
-    21300068: HUD_Font_rsmNum_2
-    21300070: HUD_Font_rsmNum_3
-    21300072: HUD_Font_rsmNum_4
-    21300074: HUD_Font_rsmNum_5
-    21300076: HUD_Font_rsmNum_6
-    21300078: HUD_Font_rsmNum_7
-    21300080: HUD_Font_rsmNum_8
-    21300082: HUD_Font_rsmNum_9
-    21300084: HUD_Font_aA
-    21300086: HUD_Font_aB
-    21300088: HUD_Font_aC
-    21300090: HUD_Font_aD
-    21300092: HUD_Font_aE
-    21300094: HUD_Font_aF
-    21300096: HUD_Font_aG
-    21300098: HUD_Font_aH
-    21300100: HUD_Font_aI
-    21300102: HUD_Font_aJ
-    21300104: HUD_Font_aK
-    21300106: HUD_Font_aL
-    21300108: HUD_Font_aM
-    21300110: HUD_Font_aN
-    21300112: HUD_Font_aO
-    21300114: HUD_Font_aP
-    21300116: HUD_Font_aQ
-    21300118: HUD_Font_aR
-    21300120: HUD_Font_aS
-    21300122: HUD_Font_aT
-    21300124: HUD_Font_aU
-    21300126: HUD_Font_aV
-    21300128: HUD_Font_aW
-    21300130: HUD_Font_aX
-    21300132: HUD_Font_aY
-    21300134: HUD_Font_aZ
-    21300136: HUD_Font_symQuo
-    21300138: HUD_Font_symSmc
-    21300140: HUD_Font_symCol
-    21300142: HUD_Font_symPip
-    21300144: HUD_Font_symParl
-    21300146: HUD_Font_symParR
-    21300148: HUD_Font_symEqu
-    21300150: HUD_Font_symPlu
-    21300152: HUD_Font_symCarL
-    21300154: HUD_Font_symCarR
-    21300156: HUD_Font_symDblQ
-    21300158: HUD_Font_symPou
-    21300160: HUD_Font_symDol
-    21300162: HUD_Font_symPrct
-    21300164: HUD_Font_symDas
-    21300166: HUD_Font_symUnd
-    21300168: HUD_Font_symAst
-    21300170: HUD_Font_symFsl
-    21300172: HUD_Font_symBsl
-    21300174: HUD_Font_symPow
-    21300176: HUD_Font_symAmp
-    21300178: HUD_Font_symAt
-    21300180: HUD_Font_symQue
-    21300182: HUD_Font_symExc
-    21300184: HUD_Font_0
-    21300186: HUD_Font_1
-    21300188: HUD_Font_2
-    21300190: HUD_Font_3
-    21300192: HUD_Font_4
-    21300194: HUD_Font_5
-    21300196: HUD_Font_6
-    21300198: HUD_Font_7
-    21300200: HUD_Font_8
-    21300202: HUD_Font_9
-    21300204: HUD_Font_10
-    21300206: HUD_Font_11
-    21300208: HUD_Font_12
-    21300210: HUD_Font_13
-    21300212: HUD_Font_14
-    21300214: HUD_Font_15
-    21300216: HUD_Font_16
-    21300218: HUD_Font_17
-    21300220: HUD_Font_18
-    21300222: HUD_Font_19
-    21300224: HUD_Font_20
-    21300226: HUD_Font_21
-    21300228: HUD_Font_22
-    21300230: HUD_Font_23
-    21300232: HUD_Font_24
-    21300234: HUD_Font_25
-    21300236: HUD_Font_26
-    21300238: HUD_Font_27
-    21300240: HUD_Font_28
-    21300242: HUD_Font_29
-    21300244: HUD_Font_30
-    21300246: HUD_Font_31
-    21300248: HUD_Font_32
-    21300250: HUD_Font_33
-    21300252: HUD_Font_34
-    21300254: HUD_Font_35
-    21300256: HUD_Font_36
-    21300258: HUD_Font_37
-    21300260: HUD_Font_38
-    21300262: HUD_Font_39
-    21300264: HUD_Font_40
-    21300266: HUD_Font_41
-    21300268: HUD_Font_42
-    21300270: HUD_Font_43
-    21300272: HUD_Font_44
-    21300274: HUD_Font_45
-    21300276: HUD_Font_46
-    21300278: HUD_Font_47
-    21300280: HUD_Font_48
-    21300282: HUD_Font_49
-    21300284: HUD_Font_50
-    21300286: HUD_Font_51
-    21300288: HUD_Font_52
-    21300290: HUD_Font_53
-    21300292: HUD_Font_54
-    21300294: HUD_Font_55
-    21300296: HUD_Font_56
-    21300298: HUD_Font_57
-    21300300: HUD_Font_58
-    21300302: HUD_Font_59
-    21300304: HUD_Font_60
-    21300306: HUD_Font_61
-    21300308: HUD_Font_62
-    21300310: HUD_Font_63
-    21300312: HUD_Font_64
-    21300314: HUD_Font_65
-    21300316: HUD_Font_66
-    21300318: HUD_Font_67
-    21300320: HUD_Font_68
-    21300322: HUD_Font_69
-    21300324: HUD_Font_70
-    21300326: HUD_Font_71
-    21300328: HUD_Font_72
-    21300330: HUD_Font_73
-    21300332: HUD_Font_74
-    21300334: HUD_Font_75
-    21300336: HUD_Font_76
-    21300338: HUD_Font_77
-    21300340: HUD_Font_78
-    21300342: HUD_Font_79
-    21300344: HUD_Font_80
-    21300346: HUD_Font_81
-    21300348: HUD_Font_82
-    21300350: HUD_Font_83
-    21300352: HUD_Font_84
-    21300354: HUD_Font_85
-    21300356: HUD_Font_86
-    21300358: HUD_Font_87
-    21300360: HUD_Font_88
-    21300362: HUD_Font_89
-    21300364: HUD_Font_90
-    21300366: HUD_Font_91
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: HUD_Font_grNum_0
+  - first:
+      213: 21300002
+    second: HUD_Font_grNum_1
+  - first:
+      213: 21300004
+    second: HUD_Font_grNum_2
+  - first:
+      213: 21300006
+    second: HUD_Font_grNum_3
+  - first:
+      213: 21300008
+    second: HUD_Font_grNum_4
+  - first:
+      213: 21300010
+    second: HUD_Font_grNum_5
+  - first:
+      213: 21300012
+    second: HUD_Font_grNum_6
+  - first:
+      213: 21300014
+    second: HUD_Font_grNum_7
+  - first:
+      213: 21300016
+    second: HUD_Font_grNum_8
+  - first:
+      213: 21300018
+    second: HUD_Font_grNum_9
+  - first:
+      213: 21300020
+    second: HUD_Font_goNum_0
+  - first:
+      213: 21300022
+    second: HUD_Font_goNum_1
+  - first:
+      213: 21300024
+    second: HUD_Font_goNum_2
+  - first:
+      213: 21300026
+    second: HUD_Font_goNum_3
+  - first:
+      213: 21300028
+    second: HUD_Font_goNum_4
+  - first:
+      213: 21300030
+    second: HUD_Font_goNum_5
+  - first:
+      213: 21300032
+    second: HUD_Font_goNum_6
+  - first:
+      213: 21300034
+    second: HUD_Font_goNum_7
+  - first:
+      213: 21300036
+    second: HUD_Font_goNum_8
+  - first:
+      213: 21300038
+    second: HUD_Font_goNum_9
+  - first:
+      213: 21300040
+    second: HUD_Font_rNum_0
+  - first:
+      213: 21300042
+    second: HUD_Font_rNum_1
+  - first:
+      213: 21300044
+    second: HUD_Font_rNum_2
+  - first:
+      213: 21300046
+    second: HUD_Font_rNum_3
+  - first:
+      213: 21300048
+    second: HUD_Font_rNum_4
+  - first:
+      213: 21300050
+    second: HUD_Font_rNum_5
+  - first:
+      213: 21300052
+    second: HUD_Font_rNum_6
+  - first:
+      213: 21300054
+    second: HUD_Font_rNum_7
+  - first:
+      213: 21300056
+    second: HUD_Font_rNum_8
+  - first:
+      213: 21300058
+    second: HUD_Font_rNum_9
+  - first:
+      213: 21300060
+    second: HUD_Font_rNum_prc
+  - first:
+      213: 21300062
+    second: HUD_Font_rNum_neg
+  - first:
+      213: 21300064
+    second: HUD_Font_rsmNum_0
+  - first:
+      213: 21300066
+    second: HUD_Font_rsmNum_1
+  - first:
+      213: 21300068
+    second: HUD_Font_rsmNum_2
+  - first:
+      213: 21300070
+    second: HUD_Font_rsmNum_3
+  - first:
+      213: 21300072
+    second: HUD_Font_rsmNum_4
+  - first:
+      213: 21300074
+    second: HUD_Font_rsmNum_5
+  - first:
+      213: 21300076
+    second: HUD_Font_rsmNum_6
+  - first:
+      213: 21300078
+    second: HUD_Font_rsmNum_7
+  - first:
+      213: 21300080
+    second: HUD_Font_rsmNum_8
+  - first:
+      213: 21300082
+    second: HUD_Font_rsmNum_9
+  - first:
+      213: 21300084
+    second: HUD_Font_aA
+  - first:
+      213: 21300086
+    second: HUD_Font_aB
+  - first:
+      213: 21300088
+    second: HUD_Font_aC
+  - first:
+      213: 21300090
+    second: HUD_Font_aD
+  - first:
+      213: 21300092
+    second: HUD_Font_aE
+  - first:
+      213: 21300094
+    second: HUD_Font_aF
+  - first:
+      213: 21300096
+    second: HUD_Font_aG
+  - first:
+      213: 21300098
+    second: HUD_Font_aH
+  - first:
+      213: 21300100
+    second: HUD_Font_aI
+  - first:
+      213: 21300102
+    second: HUD_Font_aJ
+  - first:
+      213: 21300104
+    second: HUD_Font_aK
+  - first:
+      213: 21300106
+    second: HUD_Font_aL
+  - first:
+      213: 21300108
+    second: HUD_Font_aM
+  - first:
+      213: 21300110
+    second: HUD_Font_aN
+  - first:
+      213: 21300112
+    second: HUD_Font_aO
+  - first:
+      213: 21300114
+    second: HUD_Font_aP
+  - first:
+      213: 21300116
+    second: HUD_Font_aQ
+  - first:
+      213: 21300118
+    second: HUD_Font_aR
+  - first:
+      213: 21300120
+    second: HUD_Font_aS
+  - first:
+      213: 21300122
+    second: HUD_Font_aT
+  - first:
+      213: 21300124
+    second: HUD_Font_aU
+  - first:
+      213: 21300126
+    second: HUD_Font_aV
+  - first:
+      213: 21300128
+    second: HUD_Font_aW
+  - first:
+      213: 21300130
+    second: HUD_Font_aX
+  - first:
+      213: 21300132
+    second: HUD_Font_aY
+  - first:
+      213: 21300134
+    second: HUD_Font_aZ
+  - first:
+      213: 21300136
+    second: HUD_Font_symQuo
+  - first:
+      213: 21300138
+    second: HUD_Font_symSmc
+  - first:
+      213: 21300140
+    second: HUD_Font_symCol
+  - first:
+      213: 21300142
+    second: HUD_Font_symPip
+  - first:
+      213: 21300144
+    second: HUD_Font_symParl
+  - first:
+      213: 21300146
+    second: HUD_Font_symParR
+  - first:
+      213: 21300148
+    second: HUD_Font_symEqu
+  - first:
+      213: 21300150
+    second: HUD_Font_symPlu
+  - first:
+      213: 21300152
+    second: HUD_Font_symCarL
+  - first:
+      213: 21300154
+    second: HUD_Font_symCarR
+  - first:
+      213: 21300156
+    second: HUD_Font_symDblQ
+  - first:
+      213: 21300158
+    second: HUD_Font_symPou
+  - first:
+      213: 21300160
+    second: HUD_Font_symDol
+  - first:
+      213: 21300162
+    second: HUD_Font_symPrct
+  - first:
+      213: 21300164
+    second: HUD_Font_symDas
+  - first:
+      213: 21300166
+    second: HUD_Font_symUnd
+  - first:
+      213: 21300168
+    second: HUD_Font_symAst
+  - first:
+      213: 21300170
+    second: HUD_Font_symFsl
+  - first:
+      213: 21300172
+    second: HUD_Font_symBsl
+  - first:
+      213: 21300174
+    second: HUD_Font_symPow
+  - first:
+      213: 21300176
+    second: HUD_Font_symAmp
+  - first:
+      213: 21300178
+    second: HUD_Font_symAt
+  - first:
+      213: 21300180
+    second: HUD_Font_symQue
+  - first:
+      213: 21300182
+    second: HUD_Font_symExc
+  - first:
+      213: 21300184
+    second: HUD_Font_0
+  - first:
+      213: 21300186
+    second: HUD_Font_1
+  - first:
+      213: 21300188
+    second: HUD_Font_2
+  - first:
+      213: 21300190
+    second: HUD_Font_3
+  - first:
+      213: 21300192
+    second: HUD_Font_4
+  - first:
+      213: 21300194
+    second: HUD_Font_5
+  - first:
+      213: 21300196
+    second: HUD_Font_6
+  - first:
+      213: 21300198
+    second: HUD_Font_7
+  - first:
+      213: 21300200
+    second: HUD_Font_8
+  - first:
+      213: 21300202
+    second: HUD_Font_9
+  - first:
+      213: 21300204
+    second: HUD_Font_10
+  - first:
+      213: 21300206
+    second: HUD_Font_11
+  - first:
+      213: 21300208
+    second: HUD_Font_12
+  - first:
+      213: 21300210
+    second: HUD_Font_13
+  - first:
+      213: 21300212
+    second: HUD_Font_14
+  - first:
+      213: 21300214
+    second: HUD_Font_15
+  - first:
+      213: 21300216
+    second: HUD_Font_16
+  - first:
+      213: 21300218
+    second: HUD_Font_17
+  - first:
+      213: 21300220
+    second: HUD_Font_18
+  - first:
+      213: 21300222
+    second: HUD_Font_19
+  - first:
+      213: 21300224
+    second: HUD_Font_20
+  - first:
+      213: 21300226
+    second: HUD_Font_21
+  - first:
+      213: 21300228
+    second: HUD_Font_22
+  - first:
+      213: 21300230
+    second: HUD_Font_23
+  - first:
+      213: 21300232
+    second: HUD_Font_24
+  - first:
+      213: 21300234
+    second: HUD_Font_25
+  - first:
+      213: 21300236
+    second: HUD_Font_26
+  - first:
+      213: 21300238
+    second: HUD_Font_27
+  - first:
+      213: 21300240
+    second: HUD_Font_28
+  - first:
+      213: 21300242
+    second: HUD_Font_29
+  - first:
+      213: 21300244
+    second: HUD_Font_30
+  - first:
+      213: 21300246
+    second: HUD_Font_31
+  - first:
+      213: 21300248
+    second: HUD_Font_32
+  - first:
+      213: 21300250
+    second: HUD_Font_33
+  - first:
+      213: 21300252
+    second: HUD_Font_34
+  - first:
+      213: 21300254
+    second: HUD_Font_35
+  - first:
+      213: 21300256
+    second: HUD_Font_36
+  - first:
+      213: 21300258
+    second: HUD_Font_37
+  - first:
+      213: 21300260
+    second: HUD_Font_38
+  - first:
+      213: 21300262
+    second: HUD_Font_39
+  - first:
+      213: 21300264
+    second: HUD_Font_40
+  - first:
+      213: 21300266
+    second: HUD_Font_41
+  - first:
+      213: 21300268
+    second: HUD_Font_42
+  - first:
+      213: 21300270
+    second: HUD_Font_43
+  - first:
+      213: 21300272
+    second: HUD_Font_44
+  - first:
+      213: 21300274
+    second: HUD_Font_45
+  - first:
+      213: 21300276
+    second: HUD_Font_46
+  - first:
+      213: 21300278
+    second: HUD_Font_47
+  - first:
+      213: 21300280
+    second: HUD_Font_48
+  - first:
+      213: 21300282
+    second: HUD_Font_49
+  - first:
+      213: 21300284
+    second: HUD_Font_50
+  - first:
+      213: 21300286
+    second: HUD_Font_51
+  - first:
+      213: 21300288
+    second: HUD_Font_52
+  - first:
+      213: 21300290
+    second: HUD_Font_53
+  - first:
+      213: 21300292
+    second: HUD_Font_54
+  - first:
+      213: 21300294
+    second: HUD_Font_55
+  - first:
+      213: 21300296
+    second: HUD_Font_56
+  - first:
+      213: 21300298
+    second: HUD_Font_57
+  - first:
+      213: 21300300
+    second: HUD_Font_58
+  - first:
+      213: 21300302
+    second: HUD_Font_59
+  - first:
+      213: 21300304
+    second: HUD_Font_60
+  - first:
+      213: 21300306
+    second: HUD_Font_61
+  - first:
+      213: 21300308
+    second: HUD_Font_62
+  - first:
+      213: 21300310
+    second: HUD_Font_63
+  - first:
+      213: 21300312
+    second: HUD_Font_64
+  - first:
+      213: 21300314
+    second: HUD_Font_65
+  - first:
+      213: 21300316
+    second: HUD_Font_66
+  - first:
+      213: 21300318
+    second: HUD_Font_67
+  - first:
+      213: 21300320
+    second: HUD_Font_68
+  - first:
+      213: 21300322
+    second: HUD_Font_69
+  - first:
+      213: 21300324
+    second: HUD_Font_70
+  - first:
+      213: 21300326
+    second: HUD_Font_71
+  - first:
+      213: 21300328
+    second: HUD_Font_72
+  - first:
+      213: 21300330
+    second: HUD_Font_73
+  - first:
+      213: 21300332
+    second: HUD_Font_74
+  - first:
+      213: 21300334
+    second: HUD_Font_75
+  - first:
+      213: 21300336
+    second: HUD_Font_76
+  - first:
+      213: 21300338
+    second: HUD_Font_77
+  - first:
+      213: 21300340
+    second: HUD_Font_78
+  - first:
+      213: 21300342
+    second: HUD_Font_79
+  - first:
+      213: 21300344
+    second: HUD_Font_80
+  - first:
+      213: 21300346
+    second: HUD_Font_81
+  - first:
+      213: 21300348
+    second: HUD_Font_82
+  - first:
+      213: 21300350
+    second: HUD_Font_83
+  - first:
+      213: 21300352
+    second: HUD_Font_85
+  - first:
+      213: 21300354
+    second: HUD_Font_85
+  - first:
+      213: 21300356
+    second: HUD_Font_86
+  - first:
+      213: 21300358
+    second: HUD_Font_87
+  - first:
+      213: 21300360
+    second: HUD_Font_88
+  - first:
+      213: 21300362
+    second: HUD_Font_89
+  - first:
+      213: 21300364
+    second: HUD_Font_90
+  - first:
+      213: 21300366
+    second: HUD_Font_91
+  - first:
+      213: -3346383069682163892
+    second: HUD_Font_92
+  - first:
+      213: 3383827571807162794
+    second: HUD_Font_93
+  - first:
+      213: 5079401084367803412
+    second: HUD_Font_94
+  - first:
+      213: 3890262294003320387
+    second: HUD_Font_95
+  - first:
+      213: 874652252717885082
+    second: HUD_Font_96
+  - first:
+      213: 4922144138765836862
+    second: HUD_Font_97
+  - first:
+      213: -5988444642175284703
+    second: HUD_Font_98
+  - first:
+      213: 2035143970547119343
+    second: HUD_Font_99
+  - first:
+      213: -7740727397219799976
+    second: HUD_Font_100
+  - first:
+      213: -8210891727182768850
+    second: HUD_Font_101
+  - first:
+      213: -6591474695924753819
+    second: HUD_Font_102
+  - first:
+      213: -7311823196189395145
+    second: HUD_Font_103
+  - first:
+      213: 5004119518207072409
+    second: HUD_Font_104
+  - first:
+      213: -3361986213670713844
+    second: HUD_Font_105
+  - first:
+      213: -603028725198379024
+    second: HUD_Font_106
+  - first:
+      213: 4343902987010978
+    second: HUD_Font_107
+  - first:
+      213: 5949782985018909273
+    second: HUD_Font_108
+  - first:
+      213: -6180534436988119521
+    second: HUD_Font_109
+  - first:
+      213: 8475744248186618802
+    second: HUD_Font_110
+  - first:
+      213: 562272360043655984
+    second: HUD_Font_111
+  - first:
+      213: -7139153480042957431
+    second: HUD_Font_112
+  - first:
+      213: 1135579621249270868
+    second: HUD_Font_113
+  - first:
+      213: -2382087788831150835
+    second: HUD_Font_114
+  - first:
+      213: 8405964459686221222
+    second: HUD_Font_115
+  - first:
+      213: -2382981060226567881
+    second: HUD_Font_116
+  - first:
+      213: -1460891627545920267
+    second: HUD_Font_117
+  - first:
+      213: -9172192874251975515
+    second: HUD_Font_118
+  - first:
+      213: -5081121436305718567
+    second: HUD_Font_119
+  - first:
+      213: 737984957016909124
+    second: HUD_Font_120
+  - first:
+      213: -1665383944622227974
+    second: HUD_Font_121
+  - first:
+      213: -6047749013991967228
+    second: HUD_Font_122
+  - first:
+      213: 1263420165796336216
+    second: HUD_Font_123
+  - first:
+      213: -1395674400258133513
+    second: HUD_Font_124
+  - first:
+      213: 2049516685014920043
+    second: HUD_Font_125
+  - first:
+      213: -4160374923218265428
+    second: HUD_Font_126
+  - first:
+      213: -8580734774386471425
+    second: HUD_Font_127
+  - first:
+      213: 2912870947297482994
+    second: HUD_Font_128
+  - first:
+      213: -4322792710904791692
+    second: HUD_Font_129
+  - first:
+      213: 2584270757652732618
+    second: HUD_Font_130
+  - first:
+      213: -7983333678067928035
+    second: HUD_Font_131
+  - first:
+      213: -5049789047236574767
+    second: HUD_Font_132
+  - first:
+      213: 8166407022429270668
+    second: HUD_Font_133
+  - first:
+      213: -7508310446365825295
+    second: HUD_Font_134
+  - first:
+      213: -2105073296193652690
+    second: HUD_Font_135
+  - first:
+      213: -4066406921332310526
+    second: HUD_Font_136
+  - first:
+      213: 1183192963052252170
+    second: HUD_Font_137
+  - first:
+      213: 8150527165924884712
+    second: HUD_Font_138
+  - first:
+      213: 415030358335495918
+    second: HUD_Font_139
+  - first:
+      213: 109448228443929295
+    second: HUD_Font_140
+  - first:
+      213: 3877858961865240290
+    second: HUD_Font_141
+  - first:
+      213: 371688785746434235
+    second: HUD_Font_142
+  - first:
+      213: -5341384072002454655
+    second: HUD_Font_143
+  - first:
+      213: 8919957391658954346
+    second: HUD_Font_144
+  - first:
+      213: 3597738793453491010
+    second: HUD_Font_145
+  - first:
+      213: -3822133805889368429
+    second: HUD_Font_146
+  - first:
+      213: 176240134280562022
+    second: HUD_Font_147
+  - first:
+      213: -2164577064931454064
+    second: HUD_Font_148
+  - first:
+      213: 8616593396294883705
+    second: HUD_Font_149
+  - first:
+      213: 8594369840209334337
+    second: HUD_Font_150
+  - first:
+      213: 5642540144427252980
+    second: HUD_Font_151
+  - first:
+      213: 4725305010781945291
+    second: HUD_Font_152
+  - first:
+      213: -9172986590493888415
+    second: HUD_Font_153
+  - first:
+      213: -4839550137901688813
+    second: HUD_Font_154
+  - first:
+      213: -6824488711493951359
+    second: HUD_Font_155
+  - first:
+      213: 1521830165536738912
+    second: HUD_Font_156
+  - first:
+      213: -2711535533046742108
+    second: HUD_Font_157
+  - first:
+      213: 8594410610050791987
+    second: HUD_Font_158
+  - first:
+      213: 4539956340241204139
+    second: HUD_Font_159
+  - first:
+      213: -7856958854506850423
+    second: HUD_Font_160
+  - first:
+      213: -6711616281056790055
+    second: HUD_Font_161
+  - first:
+      213: -7759474270760691168
+    second: HUD_Font_162
+  - first:
+      213: -8689545764686114082
+    second: HUD_Font_163
+  - first:
+      213: -8457807963470257759
+    second: HUD_Font_164
+  - first:
+      213: 2676794226290106134
+    second: HUD_Font_165
+  - first:
+      213: 5944949089754652285
+    second: HUD_Font_166
+  - first:
+      213: -8340233265482770970
+    second: HUD_Font_167
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -242,7 +838,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -253,7 +849,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -264,6 +861,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -272,7 +870,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 52
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -283,6 +881,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 370b995bc43f155478785afb1a7a0a7d
+      internalID: 21300184
       vertices: []
       indices: 
       edges: []
@@ -292,7 +891,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 57
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -303,6 +902,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 93a35cae4e752754391fac7c6a1c9d71
+      internalID: 21300186
       vertices: []
       indices: 
       edges: []
@@ -312,7 +912,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 62
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -323,6 +923,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c1e2ba3b828b92241a49a45b8d8edfe0
+      internalID: 21300188
       vertices: []
       indices: 
       edges: []
@@ -332,7 +933,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 67
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -343,6 +944,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ae48476f4e92bfb49b47b1dd9cd1e5a3
+      internalID: 21300190
       vertices: []
       indices: 
       edges: []
@@ -352,7 +954,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 72
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -363,6 +965,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 665691a2effe5354088877b861d5b28d
+      internalID: 21300192
       vertices: []
       indices: 
       edges: []
@@ -371,8 +974,8 @@ TextureImporter:
       name: HUD_Font_5
       rect:
         serializedVersion: 2
-        x: 77
-        y: 52
+        x: 72
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -383,6 +986,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 25df16f224cda4a45b8d54d26f5c79c5
+      internalID: 21300194
       vertices: []
       indices: 
       edges: []
@@ -391,8 +995,8 @@ TextureImporter:
       name: HUD_Font_6
       rect:
         serializedVersion: 2
-        x: 82
-        y: 52
+        x: 77
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -403,6 +1007,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e7c9eed6a7fcd1e48bed972f499d8b5f
+      internalID: 21300196
       vertices: []
       indices: 
       edges: []
@@ -412,7 +1017,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 87
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -423,6 +1028,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7502a74c865f1814bb51bf313da63a1b
+      internalID: 21300198
       vertices: []
       indices: 
       edges: []
@@ -432,7 +1038,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 92
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -443,6 +1049,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e7f21b313db49e24e822c6d52da6866b
+      internalID: 21300200
       vertices: []
       indices: 
       edges: []
@@ -452,7 +1059,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 97
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -463,6 +1070,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 60044e56724b91844b08c24f4f09c107
+      internalID: 21300202
       vertices: []
       indices: 
       edges: []
@@ -472,7 +1080,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 102
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -483,6 +1091,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: aef64864eb59ef1408308d498508ac7d
+      internalID: 21300204
       vertices: []
       indices: 
       edges: []
@@ -492,7 +1101,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 107
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -503,6 +1112,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a610d8a099361194f9d4ddcc1ee0af54
+      internalID: 21300206
       vertices: []
       indices: 
       edges: []
@@ -512,7 +1122,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -523,6 +1133,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b17c353ba555bfd409028589fd583bb5
+      internalID: 21300208
       vertices: []
       indices: 
       edges: []
@@ -532,7 +1143,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 117
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -543,6 +1154,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e2f352f16e7525f4abed9cf4cb073039
+      internalID: 21300210
       vertices: []
       indices: 
       edges: []
@@ -552,7 +1164,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 122
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -563,6 +1175,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d787a28ba567c30439d580b395764a9e
+      internalID: 21300212
       vertices: []
       indices: 
       edges: []
@@ -572,7 +1185,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 127
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -583,6 +1196,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e66f033024c8dbc478265374b2bfa6e0
+      internalID: 21300214
       vertices: []
       indices: 
       edges: []
@@ -592,7 +1206,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 132
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -603,6 +1217,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 749579985b94f854ea924d419e800b9e
+      internalID: 21300216
       vertices: []
       indices: 
       edges: []
@@ -612,7 +1227,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 137
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -623,6 +1238,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 34c4dbfbc58314448990087e6e899c3a
+      internalID: 21300218
       vertices: []
       indices: 
       edges: []
@@ -632,7 +1248,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 142
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -643,6 +1259,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2ddecded346611742a127e1c531a42d1
+      internalID: 21300220
       vertices: []
       indices: 
       edges: []
@@ -652,7 +1269,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 147
-        y: 52
+        y: 167
         width: 4
         height: 6
       alignment: 0
@@ -663,6 +1280,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7924198abb622d349ad80df126810f8e
+      internalID: 21300222
       vertices: []
       indices: 
       edges: []
@@ -672,7 +1290,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 34
+        y: 149
         width: 14
         height: 16
       alignment: 0
@@ -683,6 +1301,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 5beb847f8e5e2a9428bb6a1881ae31d5
+      internalID: 21300224
       vertices: []
       indices: 
       edges: []
@@ -692,7 +1311,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 15
-        y: 34
+        y: 149
         width: 11
         height: 16
       alignment: 0
@@ -703,6 +1322,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 06637739531996a41a7c8aa36098c5df
+      internalID: 21300226
       vertices: []
       indices: 
       edges: []
@@ -712,7 +1332,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 27
-        y: 34
+        y: 149
         width: 14
         height: 16
       alignment: 0
@@ -723,6 +1343,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 86452595eb774534f96d25f8c4a61378
+      internalID: 21300228
       vertices: []
       indices: 
       edges: []
@@ -732,7 +1353,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 42
-        y: 34
+        y: 149
         width: 14
         height: 16
       alignment: 0
@@ -743,6 +1364,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 9a739dbada65d7f469fcd115c413dd3a
+      internalID: 21300230
       vertices: []
       indices: 
       edges: []
@@ -752,7 +1374,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 57
-        y: 34
+        y: 149
         width: 14
         height: 16
       alignment: 0
@@ -763,6 +1385,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0ba172db3a3b7ed42ae8088cba88db67
+      internalID: 21300232
       vertices: []
       indices: 
       edges: []
@@ -772,7 +1395,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 72
-        y: 34
+        y: 149
         width: 14
         height: 16
       alignment: 0
@@ -783,6 +1406,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3bb9d83f974958f40ada94e12e95f4ee
+      internalID: 21300234
       vertices: []
       indices: 
       edges: []
@@ -792,7 +1416,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 87
-        y: 34
+        y: 149
         width: 14
         height: 16
       alignment: 0
@@ -803,6 +1427,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ca64abd7900a59749a987b32888eaf4c
+      internalID: 21300236
       vertices: []
       indices: 
       edges: []
@@ -812,7 +1437,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 102
-        y: 34
+        y: 149
         width: 14
         height: 16
       alignment: 0
@@ -823,6 +1448,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 79830e136e3449943aea8ed098e0c553
+      internalID: 21300238
       vertices: []
       indices: 
       edges: []
@@ -832,7 +1458,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 117
-        y: 34
+        y: 149
         width: 14
         height: 16
       alignment: 0
@@ -843,6 +1469,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 26800dc9b338fbc4e8f462e66611f216
+      internalID: 21300240
       vertices: []
       indices: 
       edges: []
@@ -852,7 +1479,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 132
-        y: 34
+        y: 149
         width: 14
         height: 16
       alignment: 0
@@ -863,6 +1490,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d1d425f42077e024db3cdb8584c24858
+      internalID: 21300242
       vertices: []
       indices: 
       edges: []
@@ -872,7 +1500,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 147
-        y: 34
+        y: 149
         width: 14
         height: 16
       alignment: 0
@@ -883,6 +1511,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: fda5b52930f26f644be1290fe90fc270
+      internalID: 21300244
       vertices: []
       indices: 
       edges: []
@@ -892,9 +1521,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 162
-        y: 39
+        y: 149
         width: 8
-        height: 6
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -903,6 +1532,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 771ccefd28a4c2543995dc7a0df69fc9
+      internalID: 21300246
       vertices: []
       indices: 
       edges: []
@@ -912,7 +1542,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 26
+        y: 141
         width: 8
         height: 7
       alignment: 0
@@ -923,6 +1553,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d8a41a6d7b57e914fa51ebc0a1fd1aa0
+      internalID: 21300248
       vertices: []
       indices: 
       edges: []
@@ -932,7 +1563,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 9
-        y: 26
+        y: 141
         width: 5
         height: 7
       alignment: 0
@@ -943,6 +1574,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: deddc09f1ef16dc41998669de657fb5b
+      internalID: 21300250
       vertices: []
       indices: 
       edges: []
@@ -952,7 +1584,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 15
-        y: 26
+        y: 141
         width: 8
         height: 7
       alignment: 0
@@ -963,6 +1595,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: faad61f57f6435d4fadc9d851e1e1659
+      internalID: 21300252
       vertices: []
       indices: 
       edges: []
@@ -972,7 +1605,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 24
-        y: 26
+        y: 141
         width: 8
         height: 7
       alignment: 0
@@ -983,6 +1616,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 33a58080d53b51d4b822eb95870a6cc3
+      internalID: 21300254
       vertices: []
       indices: 
       edges: []
@@ -992,7 +1626,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 33
-        y: 26
+        y: 141
         width: 7
         height: 7
       alignment: 0
@@ -1003,6 +1637,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: cf3eb8609dfcf75479e38f6f03c888d6
+      internalID: 21300256
       vertices: []
       indices: 
       edges: []
@@ -1012,7 +1647,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 41
-        y: 26
+        y: 141
         width: 7
         height: 7
       alignment: 0
@@ -1023,6 +1658,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 21e587d0384b40d44aa36f16bddccd00
+      internalID: 21300258
       vertices: []
       indices: 
       edges: []
@@ -1032,7 +1668,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 49
-        y: 26
+        y: 141
         width: 8
         height: 7
       alignment: 0
@@ -1043,6 +1679,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e9cd17a6ec67a6d4e83ed2d009454010
+      internalID: 21300260
       vertices: []
       indices: 
       edges: []
@@ -1052,7 +1689,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 58
-        y: 26
+        y: 141
         width: 8
         height: 7
       alignment: 0
@@ -1063,6 +1700,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7c5b848e944774642b00a65ed15ebce8
+      internalID: 21300262
       vertices: []
       indices: 
       edges: []
@@ -1072,7 +1710,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 67
-        y: 26
+        y: 141
         width: 8
         height: 7
       alignment: 0
@@ -1083,6 +1721,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1ebbe58080e434f4fb4ac84145cf3f41
+      internalID: 21300264
       vertices: []
       indices: 
       edges: []
@@ -1092,7 +1731,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 76
-        y: 26
+        y: 141
         width: 8
         height: 7
       alignment: 0
@@ -1103,6 +1742,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 489b86c0682252a4e82c5623ec017fc9
+      internalID: 21300266
       vertices: []
       indices: 
       edges: []
@@ -1112,7 +1752,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 18
+        y: 133
         width: 8
         height: 7
       alignment: 0
@@ -1123,6 +1763,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 70a328c3663845c44ab9c3a05df52070
+      internalID: 21300268
       vertices: []
       indices: 
       edges: []
@@ -1132,7 +1773,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 9
-        y: 18
+        y: 133
         width: 8
         height: 7
       alignment: 0
@@ -1143,6 +1784,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3f0df5f4484b4fd489753f2f0faf2d05
+      internalID: 21300270
       vertices: []
       indices: 
       edges: []
@@ -1152,7 +1794,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 18
-        y: 18
+        y: 133
         width: 8
         height: 7
       alignment: 0
@@ -1163,6 +1805,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c4d165610b3ed82479bc2b0bc1906fca
+      internalID: 21300272
       vertices: []
       indices: 
       edges: []
@@ -1172,7 +1815,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 27
-        y: 18
+        y: 133
         width: 8
         height: 7
       alignment: 0
@@ -1183,6 +1826,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4e0ebf1a2f92462458b02268aafa030b
+      internalID: 21300274
       vertices: []
       indices: 
       edges: []
@@ -1192,7 +1836,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 36
-        y: 18
+        y: 133
         width: 8
         height: 7
       alignment: 0
@@ -1203,6 +1847,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: edadb6287e31f6c4cab607f6ee470023
+      internalID: 21300276
       vertices: []
       indices: 
       edges: []
@@ -1212,7 +1857,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 45
-        y: 18
+        y: 133
         width: 8
         height: 7
       alignment: 0
@@ -1223,6 +1868,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 144e010f88b2a2c49a9130d7b7d6a349
+      internalID: 21300278
       vertices: []
       indices: 
       edges: []
@@ -1232,7 +1878,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 54
-        y: 18
+        y: 133
         width: 8
         height: 7
       alignment: 0
@@ -1243,6 +1889,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 05cb27fc7ee040a44ac3b224f7c96f49
+      internalID: 21300280
       vertices: []
       indices: 
       edges: []
@@ -1252,7 +1899,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 63
-        y: 18
+        y: 133
         width: 8
         height: 7
       alignment: 0
@@ -1263,6 +1910,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: edd1feddfce94ff489164bcd0589ec69
+      internalID: 21300282
       vertices: []
       indices: 
       edges: []
@@ -1272,7 +1920,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 72
-        y: 18
+        y: 133
         width: 4
         height: 7
       alignment: 0
@@ -1283,6 +1931,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 99a3dd1673c1d974c9c6d6f17272a0de
+      internalID: 21300284
       vertices: []
       indices: 
       edges: []
@@ -1292,7 +1941,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 77
-        y: 18
+        y: 133
         width: 8
         height: 7
       alignment: 0
@@ -1303,6 +1952,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 41b6c07ae2cc9fa4eb5fc2eaa94b3cb1
+      internalID: 21300286
       vertices: []
       indices: 
       edges: []
@@ -1312,7 +1962,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 86
-        y: 18
+        y: 133
         width: 8
         height: 7
       alignment: 0
@@ -1323,6 +1973,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 25ce47348fd8c47488c2df60e1ae462f
+      internalID: 21300288
       vertices: []
       indices: 
       edges: []
@@ -1332,7 +1983,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 95
-        y: 18
+        y: 133
         width: 8
         height: 7
       alignment: 0
@@ -1343,6 +1994,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8ed251e6880101f46bfd1e8ea7002dc6
+      internalID: 21300290
       vertices: []
       indices: 
       edges: []
@@ -1352,7 +2004,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 104
-        y: 18
+        y: 133
         width: 9
         height: 7
       alignment: 0
@@ -1363,6 +2015,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 96441980ad9b84240a39fe8183456f7b
+      internalID: 21300292
       vertices: []
       indices: 
       edges: []
@@ -1372,7 +2025,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 114
-        y: 18
+        y: 133
         width: 8
         height: 7
       alignment: 0
@@ -1383,6 +2036,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4e571c5391bbeaa4b9ae5d81d89bb643
+      internalID: 21300294
       vertices: []
       indices: 
       edges: []
@@ -1392,7 +2046,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 123
-        y: 18
+        y: 133
         width: 8
         height: 7
       alignment: 0
@@ -1403,6 +2057,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e4a7e869e065ca747a515fe7c3ea51f6
+      internalID: 21300296
       vertices: []
       indices: 
       edges: []
@@ -1412,7 +2067,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 132
-        y: 18
+        y: 133
         width: 8
         height: 7
       alignment: 0
@@ -1423,6 +2078,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c52078621a50fa74e8251c6d3a15c9d5
+      internalID: 21300298
       vertices: []
       indices: 
       edges: []
@@ -1432,7 +2088,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 141
-        y: 17
+        y: 132
         width: 8
         height: 8
       alignment: 0
@@ -1443,6 +2099,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: bb3dfd9d03be4104c9468cf5e34c0f9b
+      internalID: 21300300
       vertices: []
       indices: 
       edges: []
@@ -1452,7 +2109,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 150
-        y: 18
+        y: 133
         width: 8
         height: 7
       alignment: 0
@@ -1463,6 +2120,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 620cb0974fc3df74680f445f4e02483d
+      internalID: 21300302
       vertices: []
       indices: 
       edges: []
@@ -1472,7 +2130,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 159
-        y: 18
+        y: 133
         width: 7
         height: 7
       alignment: 0
@@ -1483,6 +2141,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: acc31b9e95c9b72429bad1278c5691bc
+      internalID: 21300304
       vertices: []
       indices: 
       edges: []
@@ -1492,7 +2151,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 9
+        y: 124
         width: 8
         height: 7
       alignment: 0
@@ -1503,6 +2162,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 5a3a6b7554f18d844a3f79dca0f16e7b
+      internalID: 21300306
       vertices: []
       indices: 
       edges: []
@@ -1512,7 +2172,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 9
-        y: 9
+        y: 124
         width: 8
         height: 7
       alignment: 0
@@ -1523,6 +2183,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f90c76a607682d74a9584312a16a61fb
+      internalID: 21300308
       vertices: []
       indices: 
       edges: []
@@ -1532,7 +2193,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 18
-        y: 9
+        y: 124
         width: 7
         height: 7
       alignment: 0
@@ -1543,6 +2204,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: dfe7f43fb910f5a4d8a364fc66cec1dd
+      internalID: 21300310
       vertices: []
       indices: 
       edges: []
@@ -1552,7 +2214,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 26
-        y: 9
+        y: 124
         width: 9
         height: 7
       alignment: 0
@@ -1563,6 +2225,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3aebe7c27becc1b479509086592ece72
+      internalID: 21300312
       vertices: []
       indices: 
       edges: []
@@ -1572,7 +2235,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 36
-        y: 9
+        y: 124
         width: 9
         height: 7
       alignment: 0
@@ -1583,6 +2246,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1b512c6b083839f49aec5dde3e160c5b
+      internalID: 21300314
       vertices: []
       indices: 
       edges: []
@@ -1592,7 +2256,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 46
-        y: 9
+        y: 124
         width: 8
         height: 7
       alignment: 0
@@ -1603,6 +2267,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b47d7d3a216ba3d4aab24f61fcf3e39d
+      internalID: 21300316
       vertices: []
       indices: 
       edges: []
@@ -1612,7 +2277,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 55
-        y: 9
+        y: 124
         width: 7
         height: 7
       alignment: 0
@@ -1623,6 +2288,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1d494cf3991bb254b8200a2bcb6261d3
+      internalID: 21300318
       vertices: []
       indices: 
       edges: []
@@ -1632,9 +2298,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 63
-        y: 12
+        y: 124
         width: 4
-        height: 4
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1643,6 +2309,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 97b89a89c51ee5044a25be3c8ee37a34
+      internalID: 21300320
       vertices: []
       indices: 
       edges: []
@@ -1652,7 +2319,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 78
-        y: 9
+        y: 124
         width: 4
         height: 7
       alignment: 0
@@ -1663,6 +2330,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c21f77f3ed1616e47ba4e8a1ec9b9e16
+      internalID: 21300322
       vertices: []
       indices: 
       edges: []
@@ -1672,7 +2340,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 83
-        y: 9
+        y: 124
         width: 4
         height: 7
       alignment: 0
@@ -1683,6 +2351,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 98a6695674284bf429a5f7f160d2571e
+      internalID: 21300324
       vertices: []
       indices: 
       edges: []
@@ -1692,7 +2361,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 93
-        y: 9
+        y: 124
         width: 4
         height: 7
       alignment: 0
@@ -1703,6 +2372,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: cb2161945667c6e4cb266576f2761c42
+      internalID: 21300326
       vertices: []
       indices: 
       edges: []
@@ -1712,7 +2382,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 98
-        y: 9
+        y: 124
         width: 5
         height: 7
       alignment: 0
@@ -1723,6 +2393,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: dab40e4bb77d99e42b51eab475f22090
+      internalID: 21300328
       vertices: []
       indices: 
       edges: []
@@ -1732,7 +2403,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 104
-        y: 9
+        y: 124
         width: 5
         height: 7
       alignment: 0
@@ -1743,6 +2414,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7bea92812aa78334fa8cbd0666885be9
+      internalID: 21300330
       vertices: []
       indices: 
       edges: []
@@ -1752,7 +2424,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 110
-        y: 11
+        y: 126
         width: 5
         height: 5
       alignment: 0
@@ -1763,6 +2435,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e1996e59a3856c640bfe7aa96ab05bb1
+      internalID: 21300332
       vertices: []
       indices: 
       edges: []
@@ -1772,7 +2445,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 116
-        y: 11
+        y: 126
         width: 5
         height: 5
       alignment: 0
@@ -1783,6 +2456,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0978117080fdbfb42847e72aea4262f3
+      internalID: 21300334
       vertices: []
       indices: 
       edges: []
@@ -1792,7 +2466,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 122
-        y: 9
+        y: 124
         width: 5
         height: 7
       alignment: 0
@@ -1803,6 +2477,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 794f2db6ef9e4b444ba3b8b5ecda7286
+      internalID: 21300336
       vertices: []
       indices: 
       edges: []
@@ -1812,7 +2487,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 9
+        y: 124
         width: 5
         height: 7
       alignment: 0
@@ -1823,6 +2498,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2b6811178d5f0bc45b7235f452e87ee7
+      internalID: 21300338
       vertices: []
       indices: 
       edges: []
@@ -1832,9 +2508,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 134
-        y: 12
+        y: 124
         width: 7
-        height: 4
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1843,6 +2519,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f531963b487100a43993c5db945a7797
+      internalID: 21300340
       vertices: []
       indices: 
       edges: []
@@ -1852,7 +2529,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 142
-        y: 9
+        y: 124
         width: 7
         height: 7
       alignment: 0
@@ -1863,6 +2540,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 13c993cb3ddcfed49b76f1852ac16f76
+      internalID: 21300342
       vertices: []
       indices: 
       edges: []
@@ -1872,7 +2550,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 150
-        y: 8
+        y: 123
         width: 7
         height: 8
       alignment: 0
@@ -1883,6 +2561,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 098a79e75ddb4d04fa1235ddb7ed3589
+      internalID: 21300344
       vertices: []
       indices: 
       edges: []
@@ -1892,7 +2571,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 158
-        y: 9
+        y: 124
         width: 9
         height: 7
       alignment: 0
@@ -1903,6 +2582,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3a849b5b44cc2414d8498bb9de9b2795
+      internalID: 21300346
       vertices: []
       indices: 
       edges: []
@@ -1912,9 +2592,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 90
-        y: 3
+        y: 116
         width: 6
-        height: 3
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1923,6 +2603,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 711f8cdf1af1be84eb070d603628311d
+      internalID: 21300348
       vertices: []
       indices: 
       edges: []
@@ -1932,7 +2613,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 57
-        y: 0
+        y: 115
         width: 9
         height: 8
       alignment: 0
@@ -1943,6 +2624,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ee523190e0747d344ba4013c71c38763
+      internalID: 21300350
       vertices: []
       indices: 
       edges: []
@@ -1951,8 +2633,8 @@ TextureImporter:
       name: HUD_Font_84
       rect:
         serializedVersion: 2
-        x: 16
-        y: 1
+        x: 0
+        y: 116
         width: 7
         height: 7
       alignment: 0
@@ -1963,6 +2645,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 87325503dea0446419e911ba53965c9d
+      internalID: 21300352
       vertices: []
       indices: 
       edges: []
@@ -1971,8 +2654,8 @@ TextureImporter:
       name: HUD_Font_85
       rect:
         serializedVersion: 2
-        x: 24
-        y: 1
+        x: 8
+        y: 116
         width: 7
         height: 7
       alignment: 0
@@ -1983,6 +2666,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 84693390dc967014cb4d1ffe97690783
+      internalID: 21300354
       vertices: []
       indices: 
       edges: []
@@ -1991,8 +2675,8 @@ TextureImporter:
       name: HUD_Font_86
       rect:
         serializedVersion: 2
-        x: 32
-        y: 1
+        x: 16
+        y: 116
         width: 7
         height: 7
       alignment: 0
@@ -2003,6 +2687,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8ea924330d59698468f22de62765f13c
+      internalID: 21300356
       vertices: []
       indices: 
       edges: []
@@ -2012,9 +2697,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 40
-        y: 3
+        y: 116
         width: 7
-        height: 5
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2023,6 +2708,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 85f2f3427780e36469e558e448fb417c
+      internalID: 21300358
       vertices: []
       indices: 
       edges: []
@@ -2032,7 +2718,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 1
+        y: 116
         width: 8
         height: 7
       alignment: 0
@@ -2043,6 +2729,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 70c3566b138817a4898764cad96da932
+      internalID: 21300360
       vertices: []
       indices: 
       edges: []
@@ -2052,9 +2739,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 67
-        y: 1
+        y: 116
         width: 8
-        height: 3
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2063,6 +2750,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d0ed0b4fcb09e7b4e9036f3bb5f672a0
+      internalID: 21300362
       vertices: []
       indices: 
       edges: []
@@ -2072,7 +2760,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 76
-        y: 1
+        y: 116
         width: 8
         height: 7
       alignment: 0
@@ -2083,6 +2771,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: dd76a1d5cbe321445864cc73ea091e21
+      internalID: 21300364
       vertices: []
       indices: 
       edges: []
@@ -2092,7 +2781,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 85
-        y: 1
+        y: 116
         width: 4
         height: 7
       alignment: 0
@@ -2103,6 +2792,1603 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1cc5b6bd4eb008146b553d96ffd366d9
+      internalID: 21300366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_92
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0aa8e59f8215184383ab2ed6537dc22
+      internalID: -3346383069682163892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_93
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 99
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 171981e0426355e46880e9033e542be2
+      internalID: 3383827571807162794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_94
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 99
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b86c00c20aae38468cf4985481964d6
+      internalID: 5079401084367803412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_95
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 99
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 887f85e4d8ac4d741b9425f29b0d67b6
+      internalID: 3890262294003320387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_96
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 99
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82079553462e4bd4a80cdab925ec6175
+      internalID: 874652252717885082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_97
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 99
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0a5b8f945f374f43bd5fe70bc6ff988
+      internalID: 4922144138765836862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_98
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 100
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6edec79420b0fbc4e9473a2e6ba8d610
+      internalID: -5988444642175284703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_99
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 100
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b4b61f998a134249be2adeb072c5bc1
+      internalID: 2035143970547119343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_100
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 100
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed8e414b72f50f46b7933b425d7f4b7
+      internalID: -7740727397219799976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_101
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 100
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cad2aaf53e91e24b8f93a26d5d426b5
+      internalID: -8210891727182768850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_102
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 83
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02dee76ad46acb141918542592d355d3
+      internalID: -6591474695924753819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_103
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 83
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90cf67d514cbc8d4c8e04bacd5a94e7c
+      internalID: -7311823196189395145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_104
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 83
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb0833e5453384145864d69d4da71ec6
+      internalID: 5004119518207072409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_105
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 83
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14a281930e58cc74ebc869a13970b285
+      internalID: -3361986213670713844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_106
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 83
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b88797aa0e25d0a48ad79ec954d323cc
+      internalID: -603028725198379024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_107
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 83
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8588431f446960d47898de671888f709
+      internalID: 4343902987010978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_108
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 82
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43fcd018432eae640bb492040a77824b
+      internalID: 5949782985018909273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_109
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 82
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e109b2ecb87898348b409783df9f48e8
+      internalID: -6180534436988119521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_110
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 82
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31be97a1cadd97c4e8f3013212f1fc80
+      internalID: 8475744248186618802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_111
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 65
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c5b555515308a5439de5e352984de92
+      internalID: 562272360043655984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_112
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 65
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a5dd8464d33cc747806dc75ebd5309b
+      internalID: -7139153480042957431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_113
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 65
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36833c1def3a17740b4d6c3daebe82c2
+      internalID: 1135579621249270868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_114
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 65
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 612fb662362a3a24782f34ecafd62459
+      internalID: -2382087788831150835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_115
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 65
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f0cb40050272541a9fcac9315fb2b6
+      internalID: 8405964459686221222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_116
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 65
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 557bd18a1ec02104cbb9d3b72f4057c1
+      internalID: -2382981060226567881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_117
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 65
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17e112f5b6afe9d4b99d14d2165960b9
+      internalID: -1460891627545920267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_118
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 52
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14a490afec9057e4b8529869cf322f0d
+      internalID: -9172192874251975515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_119
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 52
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16f5d07300a8b57479409895e3142915
+      internalID: -5081121436305718567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_120
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 52
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8b7ee86f9721734b82c1663210ac487
+      internalID: 737984957016909124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_121
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 52
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8027c89a2934544698e970810f44aa7
+      internalID: -1665383944622227974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_122
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 52
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16289fad13c515f408f345f2ffa21501
+      internalID: -6047749013991967228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_123
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 52
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 817359d31040a754e8ac228bcbc92d81
+      internalID: 1263420165796336216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_124
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 52
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22dd67fa82a5cbb4f9a3796755f6b90d
+      internalID: -1395674400258133513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_125
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 52
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f19e3facb44757449693d2b6504786e
+      internalID: 2049516685014920043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_126
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 52
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f745f587584c694498ff247ccf8d6ddb
+      internalID: -4160374923218265428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_127
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 52
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 142d0349d19753748b35d076249256ee
+      internalID: -8580734774386471425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_128
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 52
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b1d774a2f17514eb2c4cbc2ad673f7
+      internalID: 2912870947297482994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_129
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 52
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bd71e97e5d8b6240a73b344e7123cd5
+      internalID: -4322792710904791692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_130
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 39
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eb22e55dce74e047ae4ef0e6175484d
+      internalID: 2584270757652732618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_131
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 39
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f0d72ec976b93342b369d4d6321fb2e
+      internalID: -7983333678067928035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_132
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 39
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f82ff345972e048a2d5c49a3f29a87
+      internalID: -5049789047236574767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_133
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 39
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c5a3052281d1254691d0bda36805ea3
+      internalID: 8166407022429270668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_134
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 39
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7bfe0d6e38bbdf4a95a3add5041fad2
+      internalID: -7508310446365825295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_135
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 39
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9410e534798b6344d999c076e6f0f3fc
+      internalID: -2105073296193652690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_136
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 39
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19233e1a39ed87847bd8ebe5c738fe13
+      internalID: -4066406921332310526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_137
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 39
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03ab13691d27e3246bc338f66182bed8
+      internalID: 1183192963052252170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_138
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 39
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a997d623e2f0e154a86fe33b62c1045d
+      internalID: 8150527165924884712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_139
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 39
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17acbd238d802034cbdaa9a2158e2980
+      internalID: 415030358335495918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_140
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 26
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3311c1fd916b0b048978f3fee1bed559
+      internalID: 109448228443929295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_141
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 26
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 157a30d08f83c5b428f52ed3970afdd3
+      internalID: 3877858961865240290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_142
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 26
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9a33d87c24d99340902d28183e8c5e5
+      internalID: 371688785746434235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_143
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 26
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a98aab6124b6e1647be0c3fb4c444a33
+      internalID: -5341384072002454655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_144
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 13
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40815c28df6352743a972831c20ec7b0
+      internalID: 8919957391658954346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_145
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 13
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2657fbcdda811f841b4158951e87e2cc
+      internalID: 3597738793453491010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_146
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 13
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43db5afec93b6164a926190ade158d87
+      internalID: -3822133805889368429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_147
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 13
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b197e9dfbb08dfd46b26b793f2921c99
+      internalID: 176240134280562022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_148
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 18
+        width: 6
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e473fc3cfd78c8c48be448209a94b559
+      internalID: -2164577064931454064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_149
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 16
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cca1b9f73b619a49ad951354e058a93
+      internalID: 8616593396294883705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_150
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 13
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f58610970f9fd4aaebbe9ee2b98ff0
+      internalID: 8594369840209334337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_151
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 17
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ffe999ea45a9d4bb483ee2a98fb0d1
+      internalID: 5642540144427252980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_152
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 15
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f53491236a082847bf96edecd40712a
+      internalID: 4725305010781945291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_153
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 13
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ac2b482fb225d49a8fbd665fe254d1
+      internalID: -9172986590493888415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_154
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 13
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71098df25651d3349945953995442146
+      internalID: -4839550137901688813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_155
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 13
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8b92e50a6d77f48ba02e5930273e1e
+      internalID: -6824488711493951359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_156
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 13
+        width: 5
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73da7e5c4c561a040957c614c4dc71cf
+      internalID: 1521830165536738912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_157
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 15
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc101e98a9778254ca9a426282d0e89f
+      internalID: -2711535533046742108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_158
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 14
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af48bcd3ef80b104a9f52f81dee7b787
+      internalID: 8594410610050791987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_159
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 14
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362378c4b59cb2f4d9483d291dd1073f
+      internalID: 4539956340241204139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_160
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 14
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f5f1d91199624a49a1577ba8f615c73
+      internalID: -7856958854506850423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_161
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 14
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6e2012b7d16e2408f4fd469c495e81
+      internalID: -6711616281056790055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_162
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84681a9695d0539429a476989a4db5c8
+      internalID: -7759474270760691168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_163
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 852f84b02a470174b989c1858abe4f94
+      internalID: -8689545764686114082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_164
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9769c81992943e9438cea958230461ed
+      internalID: -8457807963470257759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_165
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 116
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05479022812017049aa77d6c32540a77
+      internalID: 2676794226290106134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_166
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 116
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0c4734aff7cc743b0ed347040c0c06
+      internalID: 5944949089754652285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Font_167
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 20
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2dd58b6b707fdb499feb8a33817c2a4
+      internalID: -8340233265482770970
       vertices: []
       indices: 
       edges: []
@@ -2111,10 +4397,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 9b2de8601063aa046ad42dc164cf4561
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

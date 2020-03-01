@@ -9,7 +9,7 @@ public class ButtonTextureChanger : MonoBehaviour
     public Material onMaterial;
     public Material offMaterial;
 
-     MeshRenderer r;
+    MeshRenderer r;
     InteractController button;
 
     bool previousState;
@@ -32,7 +32,6 @@ public class ButtonTextureChanger : MonoBehaviour
     void UpdateButtonTexture(){
         if(button.isOn)
             ChangeMaterials(indexToChange, onMaterial);
-        
         else
             ChangeMaterials(indexToChange, offMaterial);
     }

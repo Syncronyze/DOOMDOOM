@@ -53,26 +53,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Animated3DSpriteController.cs" />
      <Compile Include="Assets\Scripts\BillboardSprite.cs" />
      <Compile Include="Assets\Scripts\BulletController.cs" />
      <Compile Include="Assets\Scripts\ButtonTextureChanger.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\DoorController.cs" />
+     <Compile Include="Assets\Scripts\EnemyAIController.cs" />
+     <Compile Include="Assets\Scripts\ExplosionDmgController.cs" />
+     <Compile Include="Assets\Scripts\FlickerObjectController.cs" />
      <Compile Include="Assets\Scripts\FogController.cs" />
      <Compile Include="Assets\Scripts\GameUIController.cs" />
      <Compile Include="Assets\Scripts\GlobalPlayerVariables.cs" />
      <Compile Include="Assets\Scripts\Gun.cs" />
      <Compile Include="Assets\Scripts\GunController.cs" />
-     <Compile Include="Assets\Scripts\GunInventoryController.cs" />
      <Compile Include="Assets\Scripts\HealthController.cs" />
      <Compile Include="Assets\Scripts\InteractController.cs" />
+     <Compile Include="Assets\Scripts\MovementController.cs" />
      <Compile Include="Assets\Scripts\ParticleController.cs" />
      <Compile Include="Assets\Scripts\PickupController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PlayerInventoryController.cs" />
      <Compile Include="Assets\Scripts\PlayerMovementController.cs" />
      <Compile Include="Assets\Scripts\Pseudo3DSpriteController.cs" />
      <Compile Include="Assets\Scripts\ScrollTexture.cs" />
+     <Compile Include="Assets\Scripts\UIColorOverlayController.cs" />
      <Compile Include="Assets\Scripts\UIFontController.cs" />
+     <Compile Include="Assets\Scripts\UIInfoSectionController.cs" />
      <Compile Include="Assets\Scripts\UISpriteLoader.cs" />
      <Compile Include="Assets\Scripts\UIViewSpriteController.cs" />
      <Compile Include="Assets\Scripts\UIWeaponController.cs" />

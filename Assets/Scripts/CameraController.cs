@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour {
 	public float topAngleView = 89;
 	public float bottomAngleView = -89;
 
-	PlayerMovementController playerController;
+	MovementController playerController;
 	Texture2D xhair;
     Rect xhairRect;
 
@@ -37,8 +37,7 @@ public class CameraController : MonoBehaviour {
 	
 
 	void Awake(){
-		Cursor.lockState = CursorLockMode.Locked;
-		playerController = GetComponent<PlayerMovementController>();
+		playerController = GetComponent<MovementController>();
 		mainCamera = GameObject.FindGameObjectWithTag("MainCamera").transform;
 		cameraOffset = mainCamera.localPosition.y; // before we begin, we want to maintain the camera's Y offeset
 		movingCamHeightFrom = 0;
@@ -56,14 +55,13 @@ public class CameraController : MonoBehaviour {
 
 	void Update(){
 		MouseInputMovement();
-		RotateCamera();
 		if(headBobSpeed > 0)
 			HeadBob ();	
 
 	}
 
 	void FixedUpdate(){
-		//RotateCamera();
+		RotateCamera();
 	}
 
 	/*
@@ -152,10 +150,11 @@ public class CameraController : MonoBehaviour {
 		if(xhair != null)
 			GUI.DrawTexture(xhairRect, xhair, ScaleMode.StretchToFill, true, 0, new Color(0, 1, 0, 0.75f), 6f, 6f);
 
-		GUI.Label(new Rect(10, 550, 400, 80), 
-		"timer: " + System.Math.Round(bobTimer, 2) +
-		"\nmoving to " + movingCamHeightTo + 
-		"\nmoving from " + movingCamHeightFrom);
-	}
+		// GUI.Label(new Rect(10, 550, 400, 80), 
+		// "timer: " + System.Math.Round(bobTimer, 2) +
+		// "\nmoving to " + movingCamHeightTo + 
+		// "\nmoving from " + movingCamHeightFrom);
 
+
+	}
 }

@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - ButtonTextureChanger
     - CameraController
     - DoorController
+    - EnemyAIController
     - FogController
     - GameUIController
     - GunController
@@ -56,8 +57,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
     - Class: 64
@@ -65,6 +64,8 @@ ScriptsOnlyBuild:
     - Class: 65
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -119,9 +120,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12236}
     - Class: 114
-      Script: {instanceID: 12258}
+      Script: {instanceID: 12248}
     - Class: 114
-      Script: {instanceID: 12264}
+      Script: {instanceID: 12260}
+    - Class: 114
+      Script: {instanceID: 12266}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 134
@@ -139,6 +142,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -299,7 +304,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 5bc41185c8ae453ba3dd7f7c408fa209
+      Hash: 8c7bd27e99fca635c5aa29f8ffa1f689
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GunController
@@ -365,7 +370,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 7b00f9eb8839d962cd29f91ee0a7e80f
+      Hash: 97b42589ddfbf48609a7ef798226e4db
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Pseudo3DSpriteController
@@ -605,7 +610,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 79321b8ee4d41925a37585d2f5281370
+      Hash: ce0bf36a6e3be7ddaf980ca53be3d85f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovementController
@@ -717,6 +722,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Slider
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyAIController
   - hash:
       serializedVersion: 2
       Hash: e8187fa39af9feb6544b6245155fb2b6
