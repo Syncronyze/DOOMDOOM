@@ -13,17 +13,23 @@ public class MovementController : MonoBehaviour
 	public float isGroundedCheckDist = 3.0f;
     public float speedMultiplier = 1f;
 
-    //float T_max = 40f;
-    float T_max = 120f;
-    float V_max = 16.5f;
+    public float totalAirTime{ get; private set; }
+
+    //use t = 10, v = 32 for enemies (near 0 acceleration), t = 120, v = 16.666f for players
+    // they both top out at 16u/s, only friction is changed.
+    public float T_max = 120f;
+    public float V_max = 16.666f;
     float friction;
     float acceleration;
+    float airTime;
 
 	LayerMask ignoreLayer;
     CharacterController cc;
 
     Vector3 velocity;
     Vector3 input;
+
+    bool fly;
     //float velocity;
 
     void Start(){
@@ -31,6 +37,12 @@ public class MovementController : MonoBehaviour
         ignoreLayer = 1 << gameObject.layer;
         friction = 5 / T_max;
         acceleration = friction * V_max;
+        fly = false;
+    }
+
+    public void Fly(bool _fly){
+        fly = _fly;
+        velocity.y = 0;
     }
 
     void FixedUpdate(){
@@ -44,6 +56,10 @@ public class MovementController : MonoBehaviour
 
     public void SetSpeedMultiplier(float multiplier){
         speedMultiplier = multiplier;
+    }
+
+    public void ResetAirTime(){
+        totalAirTime = 0;
     }
 
     public bool isGrounded(){
@@ -62,16 +78,26 @@ public class MovementController : MonoBehaviour
 	}
 
     public float GetCurrentSpeedPercentage(){
-        return Mathf.Clamp(GetCurrentHorzSpeed() / 16.0f, 0, 1);
+        return Mathf.Clamp(GetCurrentHorzSpeed() / 32.0f, 0, 1);
+    }
+
+    public IEnumerator DisableOnGrounded(){
+        while(!isGrounded()){
+            yield return new WaitForSeconds(0.25f);
+        }
+        yield break;
     }
     
     void CalculateMovement(){
         //float distance = 0;
         //Vector3 input = GetInput();
-        if(cc.isGrounded){
+        if(cc.isGrounded || fly){
             //velocity += GetInput() * acceleration * Time.deltaTime * speedMultiplier;
             //velocity -= friction * Time.deltaTime * velocity;
-            
+            if(airTime > 0)
+                totalAirTime = airTime;
+
+            airTime = 0;
             velocity += InputVector() * (acceleration * Time.deltaTime) * speedMultiplier;
             velocity -= (velocity * friction);
             //distance = velocity * Time.deltaTime + (0.5f * acceleration * Mathf.Pow(Time.deltaTime, 2));
@@ -79,16 +105,21 @@ public class MovementController : MonoBehaviour
             //velocity += (acceleration * GetInput()) - (friction * velocity);
             //velocity -= friction * velocity;
         }
+        else{
+            airTime += Time.deltaTime;
+        }
 
-        velocity.y -= gravity * Time.deltaTime;
-        velocity.y = Mathf.Clamp(velocity.y, -maxFallSpeed, 0);
+        if(!fly){
+            velocity.y -= gravity * Time.deltaTime;
+            velocity.y = Mathf.Clamp(velocity.y, -maxFallSpeed, 0);
+        }
+        
         cc.Move(velocity);
     }
 
     Vector3 InputVector(){
         return transform.TransformDirection(input).normalized;
     }
-
     
     bool isGroundedRaycast(){
 		RaycastHit rcHit;

@@ -35,7 +35,8 @@ public class GameUIController : MonoBehaviour
             return null;
         }
         
-        foreach(UIFontController fc in fontControllers){
+        for (int i = 0; i < fontControllers.Count; i++){
+            UIFontController fc = fontControllers[i];
             if(fc.name == UIElementName)
                 return fc;
         }

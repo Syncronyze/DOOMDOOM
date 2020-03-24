@@ -9,22 +9,22 @@ public class UIInfoSectionController : MonoBehaviour
     //float testTimer;
 
     List<Message> messageQueue;
-    List<UIFontController> controllers;
+    UIFontController[] controllers;
 
     bool syncMessages;
 
     void Start(){
         messageQueue = new List<Message>();
-        controllers = new List<UIFontController>(transform.GetComponentsInChildren<UIFontController>());
+        controllers = transform.GetComponentsInChildren<UIFontController>();
         syncMessages = true;
 
-        if(controllers.Count == 0){
+        if(controllers.Length == 0){
             Debug.LogError("UI information messages require children with attached UIFontControllers.");
         }
     }
 
     void Update(){
-        if(controllers.Count == 0)
+        if(controllers.Length == 0)
             return;
         
         MessageExpiry();
@@ -71,7 +71,7 @@ public class UIInfoSectionController : MonoBehaviour
         if(!syncMessages)
             return;
 
-        for(int i = 0; i < controllers.Count; i++){
+        for(int i = 0; i < controllers.Length; i++){
             if(i < messageQueue.Count){
                 // setting the expiry as it comes up on screen
                 if(messageQueue[i].expiry == -1)

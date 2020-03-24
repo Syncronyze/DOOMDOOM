@@ -1,0 +1,75 @@
+newmtl nukage1
+map_Kd -o 0 0 -s 0.15 0.15 nukage1.png
+Kd 1.0 1.0 1.0
+d 1.0
+
+newmtl floor5_2
+map_Kd -o 0.5 0.55 -s 0.33 0.26666 floor5_2.png
+Kd 1 1 1
+d 1
+
+newmtl nukedge
+map_Kd -o 0 0 -s 1 1 nukedge.png
+Kd 1 1 1
+d 1
+
+newmtl support2
+map_Kd -o 0.9 0 -s 0.75 0.33 support2.png
+Kd 1 1 1
+d 1
+
+newmtl ceil3_5
+map_Kd -o 0.26 0.82 -s 0.25 0.2 ceil3_5.png
+Kd 1 1 1
+d 1
+
+newmtl floor4_8
+map_Kd -o 0.5 0.7 -s 0.33 0.26666 floor4_8.png
+Kd 1 1 1
+d 1
+
+newmtl wall62_2
+map_Kd -o 0 -0.1 -s 0.35 0.15 wall62_2.png
+Kd 1 1 1
+d 1
+
+newmtl floor6_2
+map_Kd -o 0 0 -s 0.5 0.5 floor6_2.png
+Kd 1 1 1
+d 1
+
+newmtl flat20
+map_Kd -o 0 0 -s 0.25 0.25 flat20.png
+Kd 1 1 1
+d 1
+
+newmtl ttall1_2
+map_Kd -o 0 -0.49 -s 2 0.1 ttall1_2.png
+Kd 1 1 1
+d 1
+
+newmtl tlite6_6
+map_Kd -o 0 0 -s 0.275 0.275 tlite6_6.png
+Kd 1 1 1
+d 1
+
+newmtl sw12_full
+map_Kd -o 1.08 -0.36 -s 0.15 0.12 sw12full.png
+Kd 1 1 1
+d 1
+
+newmtl wall02_2
+map_Kd -o 0 0.54 -s 0.25 0.25 wall02_2.png
+Kd 1 1 1
+d 1
+
+newmtl wall02_full
+map_Kd -o 0 0.73 -s 0.25 0.145 wall02_full.png
+Kd 1 1 1
+d 1
+
+newmtl sw11_full
+map_Kd -o -0.66 0.27 -s 0.333 0.16 sw11_full.png
+Kd 1 1 1
+d 1
+

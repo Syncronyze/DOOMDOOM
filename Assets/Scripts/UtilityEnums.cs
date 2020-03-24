@@ -15,7 +15,7 @@ public enum HUDFont{
     LRa, LRb, LRc, LRd, LRe, LRf, LRg, LRh, LRi, LRj, LRk, LRl, LRm, LRn, LRo, LRp, LRq, LRr, LRs, LRt, LRu, LRv, LRw, LRx, LRy, LRz,
     LRQst, LRExc, LRParL, LRUndsc, LRunused1, LRPlus, LRParR, LREqu, LRunused2, LRFsl, LRBsl, LRDblq, LRQuo, LRCol, LRSCol, LRCarL, LRCarR, LRPnd, LRDol, LRAst, LRPow,
     
-    SRFsl, SRBsl, SRPrd,
+    SRFsl, SRBsl, LRPrd, LRCom, SRPrd,
     WhiteSp
 }
 

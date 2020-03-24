@@ -1,0 +1,45 @@
+newmtl floor5_2
+map_Kd -o 0.5 0.55 -s 0.33 0.26666 floor5_2.png
+Kd 1 1 1
+d 1
+
+newmtl wall62_2
+map_Kd -o 0 -0.1 -s 0.35 0.15 wall62_2.png
+Kd 1 1 1
+d 1
+
+newmtl ceil3_5
+map_Kd -o 0.26 0.82 -s 0.25 0.2 ceil3_5.png
+Kd 1 1 1
+d 1
+
+newmtl doortrak
+map_Kd -o 0.94 0 -s 1.875 0.15 doortrak.png
+Kd 1 1 1
+d 1
+
+newmtl wlitfull0
+map_Kd -o 0 0 -s 0.5 2.4 wlitfull0.png
+Kd 1.0 1.0 1.0
+d 1.0
+
+newmtl sw12_4
+map_Kd -o 0 0 -s 0.575 0.15 sw12_4.png
+Kd 1 1 1
+d 1
+
+newmtl door3_4
+map_Kd -o 0 0 -s 1 1 door3_4.png
+Kd 1 1 1
+d 1
+
+newmtl door3_5
+map_Kd -o 0 0 -s 1 1 door3_5.png
+Kd 1 1 1
+d 1
+
+newmtl tlite6_5
+map_Kd -o 0 0 -s 0.275 0.275 tlite6_5.png
+Kd 1 1 1
+d 1
+

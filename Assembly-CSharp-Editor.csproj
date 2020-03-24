@@ -53,7 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Editor\NormalsVisualizer.cs" />
+     <Compile Include="Assets\ShoeBoxTools\Editor\SBT_Font.cs" />
+     <Compile Include="Assets\ShoeBoxTools\Editor\SBT_SpriteSheet.cs" />
  <Reference Include="UnityEditor.TestRunner">
  <HintPath>D:/Users/Nick/Documents/DOOMDOOM/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>

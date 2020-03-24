@@ -30,12 +30,10 @@ public class Pseudo3DSpriteController : MonoBehaviour
     }
 
     void LateUpdate(){
-        if(sprites.Length != 5)
+        if(sprites.Length != 5 || pauseUpdate)
             return;
-        
-        if(!pauseUpdate)
-            UpdateFrame();
 
+        UpdateFrame();
         forceFrameUpdate = false;
     }
 

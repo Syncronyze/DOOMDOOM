@@ -5,13 +5,15 @@ using UnityEngine;
 public class BillboardSprite : MonoBehaviour
 {
     public bool lookOnYAxis;
-    Transform player;
+    public Transform target;
+    public bool findPlayer = true;
 
     void Start(){
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        if(findPlayer)
+            target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void LateUpdate(){
-        transform.LookAt(new Vector3(player.position.x, (lookOnYAxis ? player.position.y : transform.position.y), player.position.z));
+        transform.LookAt(new Vector3(target.position.x, (lookOnYAxis ? target.position.y : transform.position.y), target.position.z));
     }
 }

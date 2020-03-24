@@ -4,57 +4,70 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[ExecuteAlways]
 public class UIFontController : MonoBehaviour
 {
     public FontStyle _style;
     public bool fromRight;
     public GameObject imagePrefab;
-    UISpriteLoader spriteLoader;
+    public Material imageMaterial;
     public float letterSpacing;
     [Min(0.01f)]
     public float letterScaling = 3;
     public bool caseInsensitive = true;
     public string defaultValue;
-
-    //[HideInInspector]
-    //public string objectName;
-
+    [Range(0, 1)]
+    public float yAnchor = 0.5f;
     string value;
-    //private float lastUpdate;
-    bool update;
-    bool valid;
 
     void Start(){
-        spriteLoader = GameObject.FindGameObjectWithTag("SpriteLoader").GetComponent<UISpriteLoader>();
-        valid = spriteLoader.LoadSpriteSheet("HUD_Font", "Textures/HUD_Font");
         if(!string.IsNullOrEmpty(defaultValue))
             SetValue(defaultValue);
     }
 
-    void Update(){
-        //lastUpdate += Time.deltaTime;
-
-        // only updating if we need to
-        if(valid && update)
-            UpdateText();
+    // to display the text in the editor only
+    #if UNITY_EDITOR
+        string editorValue = "";
+        FontStyle editorStyle;
         
-    }
+        void Update(){
+            if(Application.isPlaying || (editorValue == defaultValue && editorStyle == _style) || UISpriteLoader.instance == null)
+                return;
+            
+            SyncImageAmountWithDelete(defaultValue.Length);
+            SetValue("");
+            SetValue(defaultValue);
+            ChangeFontStyle(_style);
+            editorStyle = _style;
+            editorValue = defaultValue;
+        }
 
-    /*
-     * Force refresh on the characters
-     */
-    public void Refresh(){
-        update = true;
-    }
+        void SyncImageAmountWithDelete(int characterLength){
+            if(transform.childCount > characterLength)
+                DeleteChildren(transform.childCount - characterLength);
+            else if(transform.childCount < characterLength)
+                CreateChildren(characterLength - transform.childCount);    
+        }
+
+        void DeleteChildren(int amountOfChildren){
+            for(int i = 0; i < transform.childCount; i++){
+                int childIndex = (transform.childCount - 1) - i;
+                DestroyImmediate(transform.GetChild(childIndex).gameObject);
+                amountOfChildren--;
+
+                if(amountOfChildren == 0)
+                    return;
+            }
+        }
+    #endif
 
     /*
      * Updates the onscreen text.
      */
     void UpdateText(){
-        update = false;
         //lastUpdate = 0;
+
         HUDFont[] characters = FromStringToEnum(value, _style);
-        
         if(characters == null)
             return;
         // if we're doing right to left, the characters must be reversed in order to not appear backwards
@@ -68,6 +81,7 @@ public class UIFontController : MonoBehaviour
         for(int i = 0; i < characters.Length; i++){
             Transform child = transform.GetChild(i);
             Image image = child.GetComponent<Image>();
+            image.material = imageMaterial;
             RectTransform rt = child.GetComponent<RectTransform>();
             Sprite sprite;
             HUDFont currentChar = characters[i];
@@ -77,12 +91,12 @@ public class UIFontController : MonoBehaviour
 
             // setting anchor on the right side if we're starting from the right (numbers and such)
             if(fromRight){
-                rt.anchorMin = new Vector2(1, 0.5f);
-                rt.anchorMax = new Vector2(1, 0.5f);
+                rt.anchorMin = new Vector2(1, yAnchor);
+                rt.anchorMax = new Vector2(1, yAnchor);
             }
             else{
-                rt.anchorMax = new Vector2(0, 0.5f);
-                rt.anchorMin = new Vector2(0, 0.5f);
+                rt.anchorMax = new Vector2(0, yAnchor);
+                rt.anchorMin = new Vector2(0, yAnchor);
             }
 
             // defined whitespace size by 0, as all HUDFonts have a 0 and is reasonble size to become a space.
@@ -97,7 +111,7 @@ public class UIFontController : MonoBehaviour
             }
 
             
-            sprite = spriteLoader.RetrieveSprite("HUD_Font", "HUD_Font_" + (int)currentChar);
+            sprite = UISpriteLoader.instance.RetrieveSprite("HUD_Font", "HUD_Font_" + (int)currentChar);
 
             if(sprite == null)
                 continue;
@@ -116,8 +130,7 @@ public class UIFontController : MonoBehaviour
 
             // shifting the start position of each letter by the last + the spacing
             startPos += rt.sizeDelta.x + letterSpacing;
-        }        
-        
+        }
     }
 
     /*
@@ -160,8 +173,6 @@ public class UIFontController : MonoBehaviour
             if(amountOfChildren == 0)
                 return;
         }
-        
-
     }
 
     /*
@@ -207,6 +218,7 @@ public class UIFontController : MonoBehaviour
             case '\'': return "Quo"; 
             case '.': return "Prd";
             case ';': return "SCol";
+            case ',': return "Com";
             case ':': return "Col";
             case '|': return "Pipe";
             case '[': return "SqbL";
@@ -237,14 +249,28 @@ public class UIFontController : MonoBehaviour
     public void SetValue(string valueToSet){
         if(valueToSet == value)
             return;
-        //print("Setting new value on " + gameObject.name + ", value is " + valueToSet);
+            
         value = valueToSet;
-        update = true;
+        UpdateText();
     }
 
     public void ChangeFontStyle(FontStyle newFontStyle){
+        if(newFontStyle == _style)
+            return;
+
         _style = newFontStyle;
-        Refresh();
+        UpdateText();
+    }
+
+    public void ChangeFontMaterial(Material _imageMaterial){
+        if(_imageMaterial == imageMaterial)
+            return;
+        
+        imageMaterial = _imageMaterial;
+    }
+
+    public void ForceRefreshText(){
+        UpdateText();
     }
 
     public string GetValue(){

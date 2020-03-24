@@ -45,14 +45,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ignoreLayer:
     serializedVersion: 2
-    m_Bits: 5888
+    m_Bits: 120320
   ammoType: 1
   bulletPrefab: {fileID: 7553818978209837499, guid: 839d648890c018147a861e59a955f27f,
     type: 3}
   bulletEndPrefab: {fileID: 1527790110431134770, guid: baa7ad5b9abde394ba2b99306936d901,
     type: 3}
+  bulletEndWithDamagePrefab: {fileID: 2036510534701271983, guid: 86c638583d8b1e0418a5fa3247c2cc6c,
+    type: 3}
   gunName: chaingun
   viewSpriteHeight: 40
+  viewSpriteFPS: 12
   fireRate: 525
   projectileDist: -1
   projectileSpeed: -1
@@ -62,4 +65,3 @@ MonoBehaviour:
   maxDamage: 15
   bulletSpread: 5.5
   spreadOnNthBullet: 2
-  bulletFiredOnFrame: 0

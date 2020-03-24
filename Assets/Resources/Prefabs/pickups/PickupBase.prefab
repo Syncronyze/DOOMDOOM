@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3347726200328796904}
   - component: {fileID: 3347726200328796907}
-  - component: {fileID: 3347726200328796906}
   - component: {fileID: 3347726200328796901}
   - component: {fileID: 3347726200328796905}
+  - component: {fileID: 7812213359681352239}
   m_Layer: 10
   m_Name: PickupBase
-  m_TagString: Untagged
+  m_TagString: Pickups
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,24 +45,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3347726200328796906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3347726200328796900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0447ba7a873297b4189654a52410c800, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickup: 0
-  pickupName: 
-  key: 
-  value: 0
+  m_Size: {x: 0.2, y: 0.5, z: 0.2}
+  m_Center: {x: 0, y: 0.175, z: 0}
 --- !u!114 &3347726200328796901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,6 +60,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookOnYAxis: 0
+  target: {fileID: 0}
+  findPlayer: 1
 --- !u!212 &3347726200328796905
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -125,3 +111,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7812213359681352239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3347726200328796900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa98cecf2425a04aab3f8809d6ad004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions:
+  - action: 
+    values: []
+    messageReceiver: {fileID: 0}
+    onTriggerEnter: 0
+    onTriggerExit: 0
+    onTriggerStay: 0
+    playerOnly: 0
+    NPCOnly: 0
+    onUseOnly: 0
+    onceOnly: 0
+    minActionInterval: 0
+    previousActionPerformedAt: 0
+  triggerOnceOnly: 1

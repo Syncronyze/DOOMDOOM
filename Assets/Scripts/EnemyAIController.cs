@@ -6,12 +6,14 @@ using UnityEditor;
 /* https://doomwiki.org/wiki/Monster_behavior */ 
 public class EnemyAIController : MonoBehaviour
 {
+    [Header("Navigation")]
     public float hearingDistance = 16;
     public float sightDistance = 64;
     [Range(0,180)]
     public float LOSAngle = 90;
     public float dectectionOffset = 1.2f;
-    public LayerMask obstacleLayers; // layers considered to be obstacles
+    public LayerMask LOSObstacles; // layers considered to be obstacles
+    public LayerMask walkableLayers;
     public float distanceToAvoidObstacles = 4f;
     public float directionChangeInterval = 1f;
     public float injuredStatePause = 0.1f;
@@ -20,18 +22,32 @@ public class EnemyAIController : MonoBehaviour
     public int debugRayAmount = 3;
     public float maxAggro = 10f;
     public float distanceToChargeIntoMelee;
+    [Header("Animation FPS")]
+    public float shootAnimationFPS = 2f;
+    public float meleeAnimationFPS = 2f;
+    public float walkAnimationFPS = 4f;
+    public float injuryAnimationFPS = 16f;
+    public float dethAnimationFPS = 8f;
+    public float gibAnimationFPS = 8f;
 
-    public EnemyState state{ get; private set; }
-    
-    Animated3DSpriteController animator;
-    HealthController healthController;
+    [Header("Weapons")]
     public GunController weapon;
     public GunController meleeWeapon;
+
+    public GameObject onDeathDrop;
+
+    public EnemyState state{ get; private set; }
+
+    Animated3DSpriteController animator;
+    HealthController healthController;
+
     HealthController player;
     HealthController target;
     MovementController movementController;
     Vector3 velocity;
     Direction direction;
+
+    Coroutine targetLoop;
     
     float currentAggro;
     float height;
@@ -43,14 +59,18 @@ public class EnemyAIController : MonoBehaviour
     float distanceToTarget;
     bool hasLOS;
 
+    const float RENABLE_MOVEMENT_CONTROLLER_DISTANCE = 16f; // when the player moves within sightDistance+this we reenable movementController updates in anticipation of needing it, so really far enemies are completely sleeping
+
     // this is because the player's camera is naturally higher than the entire body. 
     // for fairness, we offset it a bit so the player's camera will always see the monster as the player gets detected.
-    Vector3 detectionOffsetV3; 
+    Vector3 detectionOffsetV3;
 
     void Start(){
+        if(GlobalLevelVariables.instanceOf != null)
+            GlobalLevelVariables.instanceOf.AddEnemy();
         direction = new Direction();
         detectionOffsetV3 = new Vector3(0, dectectionOffset, 0);
-        player = GameObject.FindGameObjectWithTag("Player").transform.GetComponent<HealthController>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthController>();
         //weapon = transform.GetComponentInChildren<GunController>();
         movementController = transform.GetComponent<MovementController>();
         healthController = transform.GetComponent<HealthController>();
@@ -82,26 +102,23 @@ public class EnemyAIController : MonoBehaviour
         height = cc.height * transform.localScale.y;
         stepHeight = cc.stepOffset + cc.skinWidth + 0.05f;
 
+        if(hearingDistance > sightDistance)
+            hearingDistance = sightDistance;
+
         // only the greater of the two on x or y actually changes the result of the radius of the character controller.
         if(Mathf.Abs(transform.localScale.x) >= Mathf.Abs(transform.localScale.z))
             radius = cc.radius * transform.localScale.x;
         else
-            radius = cc.radius * transform.localScale.z;
-        
+            radius = cc.radius * transform.localScale.z;        
     }
 
     void Update(){
-        if(state == EnemyState.Dead)
-            return;
-        
-        //EnemyState previous = state;
+        // always setting target to be whatever it got hit by last
+        if(healthController.damagedBy != null)
+           SetTarget(healthController.damagedBy);
 
-        AcquireTarget();
-        UpdateState();
-        Act();
-        //if(state != previous)
-            //print($"State changed from {previous} to {state}");
-
+        if(UpdateState())
+           Act();
     }
 
     void Act(){
@@ -118,7 +135,7 @@ public class EnemyAIController : MonoBehaviour
             DETH();
         }
         else if(state == EnemyState.Injured){
-            animator.ChangeAnimation("hit", true, false, 16, true);
+            animator.ChangeAnimation("hit", true, false, injuryAnimationFPS, false);
         }
         else{
             UpdateAggro();
@@ -135,7 +152,7 @@ public class EnemyAIController : MonoBehaviour
                 weapon.ToggleFiring(true);
                 
                 if(weapon.BulletFiredOnFrame())
-                    animator.ChangeAnimation("shoot", true, false, 4);
+                    animator.ChangeAnimation("shoot", true, false, shootAnimationFPS);
                 //else
                 //    animator.ChangeAnimation("sleep", true, false);
             }
@@ -145,7 +162,7 @@ public class EnemyAIController : MonoBehaviour
                 meleeWeapon.ToggleFiring(true);
 
                 if(meleeWeapon.BulletFiredOnFrame())
-                    animator.ChangeAnimation("melee", true, false, 4);
+                    animator.ChangeAnimation("melee", true, false, meleeAnimationFPS);
                 //else
                 //    animator.ChangeAnimation("sleep", true, false);
             }
@@ -161,34 +178,36 @@ public class EnemyAIController : MonoBehaviour
         }
     }
 
-    void UpdateState(){
+    bool UpdateState(){
+        EnemyState previousState = state;
+
         if(healthController.health <= 0){
             state = EnemyState.Dead;
-            return;
+            return true; // forcing a state change always
         }
 
         if(target == null || currentAggro <= 0 || target.health <= 0){
             state = EnemyState.Sleep;
-            return;
+            return previousState == state;
         }
 
         if(healthController.damagedBy != null){
             state = EnemyState.Injured;
             stateChangeTimer = minStateChangeInterval - injuredStatePause;
-            return;
+            return previousState == state;
         }
 
         stateChangeTimer += Time.deltaTime;
         
         if(minStateChangeInterval > stateChangeTimer)
-            return;
+            return previousState == state;
         
         stateChangeTimer = 0;
         stateChangesSincePreviousAttack++;
         
         if(minStateChangesBeforeNextAttack >= stateChangesSincePreviousAttack){
             state = EnemyState.Chase;
-            return;
+            return previousState == state;
         }
 
         stateChangesSincePreviousAttack = 0;
@@ -232,6 +251,8 @@ public class EnemyAIController : MonoBehaviour
         else{
             state = EnemyState.Chase; // has a valid target with aggro and no LOS
         }
+
+        return previousState == state;
     }
 
     void UpdateAggro(){  
@@ -245,7 +266,7 @@ public class EnemyAIController : MonoBehaviour
     }
 
     bool LOSCheck(){
-        return !Physics.Linecast(transform.position + detectionOffsetV3, target.transform.position, ~obstacleLayers);
+        return !Physics.Linecast(transform.position + detectionOffsetV3, target.transform.position, LOSObstacles);
     }
     
     void Move(){
@@ -253,7 +274,7 @@ public class EnemyAIController : MonoBehaviour
             return;
 
         movementController.SetMovementVector(Vector3.forward);
-        animator.ChangeAnimation("walk", true, true);
+        animator.ChangeAnimation("walk", true, true, walkAnimationFPS);
     }
 
     void UpdateDirection(bool checkMove){
@@ -326,52 +347,62 @@ public class EnemyAIController : MonoBehaviour
             return;
         }
         
-        Debug.LogError($"No possible move, stuck enemy ({transform.name}) at {transform.position}");
-        Sleep();
+        //Debug.LogError($"No possible move, stuck enemy ({transform.name}) at {transform.position}");
+        //Sleep();
     }
     
-    void AcquireTarget(){
-        // always targetting whatever hit the enemy last, even we already have a target
-        if(healthController.damagedBy != null){
-            SetTarget(healthController.damagedBy);
-            animator.ChangeAnimation("hit", true, false);
-            return;
-        }
+    IEnumerator AquireTargetLoop(){
+        movementController.enabled = false;
+        while(target == null){
+            //print(gameObject.name);
+            float distanceToPlayer = DistanceToTransform(player.transform);
+            if(distanceToPlayer > sightDistance + RENABLE_MOVEMENT_CONTROLLER_DISTANCE){
+                yield return new WaitForSeconds(1f); // if the player is way too far, there's no point in checking again for awhile
+            }
+            else if(distanceToPlayer > sightDistance){
+                movementController.enabled = true; 
+                yield return new WaitForSeconds(0.5f);
+            }
 
-        if(target != null)
-            return;
+            float angleToPlayer = LocalAngleToTarget(player.transform);
 
-        float distanceToPlayer = DistanceToTransform(player.transform);
-        float angleToPlayer = AngleToTarget(player.transform);
-
-        if(distanceToPlayer <= hearingDistance){
-            SetTarget(player.transform);
-        }
-        else if(distanceToPlayer <= sightDistance && (angleToPlayer >= -LOSAngle && angleToPlayer <= LOSAngle)){
-            //Debug.DrawLine(transform.position + detectionOffsetV3, player.transform.position, Color.magenta, 0.00833333333f * debugRayAmount);
-            if(!Physics.Linecast(transform.position + detectionOffsetV3, player.transform.position, ~obstacleLayers))
-                SetTarget(player.transform);
+            RaycastHit rchit;
             
+            if(!Physics.Linecast(transform.position + detectionOffsetV3, player.transform.position, out rchit, LOSObstacles)){
+                //print(rchit.transform.gameObject);
+                if(distanceToPlayer <= hearingDistance){
+                    SetTarget(player.transform);
+                }
+                else if(distanceToPlayer <= sightDistance && (angleToPlayer >= -LOSAngle && angleToPlayer <= LOSAngle)){
+                    //Debug.DrawLine(transform.position + detectionOffsetV3, player.transform.position, Color.magenta, 0.00833333333f * debugRayAmount);
+                    SetTarget(player.transform);
+                    
+                }
+            }
+            // in range, but cannot see the player yet
+            yield return new WaitForSeconds(0.25f);
         }
+
+        yield break;
     }
 
     bool TryMove(Direction d){
         // checking the width and height, if any of these fail, we absolutely cannot move forward.
-        if( RaycastWithDebug(transform.position + new Vector3(0, (height / 2), 0), d.GetV3Direction(), (radius + distanceToAvoidObstacles), (obstacleLayers  | 1 << gameObject.layer), Color.green) || // middle
-            RaycastWithDebug(transform.position + d.GetV3Direction(d.GetDirectionAt(2)) * radius, d.GetV3Direction(), (radius + distanceToAvoidObstacles), (obstacleLayers  | 1 << gameObject.layer), Color.cyan) || // shifting to the right by adding the direction 2 to the right + radius (eg, north + 2 would be west)
-            RaycastWithDebug(transform.position + d.GetV3Direction(d.GetDirectionAt(-2)) * radius, d.GetV3Direction(), (radius + distanceToAvoidObstacles), (obstacleLayers  | 1 << gameObject.layer), Color.cyan)){ // left
+        if( RaycastWithDebug(transform.position + new Vector3(0, (height / 2), 0), d.GetV3Direction(), (radius + distanceToAvoidObstacles), (walkableLayers), Color.green) || // middle
+            RaycastWithDebug(transform.position + d.GetV3Direction(d.GetDirectionAt(2)) * radius, d.GetV3Direction(), (radius + distanceToAvoidObstacles), (walkableLayers), Color.cyan) || // shifting to the right by adding the direction 2 to the right + radius (eg, north + 2 would be west)
+            RaycastWithDebug(transform.position + d.GetV3Direction(d.GetDirectionAt(-2)) * radius, d.GetV3Direction(), (radius + distanceToAvoidObstacles), (walkableLayers), Color.cyan)){ // left
                 return false;
         }
 
         // check if the enemy can move forward and fit on the lower bounds of where we're trying to move to
-        if( !RaycastWithDebug(transform.position + new Vector3(0, -(height / 2) + radius, 0), d.GetV3Direction(), (radius + distanceToAvoidObstacles), (obstacleLayers  | 1 << gameObject.layer), Color.red)){
+        if( !RaycastWithDebug(transform.position + new Vector3(0, -(height / 2) + radius, 0), d.GetV3Direction(), (radius + distanceToAvoidObstacles), (walkableLayers), Color.red)){
                         // begins at the bottom of the character controller plus the radius otherwise causes issues, then moved forward by a quarter of the distance to avoid obstacles
-                return RaycastWithDebug(transform.position + new Vector3(0, -(height / 2) + radius, 0) + (d.GetV3Direction() * (radius + (distanceToAvoidObstacles * 0.25f))), Vector3.down, stepHeight + radius, (obstacleLayers  | 1 << gameObject.layer), Color.blue);
+                return RaycastWithDebug(transform.position + new Vector3(0, -(height / 2) + radius, 0) + (d.GetV3Direction() * (radius + (distanceToAvoidObstacles * 0.25f))), Vector3.down, stepHeight + radius, (walkableLayers), Color.blue);
         }
 
         // // offsetting the checks by the step height to see if there's enough room to step up onto whatever is infront, if either check is a failure, this move is invalid
-        if( !RaycastWithDebug(transform.position + new Vector3(0, -(height / 2) + stepHeight, 0), d.GetV3Direction(), (radius + distanceToAvoidObstacles), (obstacleLayers | 1 << gameObject.layer), Color.yellow)){
-                return RaycastWithDebug(transform.position + new Vector3(0, -(height / 2) + stepHeight, 0) + d.GetV3Direction() * (radius + distanceToAvoidObstacles), Vector3.down, stepHeight, (obstacleLayers  | 1 << gameObject.layer), Color.white); // checking walk space
+        if( !RaycastWithDebug(transform.position + new Vector3(0, -(height / 2) + stepHeight, 0), d.GetV3Direction(), (radius + distanceToAvoidObstacles), (walkableLayers), Color.yellow)){
+                return RaycastWithDebug(transform.position + new Vector3(0, -(height / 2) + stepHeight, 0) + d.GetV3Direction() * (radius + distanceToAvoidObstacles), Vector3.down, stepHeight, (walkableLayers), Color.white); // checking walk space
             }
 
         //print("Not a valid move in direction " + d.GetDirection());
@@ -413,25 +444,41 @@ public class EnemyAIController : MonoBehaviour
     }
 
     void Sleep(){
+        if(targetLoop != null)
+            StopCoroutine(targetLoop);
         currentAggro = 0;
         target = null;
+        targetLoop = StartCoroutine(AquireTargetLoop());
         animator.ChangeAnimation("sleep", true, false);
     }
 
     void DETH(){
-        transform.GetComponent<CharacterController>().enabled = false;
-        //weapon.ToggleFiring(false);
-        if(weapon != null)
-            weapon.enabled = false;
-        
-        if(meleeWeapon != null)
-        meleeWeapon.enabled = false;
+        if(onDeathDrop != null){
+            Vector3 dropPos = transform.position;
+            dropPos += transform.forward * 1.25f;
+            dropPos.y -= (height / 2);
+            dropPos.y += 0.5f;
+            Instantiate(onDeathDrop, dropPos, transform.rotation);
+        }
+
+        if(GlobalLevelVariables.instanceOf != null)
+            GlobalLevelVariables.instanceOf.EnemyKilled();
 
         if(healthController.health <= -35)
-            animator.ChangeAnimation("gib", false, false);
+            animator.ChangeAnimation("gib", false, false, gibAnimationFPS, false);
         else
-            animator.ChangeAnimation("deth", false, false);
-        
+            animator.ChangeAnimation("deth", false, false, dethAnimationFPS, false);
+
+        if(weapon != null)
+            weapon.enabled = false;
+
+        if(meleeWeapon != null)
+            meleeWeapon.enabled = false;
+
+        gameObject.layer = LayerMask.NameToLayer("DeadEnemy"); // still interacts with the environment but not with the player or other enemies.
+        healthController.enabled = false;
+        animator.DeleteCache();
+        this.enabled = false;
     }
 
     void SetTarget(Transform _target){
@@ -441,15 +488,21 @@ public class EnemyAIController : MonoBehaviour
         stateChangesSincePreviousAttack = 0;
         directionChangeTimer = directionChangeInterval;
         currentAggro = maxAggro;
+        movementController.enabled = true;
+        if(targetLoop != null)
+            StopCoroutine(targetLoop);
     }
 
-    void OnDrawGizmosSelected(){
-        Handles.color = new Color(0.5f, 0.5f, 1f, 0.25f);
-        Handles.DrawSolidArc(transform.position + detectionOffsetV3, transform.up, transform.forward, LOSAngle, sightDistance);
-        Handles.DrawSolidArc(transform.position + detectionOffsetV3, transform.up, transform.forward, -LOSAngle, sightDistance);
-        Handles.color = new Color(0.5f, 1f, 0.5f, 0.25f);
-        Handles.DrawSolidDisc(transform.position, Vector3.up, hearingDistance);
-    }
+    #if UNITY_EDITOR
+        void OnDrawGizmosSelected(){
+            Handles.color = new Color(0.5f, 0.5f, 1f, 0.25f);
+            Handles.DrawSolidArc(transform.position + detectionOffsetV3, transform.up, transform.forward, LOSAngle, sightDistance);
+            Handles.DrawSolidArc(transform.position + detectionOffsetV3, transform.up, transform.forward, -LOSAngle, sightDistance);
+            Handles.color = new Color(0.5f, 1f, 0.5f, 0.25f);
+            Handles.DrawSolidDisc(transform.position, Vector3.up, hearingDistance);
+            Handles.DrawWireDisc(transform.position, Vector3.up, sightDistance + RENABLE_MOVEMENT_CONTROLLER_DISTANCE);
+        }
+    #endif
 }
 
 

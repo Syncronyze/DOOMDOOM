@@ -1,0 +1,155 @@
+newmtl comp03_7
+map_Kd -o 0.24 0.66 -s 0.663 0.325 comp03_7.png
+Kd 1 1 1
+d 1
+
+newmtl comp03_2
+map_Kd -o 0 0 -s 0.333 0.3333 comp03_2.png
+Kd 1 1 1
+d 1
+
+newmtl comp03_6
+map_Kd -o 0.17 0.66 -s 0.663 0.325 comp03_6.png
+Kd 1 1 1
+d 1
+
+newmtl support2
+map_Kd -o 0.9 0 -s 0.75 0.33 support2.png
+Kd 1 1 1
+d 1
+
+newmtl sw11_full
+map_Kd -o -0.66 0.27 -s 0.333 0.16 sw11_full.png
+Kd 1 1 1
+d 1
+
+newmtl sw12_full
+map_Kd -o 1.08 -0.36 -s 0.15 0.12 sw12full.png
+Kd 1 1 1
+d 1
+
+newmtl ceil3_5
+map_Kd -o 0.26 0.82 -s 0.25 0.2 ceil3_5.png
+Kd 1 1 1
+d 1
+
+newmtl wlitfull0
+map_Kd -o 0 0 -s 0.5 2.4 wlitfull0.png
+Kd 1.0 1.0 1.0
+d 1.0
+
+newmtl comp03_4
+map_Kd -o 0 -0.86 -s 0.66 0.33 comp03_4.png
+Kd 1 1 1
+d 1
+
+newmtl comp04_full
+map_Kd -o 0.0675 -0.19 -s 0.0685 0.145 comp04_full.png
+Kd 1 1 1
+d 1
+
+newmtl floor4_8
+map_Kd -o 0.5 0.7 -s 0.33 0.26666 floor4_8.png
+Kd 1 1 1
+d 1
+
+newmtl step04
+map_Kd -o -0.03 0 -s 0.4 1.5 step04.png
+Kd 1 1 1
+d 1
+
+newmtl flat14
+map_Kd -o 0 0 -s 0.33 0.33 flat14.png
+Kd 1 1 1
+d 1
+
+newmtl ceil5_1
+map_Kd -o 0 0 -s 0.5 0.5 ceil5_1.png
+Kd 1 1 1
+d 1
+
+newmtl comp02_1
+map_Kd -o 0.65 0.825 -s 0.3333 0.3333 comp02_1.png
+Kd 1 1 1
+d 1
+
+newmtl comp02_2
+map_Kd -o 0.65 0.825 -s 0.3333 0.3333 comp02_2.png
+Kd 1 1 1
+d 1
+
+newmtl comp02_5
+map_Kd -o 0.65 0.825 -s 0.3333 0.3333 comp02_5.png
+Kd 1 1 1
+d 1
+
+newmtl comp02_8
+map_Kd -o 0.65 0.825 -s 0.3333 0.3333 comp02_8.png
+Kd 1 1 1
+d 1
+
+newmtl flat18
+map_Kd -o 0.69 -0.15 -s 0.3125 0.5 flat18.png
+Kd 1 1 1
+d 1
+
+newmtl comp02_3
+map_Kd -o 0.65 0.825 -s 0.3333 0.3333 comp02_3.png
+Kd 1 1 1
+d 1
+
+newmtl comp02_7
+map_Kd -o 0.65 0.825 -s 0.3333 0.3333 comp02_7.png
+Kd 1 1 1
+d 1
+
+newmtl tlite6_5
+map_Kd -o 0 0 -s 0.275 0.275 tlite6_5.png
+Kd 1 1 1
+d 1
+
+newmtl tscrn2
+map_Kd -o 0 0 -s 1 1 tscrn2.png
+Kd 1.0 1.0 1.0
+d 1.0
+
+newmtl tscrn6
+map_Kd -o 0 0 -s 1 1 tscrn6.png
+Kd 1.0 1.0 1.0
+d 1.0
+
+newmtl w13_1
+map_Kd -o 0 0 -s 0.33 0.33 w13_1.png
+Kd 1 1 1
+d 1
+
+newmtl tscrn4
+map_Kd -o 0 0 -s 1 1 tscrn4.png
+Kd 1.0 1.0 1.0
+d 1.0
+
+newmtl tscrn5
+map_Kd -o 0 0 -s 1 1 tscrn5.png
+Kd 1.0 1.0 1.0
+d 1.0
+
+newmtl tscrn3
+map_Kd -o 0 0 -s 1 1 tscrn3.png
+Kd 1.0 1.0 1.0
+d 1.0
+
+newmtl tscrn8
+map_Kd -o 0 0 -s 1 1 tscrn8.png
+Kd 1.0 1.0 1.0
+d 1.0
+
+newmtl tlite6_4
+map_Kd -o 0 0 -s 1 1 tlite6_4.png
+Kd 1 1 1
+d 1
+
+newmtl doortrak
+map_Kd -o 0.94 0 -s 1.875 0.15 doortrak.png
+Kd 1 1 1
+d 1
+

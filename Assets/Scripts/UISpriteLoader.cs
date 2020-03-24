@@ -6,16 +6,43 @@ using UnityEngine;
 /**
   *     Custom SpriteLoader for unity to retrieve a sprite out of multiple loaded spritesheets.
   */
+[ExecuteAlways]
 public class UISpriteLoader : MonoBehaviour
 {
-
+    public static UISpriteLoader instance;
     Dictionary<string, Sprite[]> sprites = new Dictionary<string, Sprite[]>();
+
+    void Awake(){
+        if(!Application.isPlaying)
+            return;
+            
+        if(instance == null){
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            LoadSpriteSheet("HUD_Font", "Textures/HUD_Font"); // literally always used- loading it at the start.
+        }
+        else{
+            Destroy(gameObject);
+            return;
+        }
+    }
+
+    void Update(){
+        if(Application.isPlaying)
+            return;
+
+        instance = this;
+        LoadSpriteSheet("HUD_Font", "Textures/HUD_Font");
+    }
+
+
     
     public Sprite RetrieveSprite(string name, string texture, bool checkSubstring = false){
         Sprite[] returnSprites;
 
         if(!sprites.TryGetValue(name, out returnSprites)){
-            Debug.LogWarning($"The sprite sheet {name} doesn't exist or is unloaded.");
+            if(Application.isPlaying)
+                Debug.LogWarning($"The sprite sheet {name} doesn't exist or is unloaded.");
             return null;
         }
         
@@ -25,6 +52,7 @@ public class UISpriteLoader : MonoBehaviour
             else if(checkSubstring && returnSprites[i].name.Contains(texture))
                 return returnSprites[i];
         }
+
         Debug.LogWarning($"The sprite {texture} in sprite sheet {name} doesn't exist or is unloaded.");
         return null;
     }
@@ -34,6 +62,7 @@ public class UISpriteLoader : MonoBehaviour
             return true;
 
         Sprite[] retrievedSprites = Resources.LoadAll<Sprite>(path);
+        
         if(retrievedSprites.Length == 0){
             Debug.LogWarning($"Requested Sprite Sheet {name} at {path} doesn't exist, or has no valid sprites.");
             return false;

@@ -40,7 +40,9 @@ public class ExplosionDmgController : MonoBehaviour
     }
 
     void DamageAll(){
-        foreach(Collider c in collisions){
+        for (int i = 0; i < collisions.Count; i++)
+        {
+            Collider c = collisions[i];
             HealthController hc = c.gameObject.GetComponent<HealthController>();
             float dmgToApply = damagePerTick;
             Vector3 closestPoint = c.ClosestPointOnBounds(transform.position);
@@ -54,9 +56,7 @@ public class ExplosionDmgController : MonoBehaviour
                 dmgToApply = 0;
                 //Debug.DrawRay(transform.position, (closestPoint - transform.position).normalized * distance, Color.red, 9f);
                 //print("Explosion out of LOS.");
-            }
-
-            
+            }            
 
             if(dmgToApply > 0)
                 hc.TakeDamage(origin, Mathf.RoundToInt(dmgToApply));   
@@ -66,6 +66,7 @@ public class ExplosionDmgController : MonoBehaviour
     void OnTriggerEnter(Collider otherC){
         if(otherC.gameObject.GetComponent<HealthController>() != null)
             collisions.Add(otherC);
+        
     }
 }
 

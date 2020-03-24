@@ -10,7 +10,6 @@ public class ParticleController : MonoBehaviour
     public float scale;
     public Vector3 moveTo;
 
-    UISpriteLoader spriteLoader;
     SpriteRenderer spriteRenderer;
     
     int currentSpriteIndex;
@@ -20,8 +19,7 @@ public class ParticleController : MonoBehaviour
     bool move;
 
     void Start(){
-        spriteLoader = GameObject.FindGameObjectWithTag("SpriteLoader").GetComponent<UISpriteLoader>();
-        valid = spriteLoader.LoadSpriteSheet("particles", "Textures/particle_sprites");
+        valid = UISpriteLoader.instance.LoadSpriteSheet("particles", "Textures/particle_sprites");
         spriteRenderer = GetComponent<SpriteRenderer>();
         frameTimer = 0;
         currentSpriteIndex = 0;
@@ -60,7 +58,7 @@ public class ParticleController : MonoBehaviour
     }
 
     void NextFrame(){
-        Sprite sprite = spriteLoader.RetrieveSprite("particles", $"particle_sprites_{particleSpriteFrames[currentSpriteIndex]}", true);
+        Sprite sprite = UISpriteLoader.instance.RetrieveSprite("particles", $"particle_sprites_{particleSpriteFrames[currentSpriteIndex]}", true);
 
         if(sprite == null)
             return;

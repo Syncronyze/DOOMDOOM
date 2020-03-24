@@ -10,12 +10,15 @@ using System.Linq;
  */
 public class PlayerInventoryController : MonoBehaviour
 {
-    GameUIController uiController;
-    UIViewSpriteController uiViewSprite;
+    public GameUIController uiController;
+    public UIViewSpriteController uiViewSprite;
+
+    public bool inventoryUpdated{ get; private set; }
     
     List<GunController> guns;
-    List<Ammo> ammos;
-    List<UIFontController> ammoDisplays;
+    Ammo[] ammos;
+    UIFontController[] ammoDisplays;
+    int ammoTypeCount;
 
     UIFontController activeAmmoDisplay;
     Ammo activeAmmo;
@@ -27,42 +30,30 @@ public class PlayerInventoryController : MonoBehaviour
     bool updateMaxAmmo;
 
 
-    // when the inventory has an update and needs to be refreshed
-    [HideInInspector]
-    public bool inventoryRefresh;
-
-    void Awake(){
-        guns = new List<GunController>();
-        ammoDisplays = new List<UIFontController>();
-        uiController = GameObject.FindGameObjectWithTag("GameUI").GetComponent<GameUIController>();
-        uiViewSprite = GameObject.FindGameObjectWithTag("ViewSprite").GetComponent<UIViewSpriteController>();
+    void Start(){
         activeGunIndex = -1;
-        inventoryRefresh = true;
-
+        
         if(!uiController.HasControllers())
             uiController.CollectUIControllers();
 
         activeAmmoDisplay = uiController.GetFontController("UI_AmmoPos");
-        CreateAmmos();
-        AddAmmo(AmmoType.Bullet, 10);
-        
-        // TODO: Remove, just for testing
-        AddAmmo(AmmoType.Bullet, 500);
-        AddAmmo(AmmoType.Rocket, 500);
-        AddAmmo(AmmoType.Shell, 500);
-        //CreateGun("fists");
-        //CreateGun("pistol");
-        //CreateGun("rocket");
-        //CreateGun("chaingun");
+
+        for(int i = 0; i < ammos.Length; i++){
+            ammoDisplays[i] = uiController.GetFontController("UI_Ammo" + ammos[i].type.ToString() + "Pos");
+        }
+
+        inventoryUpdated = true;
+        updateMaxAmmo = true;
     }
 
     void Update(){
         if(Time.timeScale > 0){
-            RefreshInventory();
-            if(UserWeaponSwitch())
+            //RefreshInventory();
+            if(UserWeaponSwitch()){
+                inventoryUpdated = true;
                 SetActiveGun();
+            }
         }
-        
     }
 
     public void FireActiveGun(bool fire){
@@ -72,46 +63,56 @@ public class PlayerInventoryController : MonoBehaviour
         activeGun.ToggleFiring(fire);
         uiViewSprite.ToggleFiring(activeGun.firing);
 
-        if(activeGun.BulletFiredOnFrame())
+        if(activeGun.BulletFiredOnFrame()){
+            inventoryUpdated = true;
             uiViewSprite.Fire();
+        }
     }
 
     /*
      *  Adding ammo based on type.
      */
     public bool AddAmmo(AmmoType type, int amountToAdd){
-        foreach(Ammo a in ammos){
-            if(a.type == type)
-                return a.AddAmmo(amountToAdd);
-            
+        for (int i = 0; i < ammos.Length; i++){
+            Ammo a = ammos[i];
+            if(a.type == type){
+                inventoryUpdated = true;
+                return a.AddAmmo(amountToAdd); 
+            }
         }
         
         print($"Cannot add ammo of type {type.ToString()} as it doesn't exist in our inventory!");
         return false;
     }
 
+    // a gun may be found in the world already contained in the inventory of the player; must add the relevant ammo.
     public bool AddGun(string gunName, int ammo){
         GunController gun = null;
         bool addedGun = false;
-
-        foreach(GunController gc in guns){
+        for (int i = 0; i < guns.Count; i++){
+            GunController gc = guns[i];
             if(gc.gunName == gunName){
                 gun = gc;
                 break;
             }
         }
 
+        // if this gun wasn't found, we create it and add it to our inventory
         if(gun == null){
             gun = CreateGun(gunName);
             if(gun == null)
                 return false;
             
+            guns.Add(gun);
+            
+            uiController.ChangeStyle("UI_Arms" + (guns.Count - 1) + "Pos", FontStyle.Go);
             addedGun = true;
         }
 
         AmmoType ammoType = gun.GetAmmoType();
         // if we added ammo, OR if the gun wasn't already in our inventory
         addedGun = (AddAmmo(ammoType, ammo) || addedGun);
+        inventoryUpdated = addedGun;
 
         return addedGun;
     }
@@ -122,37 +123,37 @@ public class PlayerInventoryController : MonoBehaviour
     public bool IncreaseMaxAmmo(int multiplier){
         if(multiplier <= 0 || ammos[0].multiplier == multiplier)
             return false;
-
-        foreach(Ammo a in ammos){
-            a.IncreaseMaxAmmo(multiplier);
+        
+        for (int i = 0; i < ammos.Length; i++){
+            ammos[i].IncreaseMaxAmmo(multiplier);
             ammoMultiplier = multiplier;
             updateMaxAmmo = true;
         }
+
+        inventoryUpdated = true;
         return true;
     }
 
     public void SaveGlobalVariables(){
-        GlobalPlayerVariables.guns = new List<string>();
-        foreach(GunController gc in guns){
-            GlobalPlayerVariables.guns.Add(gc.gunName);
+        GlobalPlayerVariables.save.guns = new string[guns.Count];
+        for (int i = 0; i < guns.Count; i++){
+            GlobalPlayerVariables.save.guns[i] = guns[i].gunName;
         }
 
-        GlobalPlayerVariables.ammos = ammos;
+        GlobalPlayerVariables.save.ammos = ammos;
     }
 
     public void LoadGlobalVariables(){
-        if(GlobalPlayerVariables.ammos != null)
-            ammos = GlobalPlayerVariables.ammos;
+        guns = new List<GunController>();
+        ammoTypeCount = Enum.GetNames(typeof(AmmoType)).Length;
+        ammoDisplays = new UIFontController[ammoTypeCount];
+        ammos = GlobalPlayerVariables.save.ammos;
 
-        if(GlobalPlayerVariables.guns == null)
-            return;
+        string[] loadGuns = GlobalPlayerVariables.save.guns;
 
-        List<string> loadGuns = GlobalPlayerVariables.guns;
-
-        foreach(string gunName in loadGuns){
-            CreateGun(gunName);
+        for (int i = 0; i < loadGuns.Length; i++){
+            AddGun(loadGuns[i], 0);
         }
-            
     }
 
     GunController CreateGun(string gunName){
@@ -163,6 +164,9 @@ public class PlayerInventoryController : MonoBehaviour
                 if(gun.TryGetComponent<GunController>(out gunController)){
                     gunController.gunName = gunName;
                     gun.transform.parent = this.transform;
+                    Ammo a = GetAmmo(gunController.ammoType);
+                    if(a != null)
+                        gunController.SetAmmo(a);
                 }
                 else{
                     Destroy(gun);
@@ -176,35 +180,51 @@ public class PlayerInventoryController : MonoBehaviour
                 return null;
             }
 
-        inventoryRefresh = true;
+        //inventoryRefresh = true;
         return gunController;
     }
 
+    Ammo GetAmmo(AmmoType type){
+        for(int i = 0; i < ammos.Length; i++){
+            if(ammos[i].type == type){
+                return ammos[i];
+            }
+        }
+
+        Debug.LogError($"AmmoType {type} doesn't exist in the player's inventory!");
+        return null;
+    }
     
     /*
      * Creates the ammos, and tried to retrieve the relevant font controller attached.
      */
-    void CreateAmmos(){
-        // We do the ammo in the inventory because the gun ammo is NOT tied to the gun in Doom, it is tied to the overall inventory.
-        ammos = new List<Ammo>();
-        updateMaxAmmo = true;
+    // void CreateAmmos(){
+    //     // We do the ammo in the inventory because the gun ammo is NOT tied to the gun in Doom, it is tied to the overall inventory.
+    //     updateMaxAmmo = true;
+    //     AmmoType[] types = (AmmoType[])Enum.GetValues(typeof(AmmoType));
 
-        foreach(AmmoType type in Enum.GetValues(typeof(AmmoType))){
-            Ammo ammo = new Ammo(type);
-            ammos.Add(ammo);
+    //     for(int i = 0; i < ammoTypeCount; i++){
+    //         AmmoType type = types[i];
+    //         Ammo ammo = new Ammo(type);
+    //         ammos[i] = ammo;
 
-            UIFontController fc = uiController.GetFontController("UI_Ammo" + type.ToString() + "Pos");
-            ammoDisplays.Add(fc); 
-        }
-    }
+    //         UIFontController fc = uiController.GetFontController("UI_Ammo" + type.ToString() + "Pos");
+    //         ammoDisplays[i] = fc; 
+    //     }
+    // }
 
     /*
-     *  Goes through and updates all the Ammo UI pieces, SetValue doesn't update if the value is identical.
+     *  Goes through and updates all the Ammo UI pieces
      */
     public void UpdateGUI(){
+        if(!inventoryUpdated)
+            return;
+        
+        inventoryUpdated = false;
         int iterator = 1;
 
-        foreach(UIFontController cont in ammoDisplays){
+        for (int i = 0; i < ammoDisplays.Length; i++){
+            UIFontController cont = ammoDisplays[i];
             if(cont == null)
                 continue;
 
@@ -300,38 +320,11 @@ public class PlayerInventoryController : MonoBehaviour
     }
 
     /*
-     * Refreshes the gun list when we pickup weapons
-     */
-    void RefreshInventory(){
-        if(inventoryRefresh){
-            int iterator = 0;
-            guns = new List<GunController>();
-            foreach(Transform child in transform){
-                GunController gc;
-                if(child.TryGetComponent<GunController>(out gc)){
-                    try{
-                        Ammo ammo = ammos.First(a => a.type == gc.GetAmmoType());
-                        gc.SetAmmo(ammo);
-                    }
-                    catch(Exception e){
-                        print("No ammo type available for " + gc.gunName + "\n" + e.Message + "\n StackTrace: " + e.StackTrace);
-                    }
-                    uiController.ChangeStyle("UI_Arms" + iterator + "Pos", FontStyle.Go);
-                    guns.Add(gc);
-                    iterator++;
-                }
-            }
-            // after we've refreshed the inventory, we'll disable inventory refreshing until we need it again.
-            inventoryRefresh = false;
-        }
-    }
-
-    /*
      * FOR DEBUGGING ONLY
      */
-    //void OnGUI(){
-	//	GUI.Label(new Rect(10, 90, 750, 1600), $"Current Active Weapon: {guns[activeGunIndex].name} ({activeGunIndex}) \n Guns: \n {ListToString(guns)}");//\n {ListToString(ammos)}");
-	//}
+    // void OnGUI(){
+	// 	GUI.Label(new Rect(10, 90, 750, 1600), $"Current Active Weapon: {guns[activeGunIndex].name} ({activeGunIndex}) \n Guns: \n {ListToString(guns)}");//\n {ListToString(ammos)}");
+	// }
 
     /*
      * Quick and dirty print list function

@@ -9,6 +9,10 @@ TagManager:
   - GameUI
   - PlayerInventory
   - ColorOverlay
+  - Trigger
+  - MainMenu
+  - Secret
+  - Pickups
   layers:
   - Default
   - TransparentFX
@@ -24,9 +28,9 @@ TagManager:
   - LevelParts
   - PlayerClip
   - Enemy
-  - 
-  - 
-  - 
+  - NoCollision
+  - Trigger
+  - DeadEnemy
   - 
   - 
   - 

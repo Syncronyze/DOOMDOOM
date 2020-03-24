@@ -14,6 +14,7 @@ public class GunController : MonoBehaviour
 
     public GameObject bulletPrefab;
     public GameObject bulletEndPrefab;
+    public GameObject bulletEndWithDamagePrefab;
     GameObject damagePrefab;
     Transform gunShooter;
 
@@ -50,8 +51,7 @@ public class GunController : MonoBehaviour
 
     void Awake(){
         if(projectileSpeed > 0)
-            damagePrefab = Resources.Load($"Prefabs/ProjectileDamagePrefab", typeof(GameObject)) as GameObject;
-        //uiViewSprite = GameObject.FindGameObjectWithTag("ViewSprite").GetComponent<UIViewSpriteController>();
+            damagePrefab = Resources.Load($"Prefabs/guns/ProjectileDamagePrefab", typeof(GameObject)) as GameObject;
         RPS = (60f / fireRate); // gun's fire rate is rounds per minute, we're setting it to be rounds per second for coding purposes
         //gunSwapSpeed = uiViewSprite.gunSwapSpeed;
         bulletSpread /= 2;
@@ -141,7 +141,7 @@ public class GunController : MonoBehaviour
 
                     BulletController bullet = Instantiate(bulletPrefab, transform.position, transform.rotation * Quaternion.Euler (randomSpreadX, randomSpreadY, 0f)).GetComponent<BulletController>();
                     int damageTo = (int)UnityEngine.Random.Range(minDamage, maxDamage);
-                    bullet.SetVariables(projectileSpeed, projectileDist, explosionSize, damageTo, ignoreLayer, bulletEndPrefab, damagePrefab, gunShooter);
+                    bullet.SetVariables(projectileSpeed, projectileDist, explosionSize, damageTo, ignoreLayer, bulletEndPrefab, damagePrefab, bulletEndWithDamagePrefab, gunShooter);
                     bulletsFired++;
                 }
             }
@@ -173,11 +173,12 @@ public class GunController : MonoBehaviour
 /**
   * Ammo class to store the ammo information, since ammo is shared between guns.
   */
+[System.Serializable]
 public class Ammo{
-    public int max{ get; private set; }
-    public int multiplier{ get; private set; }
-    public int count{ get; private set;}
-    public AmmoType type{ get; }
+    public int max;//{ get; private set; }
+    public int multiplier;//{ get; private set; }
+    public int count;//{ get; private set;}
+    public AmmoType type;//{ get; }
 
     public Ammo(AmmoType _type){
         type = _type;

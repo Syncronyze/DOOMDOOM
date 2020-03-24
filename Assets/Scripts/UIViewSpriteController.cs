@@ -8,6 +8,7 @@ using UnityEngine.UI;
  */
 public class UIViewSpriteController : MonoBehaviour
 {
+    public MovementController playerMovementController;
     public Vector3 defaultSpritePos = new Vector3(0, 65, 0);
     public float weaponScaling = 2;
     public float FPS = 5;
@@ -16,12 +17,14 @@ public class UIViewSpriteController : MonoBehaviour
     public float spriteBobResetScale = 25;
     public float spriteBobX = -40;
 
-    MovementController playerMovementController;
-    UISpriteLoader spriteLoader;
+    
+    
     Image image;
     RectTransform rt;
     Vector3 spriteMoveTo;
     Vector3 spriteMoveFrom;
+    Sprite[] sprites;
+    Coroutine frameLoop;
 
     string currentSprite;
 
@@ -29,7 +32,6 @@ public class UIViewSpriteController : MonoBehaviour
     bool fire;
     bool gunSwap;
     bool bobbing;
-    bool valid;
 
     int firingLoopBegin;
     int firingLoopEnd;
@@ -38,36 +40,36 @@ public class UIViewSpriteController : MonoBehaviour
 
     string gunName;
 
-    float previousFrame;
     float gunSwapTimer;
     float bobTimer;
     
     void Awake(){
-        spriteLoader = GameObject.FindGameObjectWithTag("SpriteLoader").GetComponent<UISpriteLoader>();
-        playerMovementController = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>();
-        valid = spriteLoader.LoadSpriteSheet("weapons", "Textures/weapons");
+        UISpriteLoader.instance.LoadSpriteSheet("weapons", "Textures/weapons");
         image = gameObject.GetComponent<Image>();
         rt = gameObject.GetComponent<RectTransform>();
     }
 
     void Update(){
-        if(!valid)
-            return;
-            
-        previousFrame += Time.deltaTime;
-
-        if(previousFrame >= (1 / FPS))
-            NextFrame();
-
         ApplySpriteMovement();
     }
 
+    IEnumerator FrameLoop(){
+        while(true){
+            NextFrame();
+            yield return new WaitForSeconds((1 / FPS));
+        }
+    }
+
     public void ChangeGun(string _gunName, float viewSpriteHeight, float viewSpriteFPS){
-        if(gunName == _gunName)
+        if(gunName == _gunName || string.IsNullOrEmpty(_gunName))
             return;
+        
+        if(frameLoop != null)
+            StopCoroutine(frameLoop);
+
         // resetting all variables
         gunName = _gunName;
-        Sprite[] sprites = spriteLoader.GetMatches("weapons", $"weapons_{gunName}");
+        sprites = UISpriteLoader.instance.GetMatches("weapons", $"weapons_{gunName}");
         image.enabled = true;
         fire = false;
         firing = false;
@@ -75,7 +77,7 @@ public class UIViewSpriteController : MonoBehaviour
         firingLoopBegin = 0;
         firingLoopEnd = sprites.Length - 1;
         FPS = viewSpriteFPS;
-        previousFrame = FPS; // allowing for instant refresh of the frame
+        //previousFrame = FPS; // allowing for instant refresh of the frame
         gunSwapTimer = 0;
         gunSwap = true;
         bobTimer = 1;
@@ -90,6 +92,8 @@ public class UIViewSpriteController : MonoBehaviour
                     break;
             }
         }
+
+        frameLoop = StartCoroutine(FrameLoop());
     }
 
     /*
@@ -145,8 +149,8 @@ public class UIViewSpriteController : MonoBehaviour
         else{ // otherwise, not moving; resetting viewmodel back
             if(bobbing){
                 bobbing = false;
-                // if we're already moving towards default, we just continue on that path, no changes
                 //print("STARTING RESET-----------");
+                // if we're already moving towards default, we just continue on that path, no changes
                 if(spriteMoveTo != defaultSpritePos){
                     spriteMoveFrom.x = spriteMoveTo.x;
                     spriteMoveTo = defaultSpritePos;
@@ -193,8 +197,7 @@ public class UIViewSpriteController : MonoBehaviour
             
         }
 
-        SetSprite(spriteLoader.RetrieveSprite("weapons", $"weapons_{gunName}_{currentIndex}", true));
-        previousFrame = 0;
+        SetSprite(sprites[currentIndex]);
     }
 
     void SetSprite(Sprite spriteToSet){

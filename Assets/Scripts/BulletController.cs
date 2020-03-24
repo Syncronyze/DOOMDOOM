@@ -13,6 +13,7 @@ public class BulletController : MonoBehaviour
     Rigidbody rb;
     GameObject endPrefab;
     GameObject damagePrefab;
+    GameObject endWithDamagePrefab;
     Transform firedFrom;
     RaycastHit rcHit;
 
@@ -94,17 +95,14 @@ public class BulletController : MonoBehaviour
     void End(){
         //print($"{(timeActive == 0 ? "Raycasted" : "Lasted " + timeActive + " s")}, travelling {dist}u, and hit something? {hit}");
         //print($"Bullet orignated at {startPos} and ended {endPos}.");
-        // if we hit, we spawn particles no matter what
-        if(endPrefab != null && (hit || forceSpawnEndParticles)){
-            ParticleController particle = Instantiate(endPrefab, (forceSpawnEndParticles && !hit) ? transform.position : endPos, transform.rotation).GetComponent<ParticleController>();
-            particle.MoveParticle();
-        }
-
+        bool damagedSomething = false;
         if(hit){
             if(raycast){
                 HealthController hcTest;
-                if(rcHit.transform.TryGetComponent<HealthController>(out hcTest))
+                if(rcHit.transform.TryGetComponent<HealthController>(out hcTest)){
                     hcTest.TakeDamage(firedFrom, damage);
+                    damagedSomething = true;
+                }
             }
             else{    
                 if(damagePrefab != null){ // if not a raycast, then we have to know what we hit.
@@ -112,11 +110,10 @@ public class BulletController : MonoBehaviour
                     dmg.transform.localScale *= damageAreaSize;
                     //dmg.transform.SetParent(gameObject.transform);
                     ExplosionDmgController dmgC;
-                    dmg.TryGetComponent<ExplosionDmgController>(out dmgC);
                     
-                    if(dmgC == null){
+                    if(!dmg.TryGetComponent<ExplosionDmgController>(out dmgC)){
+                        Debug.LogWarning($"Non-raycasted bullet fired from {firedFrom.name} has a damage prefab, but no damage controller attached.");
                         Destroy(dmg);
-                        Debug.LogWarning("Explosion Damage prefab doesn't have an attached Damage Controller.");
                     }
                     else{
                         dmgC.damageFallOff = true;
@@ -126,22 +123,41 @@ public class BulletController : MonoBehaviour
                     }
                 }
                 else{
-                    Debug.LogWarning($"Missing or invalid explosion damage controller, bullet will not apply damage - from {firedFrom}");
+                    Debug.LogWarning($"Missing or invalid explosion damage controller, bullet will not apply damage - from {firedFrom.name}");
                 }
             }
 
+        }
+
+        // if we hit, we spawn particles no matter what
+        if(endPrefab != null && (hit || forceSpawnEndParticles)){
+            GameObject particleGO;
+            if(!damagedSomething || endWithDamagePrefab == null)
+                particleGO = Instantiate(endPrefab, endPos, transform.rotation);
+            else
+                particleGO = Instantiate(endWithDamagePrefab, endPos, transform.rotation);
+
+            ParticleController particleC;
+
+            if(!particleGO.TryGetComponent<ParticleController>(out particleC)){
+                Debug.LogWarning($"Bullet fired from {firedFrom.name} has an endPrefab particle, but no particle controller attached.");
+                Destroy(particleC);
+            }
+            else{
+                particleC.MoveParticle();
+            }
         }
         // destroy is asynchronous, so just making bullet invalid after we've "ended"
         valid = false;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
-        Destroy(gameObject);
+        Destroy(gameObject, 0.05f);
     }
 
     /*
      * Once spawned, the bullet needs to become valid based on its projectile speed & distance.
      */
-    public void SetVariables(float _projectileSpeed, float _projectileDist, float _damageAreaSize, int _damage, LayerMask _ignoreLayer, GameObject _endPrefab, GameObject _damagePrefab, Transform _firedFrom){
+    public void SetVariables(float _projectileSpeed, float _projectileDist, float _damageAreaSize, int _damage, LayerMask _ignoreLayer, GameObject _endPrefab, GameObject _damagePrefab, GameObject _endWithDamagePrefab, Transform _firedFrom){
         if(rb == null)
             Destroy(gameObject);
         
@@ -149,6 +165,7 @@ public class BulletController : MonoBehaviour
         firedFrom = _firedFrom;
         damagePrefab = _damagePrefab;
         endPrefab = _endPrefab;
+        endWithDamagePrefab = _endWithDamagePrefab;
         projectileSpeed = _projectileSpeed;
         projectileDist = _projectileDist;
         ignoreLayer = _ignoreLayer;

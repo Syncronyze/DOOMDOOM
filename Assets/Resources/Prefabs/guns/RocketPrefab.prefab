@@ -45,12 +45,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ignoreLayer:
     serializedVersion: 2
-    m_Bits: 5888
+    m_Bits: 120320
   ammoType: 3
   bulletPrefab: {fileID: 2406412495494251024, guid: 6766bb0ef03e61e458086c778c2f9989,
     type: 3}
   bulletEndPrefab: {fileID: 2519044172990083312, guid: df7336f3ff837074ca805c5a0b2503bd,
     type: 3}
+  bulletEndWithDamagePrefab: {fileID: 0}
   gunName: rocket
   viewSpriteHeight: 40
   viewSpriteFPS: 12
@@ -58,8 +59,8 @@ MonoBehaviour:
   projectileDist: 2048
   projectileSpeed: 7500
   projectileAmount: 1
-  explosionSize: 3
-  minDamage: 999
-  maxDamage: 999
-  bulletSpread: 5.5
+  explosionSize: 5
+  minDamage: 101
+  maxDamage: 150
+  bulletSpread: 0
   spreadOnNthBullet: 2

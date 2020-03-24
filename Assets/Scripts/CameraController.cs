@@ -10,10 +10,13 @@ public class CameraController : MonoBehaviour {
 	public float headBobSpeed = 4;
 	public float headBobResetSpeed = 8;
 	public float headBobDistance = 0.5f;
+	public bool headBob = true;
 	// first person look variables
 	public float mouseSensitvity = 1;
 	public float topAngleView = 89;
 	public float bottomAngleView = -89;
+
+	
 
 	MovementController playerController;
 	Texture2D xhair;
@@ -31,32 +34,36 @@ public class CameraController : MonoBehaviour {
 	float movingCamHeightFrom;
 	float cameraOffset;
 
-	bool resettingCamera;
+	bool bobbing;
 
-	float bobTimer = 0.0f;
+	float bobTimer;
 	
 
 	void Awake(){
 		playerController = GetComponent<MovementController>();
-		mainCamera = GameObject.FindGameObjectWithTag("MainCamera").transform;
 		cameraOffset = mainCamera.localPosition.y; // before we begin, we want to maintain the camera's Y offeset
 		movingCamHeightFrom = 0;
 		movingCamHeightTo = headBobDistance;
-		resettingCamera = false;
+		bobbing = false;
+		bobTimer = 0;
 
-		xhair = Resources.Load<Texture2D>("Textures/xhair");
-		float xhairWidth = 4;
-        float xhairHeight = 4;
-        float xMin = (Screen.width / 2) - (xhairWidth / 2);
-        float yMin = (Screen.height / 2) - (xhairHeight / 2);
+		// xhair = Resources.Load<Texture2D>("Textures/xhair");
+		// float xhairWidth = 4;
+        // float xhairHeight = 4;
+        // float xMin = (Screen.width / 2) - (xhairWidth / 2);
+        // float yMin = (Screen.height / 2) - (xhairHeight / 2);
 
-        xhairRect = new Rect(xMin, yMin, xhairWidth, xhairHeight);
+        // xhairRect = new Rect(xMin, yMin, xhairWidth, xhairHeight);
 	}
 
 	void Update(){
+		if(Time.timeScale == 0) // still records mouse input even while paused
+			return;
+
 		MouseInputMovement();
-		if(headBobSpeed > 0)
-			HeadBob ();	
+		if(headBob && headBobSpeed > 0){
+			HeadBob();	
+		}
 
 	}
 
@@ -74,48 +81,51 @@ public class CameraController : MonoBehaviour {
 			return;
 		
 		// to smooth the headbob, we're only applying headbob at 10% speed
-		if(speedPercentage > 0.1){
-			// if we came from camera reset, we start from the current height
-			// the timing will be a bit off, becuase it's a smaller distnace covered by the same timer
-			// but this is a smoother result overall
-			if(resettingCamera){
-				resettingCamera = false;
+		if(speedPercentage > 0.2){
+			// if we're not at "default" position, then we skip this and continue with the current bobTimer
+			if(!bobbing && mainCamera.localPosition.y == cameraOffset){
+				bobbing = true;
 				bobTimer = 0;
-				movingCamHeightFrom = mainCamera.transform.localPosition.y - cameraOffset;;
+				movingCamHeightFrom = 0;
 				movingCamHeightTo = headBobDistance;
 			}
 
 			// if the timer has run its course, we flip the variables and reset the timer.
-			if (bobTimer > 1){
-				if(movingCamHeightTo == headBobDistance){
-					movingCamHeightTo = 0;
-					movingCamHeightFrom = headBobDistance;
-				}
-				else{
-					movingCamHeightFrom = 0;
-					movingCamHeightTo = headBobDistance;
-				}
+			if(bobTimer > 1){
+				float temp = movingCamHeightFrom;
+				// we've finished moving TO zero, then we move the opposite direction
+				if(movingCamHeightTo == 0)
+					temp *= -1;
 
+				movingCamHeightFrom = movingCamHeightTo;
+				movingCamHeightTo = temp;
 				bobTimer = 0;
 			}
 			
-			bobTimer += Time.deltaTime * headBobSpeed * speedPercentage;
+			bobTimer += Time.deltaTime * headBobSpeed;// * speedPercentage;
 		}
 		else{
-			if(!resettingCamera){
-				movingCamHeightTo = 0;
-				movingCamHeightFrom =  mainCamera.transform.localPosition.y - cameraOffset;
-				bobTimer = 0;
-				resettingCamera = true;
+			if(bobbing){
+				bobbing = false;
+				// if we're already moving to zero, then we just continue moving that way
+				if(movingCamHeightTo != 0){
+					movingCamHeightFrom = movingCamHeightTo;
+					movingCamHeightTo = 0;
+					bobTimer = 1 - bobTimer;
+				}
 			}
-			else if(bobTimer > 1.0f){ // if we're not moving, and we've already reset the camera, we're done here
+			
+			if(bobTimer > 1.0f){ // if we're not moving, and we've already reset the camera, we're done here
 				return;
 			}
+
 			bobTimer += Time.deltaTime * headBobResetSpeed;
 		}
-		
-		//print($"Moving Camera from {movingCamHeightFrom} to {movingCamHeightTo}, and at {(bobTimer * 100)}%");
-		mainCamera.transform.localPosition = new Vector3(0, Mathf.Lerp(movingCamHeightFrom, movingCamHeightTo, bobTimer) + cameraOffset, 0);
+
+		mainCamera.localPosition = new Vector3(0, (Mathf.Lerp(movingCamHeightFrom, movingCamHeightTo, bobTimer)  * speedPercentage) + cameraOffset, 0);
+
+		//if(bobTimer >= 1)
+		//	print($"Moving Camera from {movingCamHeightFrom} to {movingCamHeightTo}, and at {(bobTimer * 100)}% ({mainCamera.localPosition.y})");
 	}
 
 	/*
@@ -140,21 +150,6 @@ public class CameraController : MonoBehaviour {
 
 		transform.rotation = Quaternion.Euler(0, currentYRotation, 0);
 		mainCamera.localRotation = Quaternion.Euler(currentCameraXRotation, 0, 0);
-
-	}
-
-	/*
-	 * Drawing our crosshair - TODO: DELETE THIS AND MOVE TO PROPER CANVAS OBJECT LATER
-	 */
-	void OnGUI(){
-		if(xhair != null)
-			GUI.DrawTexture(xhairRect, xhair, ScaleMode.StretchToFill, true, 0, new Color(0, 1, 0, 0.75f), 6f, 6f);
-
-		// GUI.Label(new Rect(10, 550, 400, 80), 
-		// "timer: " + System.Math.Round(bobTimer, 2) +
-		// "\nmoving to " + movingCamHeightTo + 
-		// "\nmoving from " + movingCamHeightFrom);
-
 
 	}
 }
