@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 5}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 605}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -93,14 +93,14 @@ MonoBehaviour:
     y: 0
     width: 452
     height: 711
-  m_MinSize: {x: 277, y: 72}
-  m_MaxSize: {x: 4002, y: 4022}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 23}
   m_Panes:
   - {fileID: 23}
   - {fileID: 14}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 2
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -123,7 +123,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 1037
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 605}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &6
 MonoBehaviour:
@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 987
-  m_MinSize: {x: 583, y: 555}
-  m_MaxSize: {x: 12008, y: 18066}
+  m_MinSize: {x: 581, y: 555}
+  m_MaxSize: {x: 12006, y: 18066}
   vertical: 1
   controlID: 53
 --- !u!114 &9
@@ -215,8 +215,8 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 711
-  m_MinSize: {x: 583, y: 283}
-  m_MaxSize: {x: 12008, y: 8044}
+  m_MinSize: {x: 581, y: 283}
+  m_MaxSize: {x: 12006, y: 8044}
   vertical: 0
   controlID: 54
 --- !u!114 &10
@@ -238,8 +238,8 @@ MonoBehaviour:
     y: 0
     width: 319
     height: 470
-  m_MinSize: {x: 202, y: 222}
-  m_MaxSize: {x: 4002, y: 4022}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.036946148, y: 0.5322766, z: -0.025793508, w: -0.84669316}
     speed: 2
-    m_Value: {x: -0.036946148, y: 0.5322766, z: -0.025793508, w: -0.8466931}
+    m_Value: {x: -0.03690487, y: 0.53168195, z: -0.025764693, w: -0.84574723}
   m_Size:
     m_Target: 5.136377
     speed: 2
@@ -619,9 +619,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: ce2a0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 68fbffff
+      m_ExpandedIDs: 1efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -709,20 +709,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 77
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: 77
   m_LastProjectPath: E:\DOOMDOOM
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 31}
-    m_SelectedIDs: 2e310000
-    m_LastClickedID: 12590
-    m_ExpandedIDs: 000000002e310000fa3200009e3300004e340000c4340000903500000e370000e8370000de390000bc3a0000043b0000e03f0000104e0000124e0000144e0000164e0000184e00001a4e00001c4e0000
+    scrollPos: {x: 0, y: 147}
+    m_SelectedIDs: 4e3f0000
+    m_LastClickedID: 16206
+    m_ExpandedIDs: 00000000c43000009032000030330000de330000503400001c350000943600006c3700005a390000383a0000803a00004e3f0000804d0000824d0000844d0000864d0000884d00008a4d00008c4d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -750,7 +750,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002e310000fa3200009e3300004e340000c4340000903500000e370000e8370000de390000bc3a0000043b0000e03f0000104e0000124e0000144e0000164e0000184e00001a4e00001c4e0000
+    m_ExpandedIDs: 00000000c43000009032000030330000de330000503400001c350000943600006c3700005a390000383a0000803a00004e3f0000804d0000824d0000844d0000864d0000884d00008a4d00008c4d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -777,7 +777,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300005e3900003a3700000000000044cfffffd8c0ffff60f7ffff82c7ffff
     m_RenameOverlay:
       m_UserAcceptedRename: 0

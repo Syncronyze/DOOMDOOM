@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2020-03-24T14:22:23.351-05:00
-  initializedAtString: 2020-03-24T14:22:23.321-05:00
-  localBranches: []
-  remoteBranches: []
+  lastUpdatedAtString: 2020-03-24T15:49:39.623-05:00
+  initializedAtString: 2020-03-24T15:49:39.583-05:00
+  localBranches:
+  - name: master
+    tracking: origin/master
+  remoteBranches:
+  - name: origin/master
+    tracking: '[None]'
   remotes:
   - name: origin
     url: https://github.com/Syncronyze/DOOMDOOM.git
@@ -26,15 +30,27 @@ MonoBehaviour:
     function: 0
     token: 
   localConfigBranches:
-    keys: []
-    values: []
+    keys:
+    - master
+    values:
+    - name: master
+      remote:
+        name: origin
+        url: https://github.com/Syncronyze/DOOMDOOM.git
+      trackingBranch: master
   remoteConfigBranches:
     keys:
     - origin
     subKeys:
-    - Values: []
+    - Values:
+      - master
     subKeyValues:
-    - Values: []
+    - Values:
+      - name: master
+        remote:
+          name: origin
+          url: https://github.com/Syncronyze/DOOMDOOM.git
+        trackingBranch: 
   configRemotes:
     keys:
     - origin
